@@ -1,0 +1,434 @@
+/* @import url(mylibs/forms.css); */
+
+/* 320
+
+_____________________________________________________
+
+320 and Up boilerplate extension
+
+Author: Andy Clarke
+Version: 0.9b
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+License: http://creativecommons.org/licenses/MIT/
+_____________________________________________________
+
+1.ROOT
+2.HEADINGS
+3.TYPOGRAPHY
+4.LINKS
+5.FIGURES & IMAGES
+6.TABLES
+7.FORMS (See css/mylibs/forms.css)
+8.BANNER — header[role="banner"]
+9.NAVIGATION — nav[role="navigation"]
+10.CONTENT
+11.MAIN — div[role="main"]
+12.COMPLIMENTARY — div[role="complementary"]
+13.CONTENTINFO — footer[role="contentinfo"]
+14.GLOBAL OBJECTS
+15.VENDOR-SPECIFIC 
+16.TEMPLATE SPECIFICS
+17.MODERNIZR
+
+COLOURS 
+
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin : 0;
+padding : 0;
+border : 0;
+font-size : 100%;
+font : inherit;
+vertical-align : baseline; }
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+display : block; }
+
+blockquote, q { 
+quotes : none; }
+
+blockquote:before, 
+blockquote:after,
+q:before, 
+q:after { 
+content : ""; content: none; }
+
+del { 
+text-decoration : line-through; }
+
+ins { 
+background-color : rgb(255,255,153); 
+color : rgb(0,0,0); 
+text-decoration : none; }
+
+mark { 
+background-color : rgb(255,255,153); 
+color : rgb(0,0,0); 
+font-style : italic; 
+font-weight : bold; }
+
+abbr[title], 
+dfn[title] { 
+border-bottom : 1px dotted; 
+cursor : help; }
+
+table { 
+border-collapse : collapse; 
+border-spacing : 0; }
+
+hr { 
+display : block; 
+height : 1px; 
+border : 0; 
+border-top : 1px solid rgb(204,204,204);
+margin : 1em 0; 
+padding : 0; }
+
+/* 1.ROOT */
+
+html {
+overflow-y : scroll;
+background : rgb(255,255,255) /* url(../img/tmp/grid.png) repeat-y 50% 0 */; }
+
+body { 
+margin : 0 auto;
+padding : 24px 0;
+width : 90% /* 252px */;
+font : 100%/1.4 Cambria, Georgia, Times, "Times New Roman";
+color : rgb(40,40,40); 
+background-color : transparent; }
+
+/* 2.HEADINGS */
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+font-family : "Helvetica Neue", Helvetica, Arial;
+font-weight : bold; }
+
+h1 { 
+margin-bottom : .75em;
+font-size : 3em; /* 48 / 16 = 3 */
+line-height : 1.2; }
+
+h2 { 
+margin-bottom : .75em;
+font-size : 2em; /* 36 / 16 = 2 */
+line-height : 1.2; }
+
+h3 { 
+margin-bottom : 1em;
+font-size : 1.5em; /* 24 / 16 = 1.5 */
+line-height : 1.3; }
+
+h4 { 
+margin-bottom : 1.25em;
+font-size : 1.25em; /* 20 / 16 = 1.25 */
+line-height : 1.25; }
+
+h5 { 
+margin-bottom : 1.5em;
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+h6 { 
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+/* 3.TYPOGRAPHY */
+
+p, 
+ol, 
+ul, 
+dl, 
+address { 
+margin-bottom : 1.5em; 
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+ul, 
+ol { 
+margin : 0 0 1.5em -24px; 
+padding-left : 24px; }
+
+ul { 
+list-style-type : disc; }
+
+ol { 
+list-style-type : decimal; }
+
+li ul, 
+li ol { 
+margin : 0;
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+dl, 
+dd { 
+margin-bottom : 1.5em; }
+
+dt { 
+font-weight : normal; }
+
+blockquote  { 
+margin : 0 0 1.5em -24px; 
+padding-left : 24px; 
+border-left : 1px solid rgb(200,200,200);
+font-style : italic; }
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+content : '';
+content : none; }
+
+b, 
+strong	{ 
+font-weight : bold; }
+
+i, 
+em { 
+font-style : italic; }
+
+sup, 
+sub { 
+position : relative;
+font-size : 75%; 
+line-height : 0; }
+
+sup { 
+top : -.5em; }
+
+sub { 
+bottom : -.25em; }
+
+address { 
+font-style : normal; }
+
+pre { 
+margin-bottom : 1.5em; 
+white-space : pre; 
+white-space : pre-wrap; 
+word-wrap : break-word; }
+
+pre, 
+code { 
+font : .875em 'andale mono', 'lucida console', monospace; 
+line-height : 1.5; }
+
+small {
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+/* 4.LINKS */
+
+a, 
+a:visited {
+outline : none;
+color : rgb(23,119,175);
+text-decoration : none; }
+ 
+a:hover { 
+outline : none;
+color : rgb(40,40,40); 
+text-decoration : underline; }
+ 
+a:active, 
+a:focus { 
+outline : none;
+color : rgb(0,0,0); }
+
+/* 5.FIGURES & IMAGES */
+
+figure {
+margin-bottom : 1.5em; }
+
+figure img,
+figure object,
+figure embed {
+margin-bottom : .75em;
+max-width : 100%; }
+
+figcaption {
+display : block;
+font-weight : normal; }
+
+/* 6.TABLES */
+
+table { 
+border-collapse : collapse;
+border-spacing : 0;
+margin-bottom : 1.4em; 
+width : 100%;
+font-size : .875em; /* 14 / 16 = .875 */ }
+
+th { 
+font-weight : bold; }
+
+th, td, caption { 
+padding : .25em 10px .25em 5px; }
+
+tfoot { 
+font-style : italic; }
+
+caption { 
+background-color : transparent; }
+
+/* 7.FORMS (See css/mylibs/forms.css) */
+
+/* 8.BANNER */
+/* 9.NAVIGATION */
+/* 10.CONTENT */
+/* 11.MAIN */
+/* 12.COMPLIMENTARY */
+/* 13.CONTENTINFO */
+
+/* 14.GLOBAL OBJECTS */
+
+.clearfix { 
+zoom : 1; }
+
+.clearfix:before, 
+.clearfix:after { 
+content : "\0020"; 
+display : block; 
+height : 0; 
+overflow : hidden; }
+
+.clearfix:after { 
+clear : both; }
+
+/* 15.VENDOR-SPECIFIC */
+
+body {
+-webkit-text-size-adjust : 100%; 
+-ms-text-size-adjust : 100%; }
+
+a:link { 
+-webkit-tap-highlight-color : rgb(52,158,219); }
+
+::-webkit-selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::-moz-selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::selection { 
+background : rgb(23,119,175); 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+/* input[type=search] {
+-webkit-appearance : none; }
+
+input[type="search"]::-webkit-search-decoration, 
+input[type="search"]::-webkit-search-cancel-button {
+display : none; } */
+
+::-webkit-input-placeholder {
+padding : 10px;
+font-size : .875em; 
+line-height : 1.4; }
+
+input:-moz-placeholder { 
+padding : 10px;
+font-size : .875em; 
+line-height : 1.4; }
+
+.ie7 img,
+.iem7 img { 
+-ms-interpolation-mode : bicubic; }
+
+div,
+input,
+textarea  { 
+-webkit-box-sizing : border-box;
+-moz-box-sizing : border-box;
+-o-box-sizing : border-box;
+box-sizing : border-box; }
+
+/* Non-semantic helper classes */
+
+/* Image replacement */
+.ir { 
+display : block; 
+text-indent : -999em; 
+overflow : hidden; 
+background-repeat : no-repeat; 
+text-align : left; 
+direction : ltr; }
+
+/* Hide for screenreaders and visual browsers */
+.hidden { 
+display : none; 
+visibility : hidden; }
+
+/* Hide visually */
+.visuallyhidden { 
+position : absolute;
+clip : rect(0 0 0 0); 
+overflow : hidden;
+margin: -1px;
+padding : 0;
+height : 1px;      
+width : 1px;
+border : 0; }
+
+/* Allow an element to be focusable via keyboard  */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { 
+position : static;
+clip : auto; 
+overflow : visible;
+height : auto; 
+margin : 0;   
+width : auto; }
+
+/* Hide but maintain layout */
+.invisible { 
+visibility : hidden; }
+
+/* 16.TEMPLATE SPECIFICS */
+
+#goog-fixurl ul  {
+list-style-type : none; }
+
+#goog-fixurl input  {
+margin-bottom : 1.5em; }
+
+/* 17.MODERNIZR */
+
+/* 
+Sources: 
+http://meyerweb.com/eric/tools/css/reset
+http://people.opera.com/patrickl/experiments/keyboard/test
+http://gist.github.com/413930
+http://pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap
+http://sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars
+http://tjkdesign.com/ez-css/css/base.css
+http://viget.com/inspire/styling-the-button-element-in-internet-explorer
+http://code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing
+http://html5doctor.com/html-5-reset-stylesheet/
+http://praegnanz.de/weblog/htmlcssjs-kickstart/
+http://camendesign.com/design/
+http://yui.yahooapis.com/2.8.1/build/base/base.css
+http://webaim.org/techniques/css/invisiblecontent/
+http://drupal.org/node/897638
+*/
