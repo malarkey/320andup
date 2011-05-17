@@ -1,10 +1,10 @@
 /* _________________________________________________
 
 320 and Up boilerplate extension
-
 Author: Andy Clarke
-Version: 0.9b
+Version: 0.9.3b
 URL: http://stuffandnonsense.co.uk/projects/320andup/
+License: http://creativecommons.org/licenses/MIT/
 _____________________________________________________
 
 1.ROOT
@@ -196,18 +196,15 @@ font-size : 1em; /* 16 / 16 = 1 */ }
 
 a, 
 a:visited {
-outline : none;
 color : rgb(23,119,175);
 text-decoration : none; }
  
 a:hover { 
-outline : none;
 color : rgb(40,40,40); 
 text-decoration : underline; }
  
 a:active, 
 a:focus { 
-outline : none;
 color : rgb(0,0,0); }
 
 /* 5.FIGURES & IMAGES */
@@ -324,6 +321,16 @@ textarea  {
 box-sizing : border-box; }
 
 /* Non-semantic helper classes */
+
+/* Ellipsis */
+.ellipsis {
+text-overflow : ellipsis;
+overflow : hidden;
+white-space : nowrap; }
+
+/* Prevent callout */
+.nocallout {
+-webkit-touch-callout : none; }
 
 /* Image replacement */
 .ir { 
@@ -515,7 +522,7 @@ page-break-after : avoid; }
 }/*/mediaquery*/
 
 /*2x __________________________________________________________________________________________________________ */
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
 
 /* 1.ROOT */
 /* 2.HEADINGS */

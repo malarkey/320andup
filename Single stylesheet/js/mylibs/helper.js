@@ -1,28 +1,47 @@
 /*
  * MBP - Mobile boilerplate helper functions
  */
+(function(document){
 
- 
 window.MBP = window.MBP || {}; 
- 
+
+// Fix for iPhone viewport scale bug 
+// http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
+
+MBP.viewportmeta = document.querySelector && document.querySelector('meta[name="viewport"]');
+MBP.ua = navigator.userAgent;
+
+MBP.scaleFix = function () {
+  if (MBP.viewportmeta && /iPhone|iPad/.test(MBP.ua) && !/Opera Mini/.test(MBP.ua)) {
+    MBP.viewportmeta.content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+    document.addEventListener("gesturestart", MBP.gestureStart, false);
+  }
+};
+MBP.gestureStart = function () {
+    MBP.viewportmeta.content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+};
+
+
 // Hide URL Bar for iOS
 // http://remysharp.com/2010/08/05/doing-it-right-skipping-the-iphone-url-bar/
 
 MBP.hideUrlBar = function () {
-    /mobile/i.test(navigator.userAgent) && !pageYOffset && !location.hash && setTimeout(function () {
-    window.scrollTo(0, 1);
+    /iPhone/.test(MBP.ua) && !pageYOffset && !location.hash && setTimeout(function () {
+      window.scrollTo(0, 1);
     }, 1000);
-}
+};
 
 
-// Fast Buttons
-// http://code.google.com/mobile/articles/fast_buttons.html
+// Fast Buttons - read wiki below before using
+// https://github.com/shichuan/mobile-html5-boilerplate/wiki/JavaScript-Helper
 
 MBP.fastButton = function (element, handler) {
     this.element = element;
     this.handler = handler;
-    element.addEventListener('touchstart', this, false);
-    element.addEventListener('click', this, false);
+    if (element.addEventListener) {
+      element.addEventListener('touchstart', this, false);
+      element.addEventListener('click', this, false);
+    }
 };
 
 MBP.fastButton.prototype.handleEvent = function(event) {
@@ -48,6 +67,7 @@ MBP.fastButton.prototype.onTouchMove = function(event) {
         this.reset();
     }
 };
+
 MBP.fastButton.prototype.onClick = function(event) {
     event.stopPropagation();
     this.reset();
@@ -57,18 +77,20 @@ MBP.fastButton.prototype.onClick = function(event) {
     }
     this.element.style.backgroundColor = "";
 };
+
 MBP.fastButton.prototype.reset = function() {
     this.element.removeEventListener('touchend', this, false);
     document.body.removeEventListener('touchmove', this, false);
     this.element.style.backgroundColor = "";
 };
+
 MBP.preventGhostClick = function (x, y) {
     MBP.coords.push(x, y);
     window.setTimeout(function (){
         MBP.coords.splice(0, 2);
     }, 2500);
 };
-;
+
 MBP.ghostClickHandler = function (event) {
     for(var i = 0, len = MBP.coords.length; i < len; i += 2) {
         var x = MBP.coords[i];
@@ -79,7 +101,11 @@ MBP.ghostClickHandler = function (event) {
         }
     }
 };
-document.addEventListener('click', MBP.ghostClickHandler, true);
+
+if (document.addEventListener) {
+    document.addEventListener('click', MBP.ghostClickHandler, true);
+}
+                            
 MBP.coords = [];
 
 
@@ -87,16 +113,16 @@ MBP.coords = [];
 // https://github.com/shichuan/mobile-html5-boilerplate/issues#issue/2
 
 MBP.splash = function () {
-  var filename = navigator.platform === 'iPad' ? 'h/' : 'l/';
-  document.write('<link rel="apple-touch-startup-image" href="/img/' + filename + 'splash.png" />' );
-}
+    var filename = navigator.platform === 'iPad' ? 'h/' : 'l/';
+    document.write('<link rel="apple-touch-startup-image" href="/img/' + filename + 'splash.png" />' );
+};
 
 
 // Autogrow
 // http://googlecode.blogspot.com/2009/07/gmail-for-mobile-html5-series.html
 
 MBP.autogrow = function (element, lh) {
-    
+
     function handler(e){
         var newHeight = this.scrollHeight,
             currentHeight = this.clientHeight;
@@ -104,18 +130,18 @@ MBP.autogrow = function (element, lh) {
             this.style.height = newHeight + 3 * textLineHeight + "px";
         }
     }
-    
+
     var setLineHeight = (lh) ? lh : 12,
         textLineHeight = element.currentStyle ? element.currentStyle.lineHeight : 
                          getComputedStyle(element, null).lineHeight;
-                         
+
     textLineHeight = (textLineHeight.indexOf("px") == -1) ? setLineHeight :
                      parseInt(textLineHeight, 10);
 
     element.style.overflow = "hidden";
     element.addEventListener ? element.addEventListener('keyup', handler, false) :
                                element.attachEvent('onkeyup', handler);
-}
+};
 
-
+})(document);
 
