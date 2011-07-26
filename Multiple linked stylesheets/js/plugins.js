@@ -14,11 +14,7 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 
 // jQuery/helper plugins
 
-/*!
- * HTML5 Placeholder jQuery Plugin v1.8.3
- * @link http://mths.be/placeholder
- * @author Mathias Bynens <http://mathiasbynens.be/>
- */
+/*! http://mths.be/placeholder v1.8.4 by @mathias */
 ;(function($) {
 
 	var isInputSupported = 'placeholder' in document.createElement('input'),
@@ -85,7 +81,7 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 		}
 	}
 
-	function setPlaceholder(elem) {
+	function setPlaceholder() {
 		var $replacement,
 		    $input = $(this),
 		    $origInput = $input,
@@ -94,9 +90,9 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 			if ($input.is(':password')) {
 				if (!$input.data('placeholder-textinput')) {
 					try {
-						$replacement = $input.clone().attr({ type: 'text' });
+						$replacement = $input.clone().attr({ 'type': 'text' });
 					} catch(e) {
-						$replacement = $('<input>').attr($.extend(args(this), { type: 'text' }));
+						$replacement = $('<input>').attr($.extend(args(this), { 'type': 'text' }));
 					}
 					$replacement
 						.removeAttr('name')
