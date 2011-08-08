@@ -14,8 +14,8 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 
 // jQuery/helper plugins
 
-/*! http://mths.be/placeholder v1.8.4 by @mathias */
-;(function($) {
+/*! http://mths.be/placeholder v1.8.5 by @mathias */
+;(function(window, document, $) {
 
 	var isInputSupported = 'placeholder' in document.createElement('input'),
 	    isTextareaSupported = 'placeholder' in document.createElement('textarea');
@@ -74,7 +74,7 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 		var $input = $(this);
 		if ($input.val() === $input.attr('placeholder') && $input.hasClass('placeholder')) {
 			if ($input.data('placeholder-password')) {
-				$input.hide().next().attr('id', $input.removeAttr('id').data('placeholder-id')).show().focus();
+				$input.hide().next().show().focus().attr('id', $input.removeAttr('id').data('placeholder-id'));
 			} else {
 				$input.val('').removeClass('placeholder');
 			}
@@ -113,4 +113,4 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 		}
 	}
 
-}(jQuery));
+}(this, document, jQuery));
