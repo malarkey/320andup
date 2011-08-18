@@ -14,30 +14,48 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 
 // jQuery/helper plugins
 
-/*!
- * HTML5 Placeholder jQuery Plugin v1.8.2
- * @link http://github.com/mathiasbynens/Placeholder-jQuery-Plugin
- * @author Mathias Bynens <http://mathiasbynens.be/>
- */
- 
-;(function($) {
+/*! http://mths.be/placeholder v1.8.5 by @mathias */
+;(function(window, document, $) {
 
 	var isInputSupported = 'placeholder' in document.createElement('input'),
 	    isTextareaSupported = 'placeholder' in document.createElement('textarea');
+
 	if (isInputSupported && isTextareaSupported) {
+
 		$.fn.placeholder = function() {
 			return this;
 		};
+
 		$.fn.placeholder.input = $.fn.placeholder.textarea = true;
+
 	} else {
+
 		$.fn.placeholder = function() {
 			return this.filter((isInputSupported ? 'textarea' : ':input') + '[placeholder]')
 				.bind('focus.placeholder', clearPlaceholder)
 				.bind('blur.placeholder', setPlaceholder)
-			.trigger('blur.placeholder').end();
+				.trigger('blur.placeholder').end();
 		};
+
 		$.fn.placeholder.input = isInputSupported;
 		$.fn.placeholder.textarea = isTextareaSupported;
+
+		$(function() {
+			// Look for forms
+			$('form').bind('submit.placeholder', function() {
+				// Clear the placeholder values so they don’t get submitted
+				var $inputs = $('.placeholder', this).each(clearPlaceholder);
+				setTimeout(function() {
+					$inputs.each(setPlaceholder);
+				}, 10);
+			});
+		});
+
+		// Clear placeholder values upon page reload
+		$(window).bind('unload.placeholder', function() {
+			$('.placeholder').val('');
+		});
+
 	}
 
 	function args(elem) {
@@ -56,14 +74,14 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 		var $input = $(this);
 		if ($input.val() === $input.attr('placeholder') && $input.hasClass('placeholder')) {
 			if ($input.data('placeholder-password')) {
-				$input.hide().next().attr('id', $input.removeAttr('id').data('placeholder-id')).show().focus();
+				$input.hide().next().show().focus().attr('id', $input.removeAttr('id').data('placeholder-id'));
 			} else {
 				$input.val('').removeClass('placeholder');
 			}
 		}
 	}
 
-	function setPlaceholder(elem) {
+	function setPlaceholder() {
 		var $replacement,
 		    $input = $(this),
 		    $origInput = $input,
@@ -72,9 +90,9 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 			if ($input.is(':password')) {
 				if (!$input.data('placeholder-textinput')) {
 					try {
-						$replacement = $input.clone().attr({ type: 'text' });
+						$replacement = $input.clone().attr({ 'type': 'text' });
 					} catch(e) {
-						$replacement = $('<input>').attr($.extend(args(this), { type: 'text' }));
+						$replacement = $('<input>').attr($.extend(args(this), { 'type': 'text' }));
 					}
 					$replacement
 						.removeAttr('name')
@@ -95,20 +113,4 @@ if(this.console) console.log( Array.prototype.slice.call(arguments) );
 		}
 	}
 
-	$(function() {
-		// Look for forms
-		$('form').bind('submit.placeholder', function() {
-			// Clear the placeholder values so they don’t get submitted
-			var $inputs = $('.placeholder', this).each(clearPlaceholder);
-			setTimeout(function() {
-				$inputs.each(setPlaceholder);
-			}, 10);
-		});
-	});
-
-	// Clear placeholder values upon page reload
-	$(window).bind('unload.placeholder', function() {
-		$('.placeholder').val('');
-	});
-
-}(jQuery));
+}(this, document, jQuery));
