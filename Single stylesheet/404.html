@@ -1,44 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <!-- 
 320 and Up boilerplate extension
-Author: Andy Clarke
-Version: 0.9.3b
+Author: Andy Clarke (http://about.me/malarkey)
+Author: Keith Clark (http://twitter.com/keithclarkcouk)
+Version: 2
 URL: http://stuffandnonsense.co.uk/projects/320andup/
 License: http://creativecommons.org/licenses/MIT/
 -->
 
-<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]-->
-<!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]-->
-<!--[if (IE 7)&!(IEMobile) ]><html class="no-js ie7" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile) ]><html class="no-js ie8" lang="en"><![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)|!(IE)]><!--><html class="no-js" manifest="default.appcache?v=1" lang="en"><!--<![endif]-->
+<!--[if IEMobile 7]><html class="no-js iem7 oldie"><![endif]-->
+<!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js ie7 oldie" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js ie8 oldie" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 
 <head>
 <meta charset="utf-8">
 
-<title>320 and up</title>
+<title>320 and Up Version: 1</title>
 <meta name="description" content="">
 <meta name="author" content="">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
 
 <!-- For all browsers -->
-<link rel="stylesheet" media="screen" href="css/style.css?v=1">
-<link rel="stylesheet" media="print" href="css/print.css?v=1">
-<!-- For progressively larger displays -->
-<link rel="stylesheet" media="only screen and (min-width: 480px)" href="css/480.css?v=1">
-<link rel="stylesheet" media="only screen and (min-width: 768px)" href="css/768.css?v=1">
-<link rel="stylesheet" media="only screen and (min-width: 992px)" href="css/992.css?v=1">
-<link rel="stylesheet" media="only screen and (min-width: 1382px)" href="css/1382.css?v=1">
-<!-- For Retina displays -->
-<link rel="stylesheet" media="only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5)" href="css/2x.css?v=1">
+<link rel="stylesheet" href="css/style.css">
 
-<!-- JavaScript at bottom except for Modernizr -->
-<script src="js/libs/modernizr-custom.js"></script>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="js/libs/selectivizr-min.js"></script>
+<![endif]-->
+
+<!-- JavaScript -->
+<script src="js/libs/modernizr-2.0.6.min.js"></script>
 
 <!-- For iPhone 4 -->
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
@@ -59,6 +57,7 @@ License: http://creativecommons.org/licenses/MIT/
 <!--Microsoft. Delete if not required -->
 <meta http-equiv="cleartype" content="on">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--[if lt IE 7 ]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script><script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script><![endif]-->
 
 <!-- http://t.co/y1jPVnT -->
 <link rel="canonical" href="/">
@@ -66,8 +65,8 @@ License: http://creativecommons.org/licenses/MIT/
 
 <body class="clearfix">
 
-<header role="banner" class="clearfix">
-<h1>320 and up</h1>
+<header role="banner">
+<h1>320 and Up</h1>
 </header>
 
 <div class="content clearfix">
@@ -87,7 +86,7 @@ License: http://creativecommons.org/licenses/MIT/
 <script src="http://linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
 </div>
 
-<div role="complimentary">
+<div role="complementary">
 </div>
 
 </div>
@@ -95,37 +94,33 @@ License: http://creativecommons.org/licenses/MIT/
 <footer role="contentinfo" class="clearfix">
 </footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
 <!-- Scripts -->
-<script src="js/mylibs/helper.js"></script>
+<script src="js/libs/jquery-1.6.2.min.js"></script>
 <script src="js/plugins.js"></script>
-<script src="js/rwd-images.js"></script>
+<script src="js/script.js"></script>
+<script src="js/mylibs/helper.js"></script>
 
 <!--[if (lt IE 9) & (!IEMobile)]>
-<script src="js/libs/DOMAssistantCompressed-2.8.js"></script>
-<script src="js/libs/selectivizr-1.0.1.js"></script>
 <script src="js/libs/imgsizer.js"></script>
 <![endif]-->
 
 <script>
-// http://t.co/zA4oKMd
+// iOS scale bug fix
 MBP.scaleFix();
 
-// http://t.co/4wHOsZP
+// Respond.js
 yepnope({
-test : Modernizr.mq('(min-width)'),
-nope : ['js/libs/respond.min.js']
+	test : Modernizr.mq('(min-width)'),
+	nope : ['js/libs/respond.min.js']
 });
 </script>
 
-<!-- http://t.co/HZe9oJ4 -->
+<!-- http://mths.be/aab -->
 <script>
-var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-s.parentNode.insertBefore(g,s)}(document,"script"));
+var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
-<noscript>JavaScript is unavailable or disabled</noscript>
+
+
 </body>
 </html>

@@ -1,117 +1,67 @@
-/* @import url(mylibs/forms.css); */
-
-/* 320
-
-_____________________________________________________
+/* _________________________________________________
 
 320 and Up boilerplate extension
-Author: Andy Clarke
-Version: 0.9.3b
+Andy Clarke http://about.me/malarkey
+Keith Clark http://twitter.com/keithclarkcouk
+Version: 2
 URL: http://stuffandnonsense.co.uk/projects/320andup/
 License: http://creativecommons.org/licenses/MIT/
 _____________________________________________________
 
-1.ROOT
-2.HEADINGS
-3.TYPOGRAPHY
-4.LINKS
-5.FIGURES & IMAGES
-6.TABLES
-7.FORMS (See css/mylibs/forms.css)
-8.BANNER — header[role="banner"]
-9.NAVIGATION — nav[role="navigation"]
-10.CONTENT
-11.MAIN — div[role="main"]
-12.COMPLIMENTARY — div[role="complementary"]
-13.CONTENTINFO — footer[role="contentinfo"]
-14.GLOBAL OBJECTS
-15.VENDOR-SPECIFIC 
-16.TEMPLATE SPECIFICS
-17.MODERNIZR
+1 ROOT
+2 HEADINGS
+3 TYPOGRAPHY
+4 LINKS
+5 FIGURES & IMAGES
+6 TABLES
+7 FORMS
+8 BANNER
+9 NAVIGATION
+10 CONTENT
+11 MAIN
+12 COMPLEMENTARY
+13 CONTENTINFO
+14 GLOBAL OBJECTS
+15 VENDOR-SPECIFIC 
+16 MODERNIZR
+17 TEMPLATE SPECIFICS
+18 MEDIA QUERIES
 
 COLOURS 
 
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-margin : 0;
-padding : 0;
-border : 0;
-font-size : 100%;
-font : inherit;
-vertical-align : baseline; }
-
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { 
 display : block; }
 
-blockquote, q { 
-quotes : none; }
+audio[controls], canvas, video { 
+display : inline-block; 
+*display : inline; 
+*zoom : 1; }
 
-blockquote:before, 
-blockquote:after,
-q:before, 
-q:after { 
-content : ""; content: none; }
-
-del { 
-text-decoration : line-through; }
-
-ins { 
-background-color : rgb(255,255,153); 
-color : rgb(0,0,0); 
-text-decoration : none; }
-
-mark { 
-background-color : rgb(255,255,153); 
-color : rgb(0,0,0); 
-font-style : italic; 
-font-weight : bold; }
-
-abbr[title], 
-dfn[title] { 
-border-bottom : 1px dotted; 
-cursor : help; }
-
-table { 
-border-collapse : collapse; 
-border-spacing : 0; }
-
-hr { 
-display : block; 
-height : 1px; 
-border : 0; 
-border-top : 1px solid rgb(204,204,204);
-margin : 1em 0; 
-padding : 0; }
-
-/* 1.ROOT */
+/* 1. ROOT ============================================================================= */
 
 html {
 overflow-y : scroll;
-background : rgb(255,255,255) /* url(../img/tmp/grid.png) repeat-y 50% 0 */; }
+background : rgb(255,255,255); 
+background : rgb(255,255,255) url(../img/tmp/grid.png) repeat-y 50% 0; }
 
 body { 
 margin : 0 auto;
-padding : 24px 0;
+padding : 0;
 width : 90% /* 252px */;
 font : 100%/1.4 Cambria, Georgia, Times, "Times New Roman";
 color : rgb(40,40,40); 
 background-color : transparent; }
 
-/* 2.HEADINGS */
+button, 
+input, 
+select, 
+textarea { 
+font-family : "Helvetica Neue", Helvetica, Arial, sans-serif; 
+color : rgb(40,40,40); }
+
+/* 2. HEADINGS (320 and Up typography defaults) ==================================================== */
 
 h1, 
 h2, 
@@ -149,7 +99,7 @@ font-size : 1em; /* 16 / 16 = 1 */ }
 h6 { 
 font-size : 1em; /* 16 / 16 = 1 */ }
 
-/* 3.TYPOGRAPHY */
+/* 3. TYPOGRAPHY (320 and Up typography defaults) ============================================================================= */
 
 p, 
 ol, 
@@ -159,16 +109,14 @@ address {
 margin-bottom : 1.5em; 
 font-size : 1em; /* 16 / 16 = 1 */ }
 
+p {
+hyphens : auto; 
+text-align : justify; }
+
 ul, 
 ol { 
 margin : 0 0 1.5em -24px; 
-padding-left : 24px; }
-
-ul { 
-list-style-type : disc; }
-
-ol { 
-list-style-type : decimal; }
+padding : 0 0 0 24px; }
 
 li ul, 
 li ol { 
@@ -195,19 +143,65 @@ q:after {
 content : '';
 content : none; }
 
-b, 
-strong	{ 
+abbr[title] { 
+border-bottom : 1px dotted; 
+cursor : help; }
+
+b, strong { 
 font-weight : bold; }
 
-i, 
-em { 
+dfn { 
 font-style : italic; }
 
-sup, 
-sub { 
-position : relative;
+hr { 
+display : block; 
+margin : 1em 0; 
+padding : 0;
+height : 1px; 
+border : 0; 
+border-top : 1px solid rgb(204,204,204); }
+
+ins { 
+background-color : rgb(240,240,240); 
+color : rgb(0,0,0); 
+text-decoration : none; }
+
+mark { 
+background-color : rgb(240,240,240); 
+color: rgb(0,0,0); 
+font-style : italic; 
+font-weight : bold; }
+
+pre, 
+code, 
+kbd, 
+samp { 
+font-family : monospace, monospace; 
+_font-family : 'courier new', monospace; 
+font-size : .875em; 
+line-height : 1.5; }
+
+pre { 
+white-space : pre; 
+white-space : pre-wrap; 
+word-wrap : break-word; }
+
+q { 
+quotes : none; }
+
+q:before, 
+q:after { 
+content : ""; 
+content : none; }
+
+small { 
+font-size : 1em; /* 16 / 16 = 1 */ }
+
+sub, sup { 
 font-size : 75%; 
-line-height : 0; }
+line-height : 0; 
+position : relative; 
+vertical-align : baseline; }
 
 sup { 
 top : -.5em; }
@@ -215,39 +209,23 @@ top : -.5em; }
 sub { 
 bottom : -.25em; }
 
-address { 
-font-style : normal; }
+/* 4.LINKS ============================================================================= */
 
-pre { 
-margin-bottom : 1.5em; 
-white-space : pre; 
-white-space : pre-wrap; 
-word-wrap : break-word; }
+a { 
+color : rgb(23,119,175); }
 
-pre, 
-code { 
-font : .875em 'andale mono', 'lucida console', monospace; 
-line-height : 1.5; }
+a:visited { 
+color : rgb(40,40,40); }
 
-small {
-font-size : 1em; /* 16 / 16 = 1 */ }
-
-/* 4.LINKS */
-
-a, 
-a:visited {
-color : rgb(23,119,175);
-text-decoration : none; }
- 
-a:hover { 
-color : rgb(40,40,40); 
-text-decoration : underline; }
- 
-a:active, 
 a:focus { 
+outline : thin dotted; 
 color : rgb(0,0,0); }
 
-/* 5.FIGURES & IMAGES */
+a:hover, 
+a:active { 
+outline : 0; }
+
+/* 5.FIGURES & IMAGES ============================================================================= */
 
 figure {
 margin-bottom : 1.5em; }
@@ -262,7 +240,13 @@ figcaption {
 display : block;
 font-weight : normal; }
 
-/* 6.TABLES */
+img {
+border : 0; }
+
+svg:not(:root) {
+overflow : hidden; }
+
+/* 6.TABLES ============================================================================= */
 
 table { 
 border-collapse : collapse;
@@ -270,9 +254,6 @@ border-spacing : 0;
 margin-bottom : 1.4em; 
 width : 100%;
 font-size : .875em; /* 14 / 16 = .875 */ }
-
-th { 
-font-weight : bold; }
 
 th, td, caption { 
 padding : .25em 10px .25em 5px; }
@@ -283,19 +264,83 @@ font-style : italic; }
 caption { 
 background-color : transparent; }
 
-/* 7.FORMS (See css/mylibs/forms.css) */
+/* 7.FORMS ============================================================================= */
 
-/* 8.BANNER */
-/* 9.NAVIGATION */
-/* 10.CONTENT */
-/* 11.MAIN */
-/* 12.COMPLIMENTARY */
-/* 13.CONTENTINFO */
+form { 
+margin : 0; }
 
-/* 14.GLOBAL OBJECTS */
+fieldset { 
+margin-bottom : 1.5em; 
+padding : 0; 
+border-width : 0; }
 
-.clearfix { 
-zoom : 1; }
+legend { 
+*margin-left : -7px; 
+padding : 0; 
+border-width : 0; }
+
+label { 
+font-weight : normal;
+cursor : pointer; }
+
+button, 
+input, 
+select, 
+textarea { 
+font-size : 100%; 
+margin : 0; 
+vertical-align : baseline; 
+*vertical-align : middle; }
+
+button, input { 
+line-height : normal; 
+*overflow : visible; }
+
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] { 
+cursor : pointer; }
+
+input[type="checkbox"], 
+input[type="radio"] { 
+box-sizing : border-box; }
+
+input[type="search"] { 
+box-sizing : content-box; }
+
+button::-moz-focus-inner, 
+input::-moz-focus-inner { 
+padding : 0;
+border : 0;  }
+
+textarea { 
+overflow : auto; 
+vertical-align : top; }
+
+/* Colors for form validity */
+input:valid, 
+textarea:valid   {  
+/* Styles */ }
+
+input:invalid, 
+textarea:invalid {
+-webkit-box-shadow : 0 0 2px rgb(255,0,0); 
+-moz-box-shadow : 0 0 2px rgb(255,0,0);
+box-shadow : 0 0 2px rgb(255,0,0); }
+
+.no-boxshadow input:invalid, 
+.no-boxshadow textarea:invalid {
+background-color : rgb(240,221,221); }
+
+/* 8 BANNER 		============================================================================= */
+/* 9 NAVIGATION 	============================================================================= */
+/* 10 CONTENT 		============================================================================= */
+/* 11 MAIN 			============================================================================= */
+/* 12 COMPLEMENTARY ============================================================================= */
+/* 13 CONTENTINFO 	============================================================================= */
+
+/* 14 GLOBAL OBJECTS ============================================================================= */
 
 .clearfix:before, 
 .clearfix:after { 
@@ -307,14 +352,16 @@ overflow : hidden; }
 .clearfix:after { 
 clear : both; }
 
-/* 15.VENDOR-SPECIFIC */
+/* 15 VENDOR-SPECIFIC ============================================================================= */
 
-body {
+html { 
+-webkit-overflow-scrolling : touch; 
+-webkit-tap-highlight-color : rgb(52,158,219); 
 -webkit-text-size-adjust : 100%; 
 -ms-text-size-adjust : 100%; }
 
-a:link { 
--webkit-tap-highlight-color : rgb(52,158,219); }
+.clearfix { 
+zoom : 1; }
 
 ::-webkit-selection { 
 background : rgb(23,119,175); 
@@ -331,20 +378,17 @@ background : rgb(23,119,175);
 color : rgb(250,250,250); 
 text-shadow : none; }
 
-/* input[type=search] {
--webkit-appearance : none; }
-
-input[type="search"]::-webkit-search-decoration, 
-input[type="search"]::-webkit-search-cancel-button {
-display : none; } */
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] { 
+-webkit-appearance : button; }
 
 ::-webkit-input-placeholder {
-padding : 10px;
 font-size : .875em; 
 line-height : 1.4; }
 
 input:-moz-placeholder { 
-padding : 10px;
 font-size : .875em; 
 line-height : 1.4; }
 
@@ -352,89 +396,106 @@ line-height : 1.4; }
 .iem7 img { 
 -ms-interpolation-mode : bicubic; }
 
-div,
-input,
-textarea  { 
--webkit-box-sizing : border-box;
--moz-box-sizing : border-box;
--o-box-sizing : border-box;
+input[type="checkbox"], 
+input[type="radio"] { 
 box-sizing : border-box; }
 
-/* Non-semantic helper classes */
+input[type="search"] { 
+-webkit-box-sizing : content-box;
+-moz-box-sizing : content-box; }
 
-/* Ellipsis */
-.ellipsis {
-text-overflow : ellipsis;
-overflow : hidden;
-white-space : nowrap; }
+button::-moz-focus-inner, 
+input::-moz-focus-inner { 
+padding : 0;
+border : 0; }
 
-/* Prevent callout */
-.nocallout {
--webkit-touch-callout : none; }
+p {
+/* http://www.w3.org/TR/css3-text/#hyphenation */
+-webkit-hyphens : auto;
+-webkit-hyphenate-character : "\2010";
+-webkit-hyphenate-limit-after : 1;
+-webkit-hyphenate-limit-before : 3;
+-moz-hyphens : auto; }
 
-/* Image replacement */
-.ir { 
-display : block; 
-text-indent : -999em; 
+/* Non-semantic helper classes 
+
+.ir { display : block; 
 overflow : hidden; 
 background-repeat : no-repeat; 
 text-align : left; 
+text-indent : -999em; 
 direction : ltr; }
 
-/* Hide for screenreaders and visual browsers */
+.ir br { 
+display : none; }
+
 .hidden { 
 display : none; 
-visibility : hidden; }
+visibility: hidden; }
 
-/* Hide visually */
 .visuallyhidden { 
 position : absolute;
-clip : rect(0 0 0 0); 
-overflow : hidden;
-margin: -1px;
+margin : -1px;
 padding : 0;
-height : 1px;      
+height  : 1px;
 width : 1px;
-border : 0; }
+overflow : hidden;
+border : 0; 
+clip : rect(0 0 0 0); }
 
-/* Allow an element to be focusable via keyboard  */
-.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:active, 
 .visuallyhidden.focusable:focus { 
-position : static;
-clip : auto; 
-overflow : visible;
+position: static;
+margin : 0; 
 height : auto; 
-margin : 0;   
-width : auto; }
+width : auto;
+overflow: visible; 
+clip : auto; }
 
-/* Hide but maintain layout */
 .invisible { 
-visibility : hidden; }
+visibility : hidden; } */
 
-/* 16.TEMPLATE SPECIFICS */
+/* 16 MODERNIZR ============================================================================= */
 
-#goog-fixurl ul  {
-list-style-type : none; }
+/* audio */
+/* applicationcache */
+/* backgroundsize */
+/* borderimage */
+/* borderradius */
+/* boxshadow */
+/* canvas */
+/* canvastext */
+/* cssanimations */
+/* csscolumns */
+/* cssgradients */
+/* cssreflections*/
+/* csstransforms */
+/* csstransforms3d */
+/* csstransitions */
+/* draganddrop */
+/* flexbox */
+/* fontface */
+/* geolocation */
+/* hashchange */
+/* history */
+/* hsla */
+/* indexeddb */
+/* inlinesvg */
+/* localstorage */
+/* multiplebgs */
+/* opacity */
+/* postmessage */
+/* rgba */
+/* sessionstorage */
+/* smil */
+/* svg */
+/* svgclippaths */
+/* textshadow */
+/* touch */
+/* video */
+/* webgl */
+/* websqldatabase */
+/* websockets */
+/* webworkers */
 
-#goog-fixurl input  {
-margin-bottom : 1.5em; }
-
-/* 17.MODERNIZR */
-
-/* 
-Sources: 
-http://meyerweb.com/eric/tools/css/reset
-http://people.opera.com/patrickl/experiments/keyboard/test
-http://gist.github.com/413930
-http://pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap
-http://sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars
-http://tjkdesign.com/ez-css/css/base.css
-http://viget.com/inspire/styling-the-button-element-in-internet-explorer
-http://code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing
-http://html5doctor.com/html-5-reset-stylesheet/
-http://praegnanz.de/weblog/htmlcssjs-kickstart/
-http://camendesign.com/design/
-http://yui.yahooapis.com/2.8.1/build/base/base.css
-http://webaim.org/techniques/css/invisiblecontent/
-http://drupal.org/node/897638
-*/
+/* 17 TEMPLATE SPECIFICS ============================================================================= */
