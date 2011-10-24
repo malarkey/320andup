@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.7//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="1.7" type="template" client="site">
+	<name>320andup</name>
+	<creationDate>October 24th, 2011</creationDate>
+	<author>Seth Warburton</author>
+	<authorEmail>seth@internet-inspired.com</authorEmail>
+	<authorUrl>http://internet-inspired.com</authorUrl>
+	<copyright>Copyright (C) 2011 Seth Warburton | Internet Inspired! All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<version>0.1</version>	
+	<description><![CDATA[
+	<p>This is a Joomla port of the excellent <a href="http://stuffandnonsense.co.uk/projects/320andup/">320 and up</a> by Andy Clarke and Keith Clark</p>
+	]]></description>
+		
+	<files>
+        <filename>index.php</filename>
+		<filename>error.php</filename>
+        <filename>templateDetails.xml</filename>
+		<folder>css</folder>
+		<folder>img</folder>
+		<folder>js</folder>
+	</files>
+	
+	<positions>
+		<position>banner</position>
+		<position>main</position>
+		<position>complementary</position>
+		<position>footer</position>
+	</positions>
+		
+	<config>
+		<fields name="params">
+			<fieldset name="some field set" label="Field Set">
+				<field name="Field" type="list" default="" label="Field">
+					<option value="">- some value -</option>
+				</field>							
+			</fieldset>
+		</fields>
+	</config>
+</extension>
