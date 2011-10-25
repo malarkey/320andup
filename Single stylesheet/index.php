@@ -17,6 +17,7 @@ License: 	License: http://creativecommons.org/licenses/MIT
 <!--[if gt IE 8]><html class="no-js" lang="en"><![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)]><html class="no-js" lang="en"><![endif]-->
 
+<head>
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
