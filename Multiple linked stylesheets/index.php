@@ -104,7 +104,7 @@ MBP.scaleFix();
 
 // Respond.js
 yepnope({
-	test : Modernizr.mq('(min-width)'),
+	test : Modernizr.mq('only all'),
 	nope : ['<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/js/libs/respond.min.js']
 });
 </script>
