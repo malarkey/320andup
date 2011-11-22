@@ -1,0 +1,702 @@
+/* _________________________________________________
+
+320 and Up boilerplate extension
+Andy Clarke http://about.me/malarkey
+Version: 2
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+License: http://creativecommons.org/licenses/MIT/
+_____________________________________________________
+
+1 ROOT
+2 HEADINGS
+3 TYPOGRAPHY
+4 LINKS
+5 FIGURES & IMAGES
+6 TABLES
+7 FORMS
+8 BANNER
+9 NAVIGATION
+10 CONTENT
+11 MAIN
+12 COMPLEMENTARY
+13 CONTENTINFO
+14 GLOBAL OBJECTS
+15 VENDOR-SPECIFIC 
+16 MODERNIZR
+17 TEMPLATE SPECIFICS
+18 MEDIA QUERIES
+
+COLOURS 
+
+*/
+
+html, body { margin : 0; padding : 0; }
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td { margin : 0; padding : 0; border : 0; font-weight : normal; font-style : normal; font-size : 100%; line-height : 1; font-family : inherit; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { 
+display : block; }
+
+audio[controls], canvas, video { 
+display : inline-block; 
+*display : inline; 
+*zoom : 1; }
+
+@import "mixins";
+
+// 1. ROOT =============================================================================
+
+html {
+overflow-y : scroll;
+background : rgb(255,255,255); 
+background : rgb(255,255,255) url(../img/tmp/grid.png) repeat-y 50% 0; 
+font-size : 62.5%; }
+
+body { 
+margin : 0 auto;
+padding : 0;
+width : 90%; /* 252px; */
+.font-size();
+.serif();
+color : rgb(40,40,40); 
+background-color : transparent; }
+
+button, 
+input, 
+select, 
+textarea { 
+font-family : "Helvetica Neue", Helvetica, Arial, sans-serif; 
+color : @darkgrey; }
+
+// 2. HEADINGS (320 and Up typography defaults) ====================================================
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+.sans-serif;
+font-weight : bold; }
+
+h1 { 
+margin-bottom : @baseline / 2;
+.font-size(48);
+line-height : 1.2; }
+
+h2 { 
+margin-bottom : @baseline / 2;
+.font-size(32);
+line-height : 1.2; }
+
+h3 { 
+margin-bottom : @baseline / 1.5;
+.font-size(24);
+line-height : 1.3; }
+
+h4 { 
+margin-bottom : @baseline / 1.5;
+.font-size(18);
+line-height : 1.25; }
+
+h5 { 
+margin-bottom : @baseline;
+.font-size(16);  }
+
+h6 { 
+.font-size(16); }
+
+// 3. TYPOGRAPHY (320 and Up typography defaults) =============================================================================
+
+p, 
+ol, 
+ul, 
+dl, 
+address { 
+margin-bottom : @baseline; 
+.font-size(16); }
+
+p {
+hyphens : auto; 
+text-align : justify; }
+
+ul, 
+ol { 
+margin : 0 0 @baseline -24px; 
+padding : 0 0 0 24px; }
+
+li ul, 
+li ol { 
+margin : 0;
+.font-size(16); }
+
+dl, 
+dd { 
+margin-bottom : @baseline;  }
+
+dt { 
+font-weight : normal; }
+
+blockquote  { 
+margin : 0 0 @baseline -24px; 
+padding-left : 24px; 
+border-left : 1px solid @lightgrey;
+font-style : italic; }
+
+blockquote:before, 
+blockquote:after, 
+q:before, 
+q:after {
+content : '';
+content : none; }
+
+abbr[title] { 
+border-bottom : 1px dotted; 
+cursor : help; }
+
+b, strong { 
+font-weight : bold; }
+
+dfn { 
+font-style : italic; }
+
+hr { 
+display : block; 
+margin : 1em 0; 
+padding : 0;
+height : 1px; 
+border : 0; 
+border-top : 1px solid @lightgrey; }
+
+ins { 
+background-color : lighten(@basecol, 20%); 
+color : @black; 
+text-decoration : none; }
+
+mark { 
+background-color : lighten(@basecol, 20%); 
+color : @black; 
+font-style : italic; 
+font-weight : bold; }
+
+pre, 
+code, 
+kbd, 
+samp { 
+.monospace;
+.font-size(14);
+line-height : @baseline; }
+
+pre { 
+white-space : pre; 
+white-space : pre-wrap; 
+word-wrap : break-word; }
+
+q { 
+quotes : none; }
+
+q:before, 
+q:after { 
+content : ""; 
+content : none; }
+
+small { 
+.font-size(14); }
+
+sub, sup { 
+.font-size(12);
+line-height : 0; 
+position : relative; 
+vertical-align : baseline; }
+
+sup { 
+top : -.5em; }
+
+sub { 
+bottom : -.25em; }
+
+// 4.LINKS =============================================================================
+
+a { 
+color : @linkcol; }
+
+a:visited { 
+color : @linkcolvisited; }
+
+a:hover { 
+color : @linkcolhover; }
+
+a:focus { 
+outline : thin dotted; 
+color : @linkcolfocus; }
+
+a:hover, 
+a:active { 
+outline : 0; }
+
+// 5.FIGURES & IMAGES =============================================================================
+
+figure {
+margin-bottom : @baseline; }
+
+figure img,
+figure object,
+figure embed {
+margin-bottom : @baseline / 2;
+max-width : 100%; }
+
+figcaption {
+display : block;
+font-weight : normal; }
+
+img {
+border : 0; }
+
+svg:not(:root) {
+overflow : hidden; }
+
+// 6.TABLES =============================================================================
+
+table { 
+border-collapse : collapse;
+border-spacing : 0;
+margin-bottom : @baseline; 
+width : 100%;
+.font-size(14); }
+
+th, td, caption { 
+padding : @baseline / 8 10px @baseline / 8 5px; }
+
+tfoot { 
+font-style : italic; }
+
+caption { 
+background-color : transparent; }
+
+tbody tr:nth-child(odd) td {
+background-color : lighten(@basecol, 20%); }
+
+// 7.FORMS =============================================================================
+
+form { 
+margin : 0; }
+
+fieldset { 
+margin-bottom : @baseline; 
+padding : 0; 
+border-width : 0; }
+
+legend { 
+*margin-left : -7px; 
+padding : 0; 
+border-width : 0; }
+
+label { 
+font-weight : normal;
+cursor : pointer; }
+
+button, 
+input, 
+select, 
+textarea { 
+.font-size(12;
+margin : 0; 
+vertical-align : baseline; 
+*vertical-align : middle; }
+
+button, input { 
+line-height : normal; 
+*overflow : visible; }
+
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] { 
+cursor : pointer; }
+
+input[type="checkbox"], 
+input[type="radio"] { 
+box-sizing : border-box; }
+
+input[type="search"] { 
+box-sizing : content-box; }
+
+button::-moz-focus-inner, 
+input::-moz-focus-inner { 
+padding : 0;
+border : 0; }
+
+textarea { 
+overflow : auto; 
+vertical-align : top; }
+
+// 8 BANNER 		=============================================================================
+// 9 NAVIGATION 	=============================================================================
+// 10 CONTENT 		=============================================================================
+// 11 MAIN 			=============================================================================
+// 12 COMPLEMENTARY =============================================================================
+// 13 CONTENTINFO 	=============================================================================
+// 14 GLOBAL OBJECTS =============================================================================
+// 15 VENDOR-SPECIFIC =============================================================================
+
+html { 
+-webkit-overflow-scrolling : touch; 
+-webkit-tap-highlight-color : lighten(@basecol, 20%); 
+-webkit-text-size-adjust : 100%; 
+-ms-text-size-adjust : 100%; }
+
+::-webkit-selection { 
+background : @lightergrey; 
+color : rgb(250,250,250); 
+text-shadow : none; }
+
+::-moz-selection { 
+background : @basecol; 
+color : @compcol; 
+text-shadow : none; }
+
+::selection { 
+background : @basecol; 
+color : @compcol; 
+text-shadow : none; }
+
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"] { 
+-webkit-appearance : button; }
+
+::-webkit-input-placeholder {
+.font-size(14; }
+
+input:-moz-placeholder { 
+.font-size(14; }
+
+.ie7 img,
+.iem7 img { 
+-ms-interpolation-mode : bicubic; }
+
+input[type="checkbox"], 
+input[type="radio"] { 
+box-sizing : border-box; }
+
+input[type="search"] { 
+-webkit-box-sizing : content-box;
+-moz-box-sizing : content-box; }
+
+button::-moz-focus-inner, 
+input::-moz-focus-inner { 
+padding : 0;
+border : 0; }
+
+p {
+// http://www.w3.org/TR/css3-text/#hyphenation
+-webkit-hyphens : auto;
+-webkit-hyphenate-character : "\2010";
+-webkit-hyphenate-limit-after : 1;
+-webkit-hyphenate-limit-before : 3;
+-moz-hyphens : auto; }
+
+// Non-semantic helper classes 
+
+.ir { display : block; 
+overflow : hidden; 
+background-repeat : no-repeat; 
+text-align : left; 
+text-indent : -999em; 
+direction : ltr; }
+
+.ir br { 
+display : none; }
+
+.hidden { 
+display : none; 
+visibility: hidden; }
+
+.visuallyhidden { 
+position : absolute;
+margin : -1px;
+padding : 0;
+height  : 1px;
+width : 1px;
+overflow : hidden;
+border : 0; 
+clip : rect(0 0 0 0); }
+
+.visuallyhidden.focusable:active, 
+.visuallyhidden.focusable:focus { 
+position: static;
+margin : 0; 
+height : auto; 
+width : auto;
+overflow: visible; 
+clip : auto; }
+
+.invisible { 
+visibility : hidden; }
+
+// 16 MODERNIZR =============================================================================
+
+// audio
+// applicationcache
+// backgroundsize 
+// borderimage
+// borderradius
+// boxshadow
+// canvas
+// canvastext
+// cssanimations
+// csscolumns
+// cssgradients
+// cssreflections
+// csstransforms
+// csstransforms3d
+// csstransitions
+// draganddrop
+// flexbox
+// fontface
+// geolocation
+// hashchange
+// history
+// hsla
+// indexeddb
+// inlinesvg
+// localstorage
+// multiplebgs
+// opacity
+// postmessage
+// rgba
+// sessionstorage
+// smil
+// svg
+// svgclippaths
+// textshadow
+// touch
+// video
+// webgl
+// websqldatabase
+// websockets
+// webworkers
+
+// 17 TEMPLATE SPECIFICS =============================================================================
+
+// 18 MEDIA QUERIES =============================================================================
+
+@media print {
+
+// 1 ROOT =============================================================================
+
+* { 
+background : transparent !important; 
+color : black !important; 
+text-shadow : none !important; 
+filter : none !important; 
+-ms-filter : none !important; }
+
+@page { 
+margin : 0.5cm; }
+
+// 2 HEADINGS =============================================================================
+
+h2, h3 { 
+orphans : 3; 
+widows : 3; 
+page-break-after : avoid; }
+
+// 3 TYPOGRAPHY =============================================================================
+
+p { 
+orphans : 3; 
+widows : 3; }
+
+pre, blockquote { 
+border : 1px solid @grey; 
+page-break-inside : avoid; }
+
+abbr[title]:after { 
+content : " (" attr(title) ")"; }
+
+// 4 LINKS =============================================================================
+
+a, a:visited { 
+color : @black !important; 
+text-decoration : underline; }
+
+a[href]:after { 
+content : " (" attr(href) ")"; }
+
+a[href^="javascript:"]:after, 
+a[href^="#"]:after { 
+content : ""; } 
+
+// 5 FIGURES & IMAGES =============================================================================
+
+img { 
+max-width : 100% !important;
+page-break-inside : avoid; }
+
+// 6 TABLES =============================================================================
+
+thead { 
+display : table-header-group; } 
+
+tr { 
+page-break-inside : avoid; }
+
+// 7 FORMS =============================================================================
+// 8 BANNER =============================================================================
+// 9 NAVIGATION =============================================================================
+// 10 CONTENT =============================================================================
+// 11 MAIN =============================================================================
+// 12 COMPLEMENTARY =============================================================================
+// 13 CONTENTINFO =============================================================================
+// 14 GLOBAL OBJECTS =============================================================================
+
+.ir a:after { 
+content : ""; } 
+
+// 15 VENDOR-SPECIFIC =============================================================================
+// 16 MODERNIZR =============================================================================
+// 17 TEMPLATE SPECIFICS =============================================================================
+
+}
+
+// 480px
+@media only screen and (min-width: 480px) {
+
+// 1 ROOT 					=============================================================================
+// 2 HEADINGS 				=============================================================================
+// 3 TYPOGRAPHY 			=============================================================================
+// 4 LINKS 					=============================================================================
+// 5 FIGURES & IMAGES 		=============================================================================
+// 6 TABLES 				=============================================================================
+// 7 FORMS 					=============================================================================
+// 8 BANNER 				=============================================================================
+// 9 NAVIGATION				=============================================================================
+// 10 CONTENT 				=============================================================================
+// 11 MAIN 					=============================================================================
+// 12 COMPLEMENTARY 		=============================================================================
+// 13 CONTENTINFO 			=============================================================================
+// 14 GLOBAL OBJECTS 		=============================================================================
+// 15 VENDOR-SPECIFIC 		=============================================================================
+// 16 MODERNIZR 			=============================================================================
+// 17 TEMPLATE SPECIFICS 	=============================================================================
+
+}
+
+// 600px
+@media only screen and (min-width: 600px) {
+
+// 1 ROOT 					=============================================================================
+// 2 HEADINGS 				=============================================================================
+// 3 TYPOGRAPHY 			=============================================================================
+// 4 LINKS 					=============================================================================
+// 5 FIGURES & IMAGES 		=============================================================================
+// 6 TABLES 				=============================================================================
+// 7 FORMS 					=============================================================================
+// 8 BANNER 				=============================================================================
+// 9 NAVIGATION				=============================================================================
+// 10 CONTENT 				=============================================================================
+// 11 MAIN 					=============================================================================
+// 12 COMPLEMENTARY 		=============================================================================
+// 13 CONTENTINFO 			=============================================================================
+// 14 GLOBAL OBJECTS 		=============================================================================
+// 15 VENDOR-SPECIFIC 		=============================================================================
+// 16 MODERNIZR 			=============================================================================
+// 17 TEMPLATE SPECIFICS 	=============================================================================
+
+}
+
+// 768px
+@media only screen and (min-width: 768px) {
+
+// 1 ROOT 					=============================================================================
+// 2 HEADINGS 				=============================================================================
+// 3 TYPOGRAPHY 			=============================================================================
+// 4 LINKS 					=============================================================================
+// 5 FIGURES & IMAGES 		=============================================================================
+// 6 TABLES 				=============================================================================
+// 7 FORMS 					=============================================================================
+// 8 BANNER 				=============================================================================
+// 9 NAVIGATION				=============================================================================
+// 10 CONTENT 				=============================================================================
+// 11 MAIN 					=============================================================================
+// 12 COMPLEMENTARY 		=============================================================================
+// 13 CONTENTINFO 			=============================================================================
+// 14 GLOBAL OBJECTS 		=============================================================================
+// 15 VENDOR-SPECIFIC 		=============================================================================
+// 16 MODERNIZR 			=============================================================================
+// 17 TEMPLATE SPECIFICS 	=============================================================================
+
+}
+
+// 992px
+@media only screen and (min-width: 992px) {
+
+// 1 ROOT 					=============================================================================
+// 2 HEADINGS 				=============================================================================
+// 3 TYPOGRAPHY 			=============================================================================
+// 4 LINKS 					=============================================================================
+// 5 FIGURES & IMAGES 		=============================================================================
+// 6 TABLES 				=============================================================================
+// 7 FORMS 					=============================================================================
+// 8 BANNER 				=============================================================================
+// 9 NAVIGATION				=============================================================================
+// 10 CONTENT 				=============================================================================
+// 11 MAIN 					=============================================================================
+// 12 COMPLEMENTARY 		=============================================================================
+// 13 CONTENTINFO 			=============================================================================
+// 14 GLOBAL OBJECTS 		=============================================================================
+// 15 VENDOR-SPECIFIC 		=============================================================================
+// 16 MODERNIZR 			=============================================================================
+// 17 TEMPLATE SPECIFICS 	=============================================================================
+
+}
+
+// 1382px
+@media only screen and (min-width: 1382px) {
+
+// 1 ROOT 					=============================================================================
+// 2 HEADINGS 				=============================================================================
+// 3 TYPOGRAPHY 			=============================================================================
+// 4 LINKS 					=============================================================================
+// 5 FIGURES & IMAGES 		=============================================================================
+// 6 TABLES 				=============================================================================
+// 7 FORMS 					=============================================================================
+// 8 BANNER 				=============================================================================
+// 9 NAVIGATION				=============================================================================
+// 10 CONTENT 				=============================================================================
+// 11 MAIN 					=============================================================================
+// 12 COMPLEMENTARY 		=============================================================================
+// 13 CONTENTINFO 			=============================================================================
+// 14 GLOBAL OBJECTS 		=============================================================================
+// 15 VENDOR-SPECIFIC 		=============================================================================
+// 16 MODERNIZR 			=============================================================================
+// 17 TEMPLATE SPECIFICS 	=============================================================================
+
+}
+
+// 2x
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (-o-min-device-pixel-ratio: 3/2), 
+only screen and (min-device-pixel-ratio: 1.5) {
+
+// 1 ROOT 					=============================================================================
+// 2 HEADINGS 				=============================================================================
+// 3 TYPOGRAPHY 			=============================================================================
+// 4 LINKS 					=============================================================================
+// 5 FIGURES & IMAGES 		=============================================================================
+// 6 TABLES 				=============================================================================
+// 7 FORMS 					=============================================================================
+// 8 BANNER 				=============================================================================
+// 9 NAVIGATION				=============================================================================
+// 10 CONTENT 				=============================================================================
+// 11 MAIN 					=============================================================================
+// 12 COMPLEMENTARY 		=============================================================================
+// 13 CONTENTINFO 			=============================================================================
+// 14 GLOBAL OBJECTS 		=============================================================================
+// 15 VENDOR-SPECIFIC 		=============================================================================
+// 16 MODERNIZR 			=============================================================================
+// 17 TEMPLATE SPECIFICS 	=============================================================================
+
+}

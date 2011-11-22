@@ -1,0 +1,214 @@
+/* 320 and Up _________________________________________________
+
+320 and Up
+Andy Clarke http://about.me/malarkey
+LESS Version: 2
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+License: http://creativecommons.org/licenses/MIT/
+
+Includes:
+
+
+__________________________________________________________ */
+
+@basecol : rgb(123,172,200);	    // Base colour
+@compcol : spin(@basecol, 180);  	// Complementary colour
+
+// Links
+
+@linkcol : rgb(1,53,104);
+@linkcolhover : darken(@linkcol, 10);
+@linkcolvisited : @linkcolhover;
+@linkcolfocus : @linkcolhover;
+
+// greyscale
+
+@black : rgb(0,0,0);
+@darkgrey : lighten(@black, 25%);
+@grey : lighten(@black, 50%);
+@lightgrey : lighten(@black, 75%);
+@lightergrey : lighten(@black, 90%);
+@white : rgb(255,255,255);
+
+// colour palettes
+
+@col_l1 : lighten(@basecol, 5%);
+@col_l2 : lighten(@basecol, 10%);
+@col_l3 : lighten(@basecol, 15%);
+@col_l4 : lighten(@basecol, 20%);
+
+@col_d1 : darken(@basecol, 5%);
+@col_d2 : darken(@basecol, 10%);
+@col_d3 : darken(@basecol, 15%);
+@col_d4 : darken(@basecol, 20%);
+
+@comp_l1 : lighten(@compcol, 5%);
+@comp_l2 : lighten(@compcol, 10%);
+@comp_l3 : lighten(@compcol, 15%);
+@comp_l4 : lighten(@compcol, 20%);
+
+@comp_d1 : darken(@compcol, 5%);
+@comp_d2 : darken(@compcol, 10%);
+@comp_d3 : darken(@compcol, 15%);
+@comp_d4 : darken(@compcol, 20%);
+
+// type
+
+.font-size(@font-size: 16){
+@rem: (@font-size / 10);
+font-size: @font-size * 1px;
+font-size: ~"@{rem}rem"; }
+
+.sans-serif {
+font-family : "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.serif {
+font-family : "Cambria, Georgia, Times, "Times New Roman; }
+
+.monospace {
+font-family : "Monaco", Courier New, monospace; }
+
+// layout
+
+@baseline : 1.5em;
+
+// MIXINS
+
+.clearfix {
+zoom : 1;
+
+&:before, &:after {
+content : "\0020"; 
+display : block; 
+height : 0; 
+overflow : hidden; }
+
+&:after {
+clear : both; }
+}
+
+// borderradius
+
+.rounded(@radius:3px) {
+-webkit-border-radius : @radius;
+-moz-border-radius : @radius;
+border-radius : @radius; }
+
+.bordered(@top-color: #eee, @right-color: #eee, @bottom-color: #eee, @left-color: #eee) {
+border-top : solid 1px @top-color;
+border-left : solid 1px @left-color;
+border-right : solid 1px @right-color;
+border-bottom : solid 1px @bottom-color; }
+
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+-webkit-border-top-right-radius : @topright;
+-webkit-border-bottom-right-radius : @bottomright;
+-webkit-border-bottom-left-radius : @bottomleft;
+-webkit-border-top-left-radius : @topleft;
+-moz-border-radius-topright : @topright;
+-moz-border-radius-bottomright : @bottomright;
+-moz-border-radius-bottomleft : @bottomleft;
+-moz-border-radius-topleft : @topleft;
+border-top-right-radius : @topright;
+border-bottom-right-radius : @bottomright;
+border-bottom-left-radius : @bottomleft;
+border-top-left-radius : @topleft; }
+
+// boxshadow
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+-webkit-box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+-moz-box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha); }
+
+.inset-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+-webkit-box-shadow : inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+-moz-box-shadow : inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+box-shadow : inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha); }
+
+.box-shadow(@arguments) {
+-webkit-box-shadow : @arguments;
+-moz-box-shadow : @arguments;
+box-shadow : @arguments; }
+
+// csscolumns
+
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #eee, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+-webkit-column-width : @colwidth;
+-webkit-column-count : @colcount;
+-webkit-column-gap : @colgap;
+-webkit-column-rule-color : @columnRuleColor;
+-webkit-column-rule-style : @columnRuleStyle;
+-webkit-column-rule-width : @columnRuleWidth;
+-moz-column-width : @colwidth;
+-moz-column-count : @colcount;
+-moz-column-gap : @colgap;
+-moz-column-rule-color : @columnRuleColor;
+-moz-column-rule-style : @columnRuleStyle;
+-moz-column-rule-width : @columnRuleWidth;
+column-width : @colwidth;
+column-count : @colcount;
+column-gap : @colgap;
+column-rule-color : @columnRuleColor;
+column-rule-style : @columnRuleStyle;
+column-rule-width : @columnRuleWidth; }
+
+// cssgradients
+
+.grad-bw(@color: #f5f5f5, @start: 0, @stop: 255) {
+background : @color;
+background : -webkit-gradient(linear,
+left bottom,
+left top,
+color-stop(0, rgb(@start,@start,@start)),
+color-stop(1, rgb(@stop,@stop,@stop)));
+background : -moz-linear-gradient(center bottom,
+rgb(@start,@start,@start) 0%,
+rgb(@stop,@stop,@stop) 100%); }
+
+.grad-col(@color: #f5f5f5, @start: #eee, @stop: #fff) {
+background : @color;
+background : -webkit-gradient(linear,
+left bottom,
+left top,
+@start,
+@stop);
+background : -moz-linear-gradient(center bottom,
+@start 0%,
+@stop 100%); }
+
+// csstransforms
+
+.rotate(@deg : 5deg){ 
+-webkit-transform : rotate(@deg);
+-moz-transform : rotate(@deg);
+transform : rotate(@deg); }
+
+.scale(@ratio : 1.5){
+-webkit-transform : scale(@ratio);
+-moz-transform : scale(@ratio);
+transform : scale(@ratio); }
+
+.translate(@transformX : 20px, @transformY : 20px) {
+-webkit-transform : translate(@transformX, @transformY);
+-moz-transform : translate(@transformX, @transformY);
+transform : translate(@transformX, @transformY); }
+
+// csstransitions
+
+.transition-duration(@duration : .2s) {
+-moz-transition-duration : @duration;
+-webkit-transition-duration : @duration;
+transition-duration: @duration; }
+
+.transition(@duration : .2s, @ease:ease-out) {
+-webkit-transition : all @duration @ease;
+-moz-transition : all @duration @ease;
+transition : all @duration @ease; }
+
+// opacity
+
+.opacity(@opacity : .5) {
+-webkit-opacity : @opacity;
+-moz-opacity : @opacity;
+opacity : @opacity; }
