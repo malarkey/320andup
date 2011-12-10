@@ -7,6 +7,9 @@ Version: 	0.1
 Sources:	320andup by Andy Clarke http://about.me/malarkey and Keith Clark http://twitter.com/keithclarkcouk - http://stuffandnonsense.co.uk/projects/320andup/						         
 License: 	License: http://creativecommons.org/licenses/MIT
 /* ===================================================================== */
+$doc 					= JFactory::getDocument();
+$renderer   			= $doc->loadRenderer( 'modules' );
+$xhtml 					= array( 'style' => 'xhtml' );
 ?>
 
 <!doctype html>
@@ -55,14 +58,12 @@ License: 	License: http://creativecommons.org/licenses/MIT
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <!--[if lt IE 7 ]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script><script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script><![endif]-->
 
-<!--Joomla! generated head -->
-<jdoc:include type="head" />
 </head>
 
 <body class="clearfix">
 
 <header role="banner">
-<jdoc:include type="modules" name="banner" style="XHTML" />
+<?php echo $renderer->render('banner', $xhtml, null);  ?>
 </header>
 
 <div class="content clearfix">
@@ -83,12 +84,12 @@ License: 	License: http://creativecommons.org/licenses/MIT
 </div>
 
 <div role="complementary">
-<jdoc:include type="modules" name="complementary" style="XHTML" />
+<?php echo $renderer->render('complementary', $xhtml, null);  ?>
 </div>
 </div>
 
 <footer role="contentinfo" class="clearfix">
-<jdoc:include type="modules" name="footer" style="XHTML" />
+<?php echo $renderer->render('footer', $xhtml, null);  ?>
 </footer>
 
 <!-- Scripts -->
