@@ -3,12 +3,12 @@ h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,cite,code,del,dfn,em,i
 article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}
 audio[controls],canvas,video{display:inline-block;*display:inline;*zoom:1;}
 .sans-serif{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
-.serif{font-family:"Cambria, Georgia, Times, " Times New Roman;}
+.serif{font-family:Cambria, Georgia, Times, "Times New Roman";}
 .monospace{font-family:"Monaco",Courier New,monospace;}
 .clearfix{zoom:1;}.clearfix:before,.clearfix:after{content:"\0020";display:block;height:0;overflow:hidden;}
 .clearfix:after{clear:both;}
 html{overflow-y:scroll;background:#ffffff;background:#ffffff url(../img/tmp/grid.png) repeat-y 50% 0;font-size:62.5%;}
-body{margin:0 auto;padding:0;width:90%;font-size:16px;font-size:1.6rem;font-family:"Cambria, Georgia, Times, " Times New Roman;color:#282828;background-color:transparent;}
+body{margin:0 auto;padding:0;width:90%;font-size:16px;font-size:1.6rem;font-family:Cambria, Georgia, Times, "Times New Roman";color:#282828;background-color:transparent;}
 button,input,select,textarea{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#404040;}
 h1,h2,h3,h4,h5,h6{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:bold;}
 h1{margin-bottom:0.75em;font-size:48px;font-size:4.8rem;line-height:1.2;}
