@@ -1,0 +1,60 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Variables =================================================== */
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+
+@basefontsize : 16;
+@baselineheight : 1.5em;
+
+// 3. COLOUR 				==============================
+
+@basecolor 		: rgb(123,172,200);	  
+@compcolor 		: spin(@basecolor, 180); 
+@textColor		: @black;
+
+// Links
+
+@linkcolor 		    : rgb(1,53,104);
+@linkcolorhover 	: darken(@linkcolor, 10);
+@linkcolorvisited   : @linkcolorhover;
+@linkcolorfocus 	: darken(@linkcolorhover, 10);
+
+// greyscale
+
+@black 			: rgb(0,0,0);
+@darkgrey 		: lighten(@black, 25%);
+@grey 			: lighten(@black, 50%);
+@lightgrey 		: lighten(@black, 75%);
+@lightergrey 	: lighten(@black, 90%);
+@white 			: rgb(255,255,255);
+
+// colour palettes (for gradients see texture.less)
+
+@alertcolor 	: rgb(252,248,227);
+@errorcolor 	: rgb(218,79,73);
+@dangercolor 	: rgb(218,79,73);
+@infocolor 		: rgb(217,237,247);
+@inverscolor 	: rgb(65,65,65);
+@successcolor 	: rgb(91,183,91);
+@warningcolor 	: rgb(250,167,50);
+
+// 4. TEXTURE 				==============================
+
+@inputcolor : @white; 
+
+// 6. LAYOUT 				==============================
+
+@baseline : 1.5em;
+
+//  7. VENDOR-SPECIFIC 		==============================
+//  8. MODERNIZR 			==============================
+//  9. TEMPLATE SPECIFICS 	==============================
