@@ -5,6 +5,10 @@
 /* Version: 1.0 */
 /* Author: Andy Clarke */
 /* URL: http://stuffandnonsense.co.uk/projects/320andup */
+
+/* Sass Port by Jina Bolton */
+/* URL: http://sushiandrobots.com/ */
+
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // HEADS UP: 320 and Up Panels Upstart is dependent on 
@@ -17,16 +21,16 @@
 // Full width panel containers
 
 .full {
-margin-bottom : @baseline;
-padding : @baseline;
-background-color : lighten(@basecolor, 75%);
-border-top : 2px solid lighten(@basecolor, 60%);
-border-bottom : 2px solid lighten(@basecolor, 60%); }
+margin-bottom : $baseline;
+padding : $baseline;
+background-color : lighten($basecolor, 75%);
+border-top : 2px solid lighten($basecolor, 60%);
+border-bottom : 2px solid lighten($basecolor, 60%); }
 
 .full .grids {
 width : 90%;
 margin : 0 auto; 
-padding : @baseline 0; }
+padding : $baseline 0; }
 
 // 480px
 @media only screen and (min-width: 480px) {

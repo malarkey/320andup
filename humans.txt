@@ -8,6 +8,11 @@ Site:				eg: http://stuffandnonsense.co.uk
 Twitter:			eg: @malarkey
 Location:			eg: UK
 
+Name:         eg: Jina bolton
+Site:       eg: http://sushiandrobots.com
+Twitter:      eg: @jina
+Location:     eg: SF
+
 /* THANKS */
 
 /* SITE */

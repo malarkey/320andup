@@ -3,23 +3,22 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
+
+// Sass Port by Jina Bolton
+// URL: http://sushiandrobots.com/
+
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
 
-/* 600 =================================================== */
+/* 1382 =================================================== */
 
 // 1. ROOT 					==============================
+
+body {
+max-width : 1440px; }
+
 // 2. TYPOGRAPHY 			==============================
-
-p, 
-ol, 
-ul, 
-dl, 
-address,
-small {
-line-height : 1.45; }
-
 // 3. COLOUR 				==============================
 // 4. TEXTURE 				==============================
 // 5. ELEMENTS 				==============================

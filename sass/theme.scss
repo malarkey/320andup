@@ -3,6 +3,10 @@
 320 and Up by Andy Clarke
 Version: 3.0
 URL: http://stuffandnonsense.co.uk/projects/320andup/
+
+Sass Port by Jina Bolton
+URL: http://sushiandrobots.com/
+
 Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 Website theme for:
@@ -13,23 +17,23 @@ http://stuffandnonsense.co.uk/projects/320andup/
 // Variables and mixins
 @import "variables";
 @import "mixins";
-@themecolour : rgb(45,53,62);
+$themecolour : rgb(45,53,62);
 
 // 1. ROOT 					==============================
 
 html {
-background : @themecolour url(../img/body.png) repeat 0 0;
+background : $themecolour url(../img/body.png) repeat 0 0;
 font-size : 62.5%;
 -webkit-overflow-scrolling : touch; 
--webkit-tap-highlight-color : lighten(@basecolor, 30%); 
+-webkit-tap-highlight-color : lighten($basecolor, 30%); 
 -webkit-text-size-adjust : 100%; 
 -ms-text-size-adjust : 100%; }
 
 body { 
 margin : 0;
-padding : @baseline 0 0 0;
+padding : $baseline 0 0 0;
 width : 100%;
-.font-size();
+@include font-size();
 font-family : "facitweb-1","facitweb-2", sans-serif;
 line-height : 1.4;
 color : rgb(193,197,202); 
@@ -52,7 +56,7 @@ a:visited,
 a:hover,
 a:active, 
 a:focus {
-color : @white; }
+color : $white; }
  
 a:active, 
 a:focus { 
@@ -69,33 +73,33 @@ display : inline-block;
 *zoom : 1;
 *margin-left : .3em;
 padding : 11px 22px;
-.sans-serif;
-.font-size(14);
+@include sans-serif;
+@include font-size(14);
 font-weight : bold;
 line-height : 1.5;
-color : @white;
+color : $white;
 text-align : center;
 vertical-align : middle;
-background-color : darken(@themecolour, 5%);
+background-color : darken($themecolour, 5%);
 cursor : pointer;
 text-decoration : none; }
 
 .btn:first-child {
-margin-bottom : @baseline; }
+margin-bottom : $baseline; }
 
 // 5. ELEMENTS 				==============================
 
 .list-bordered li {
-border-bottom-color : darken(@themecolour, 5%); }
+border-bottom-color : darken($themecolour, 5%); }
 
 // 6. LAYOUT 				==============================
 
 // banner
 
 [role="banner"] {
-margin : 0 auto @baseline;
+margin : 0 auto $baseline;
 width : 90%; 
-border-bottom : 10px solid darken(@themecolour, 5%); }
+border-bottom : 10px solid darken($themecolour, 5%); }
 
 [role="banner"] hgroup {
 width : 100%;
@@ -104,16 +108,16 @@ background : transparent url(../img/banner-160.png) no-repeat 50% 0;
 text-align : center; }
 
 [role="banner"] h1 {
-.font-size(48); }
+@include font-size(48); }
 
 [role="banner"] .btn-group {
 text-align : center; }
 
 [role="banner"] a[href="#navigation"] {
 display : none; 
-background-color : lighten(@themecolour, 10%);
-border : 1px solid darken(@themecolour, 5%);
-color : @white; }
+background-color : lighten($themecolour, 10%);
+border : 1px solid darken($themecolour, 5%);
+color : $white; }
 
 //  content
 
@@ -124,11 +128,11 @@ width : 90%; }
 //  navigation
 
 [role="navigation"] {
-background-color : lighten(@themecolour, 10%);
-border : 1px solid darken(@themecolour, 5%); }
+background-color : lighten($themecolour, 10%);
+border : 1px solid darken($themecolour, 5%); }
 
 [role="banner"] h1 {
-margin-bottom : @baseline / 4; }
+margin-bottom : $baseline / 4; }
 
 [role="banner"] a[href="http://stuffandnonsense.co.uk/projects/320andup/"] {
 display : block;
@@ -138,13 +142,13 @@ text-decoration : none; }
 
 .grids {
 width : 90%;
-margin : 0 auto @baseline;
-padding : @baseline 0;
-border-top : 5px solid darken(@themecolour, 5%);
-border-bottom : 5px solid darken(@themecolour, 5%); }
+margin : 0 auto $baseline;
+padding : $baseline 0;
+border-top : 5px solid darken($themecolour, 5%);
+border-bottom : 5px solid darken($themecolour, 5%); }
 
 .grid {
-border-bottom : 1px solid darken(@themecolour, 5%); }
+border-bottom : 1px solid darken($themecolour, 5%); }
 
 .furniture-letter {
 overflow : hidden;
@@ -157,19 +161,19 @@ float : left;
 margin : 0 12px 0 0;
 height : 44px;
 width : 44px;
-background-color : lighten(@themecolour, 10%);
-border : 1px solid darken(@themecolour, 10%);
-.font-size(32);
+background-color : lighten($themecolour, 10%);
+border : 1px solid darken($themecolour, 10%);
+@include font-size(32);
 font-weight : bold;
 line-height : 44px;
 text-align : center;
-color : @white; }
+color : $white; }
 
 //  contentinfo
 
 [role="contentinfo"] {
 background-color : rgba(0,0,0,.25);
-border-top : 5px solid darken(@themecolour, 5%); }
+border-top : 5px solid darken($themecolour, 5%); }
 
 //  7. VENDOR-SPECIFIC 		==============================
 //  8. MODERNIZR 			==============================
@@ -193,7 +197,7 @@ padding-left : 100px;
 width : 100%;
 min-height : 100px;
 background : transparent url(../img/banner-80.png) no-repeat 0 0; 
-.box-sizing(border-box);
+@include box-sizing(border-box);
 text-align : left; }
 
 [role="banner"] .btn-group {
@@ -231,7 +235,7 @@ width : 80%;
 height : 240px;
 padding-right : 240px;
 background : transparent url(../img/header.png) no-repeat 100% 100%; 
-.box-sizing(border-box); }
+@include box-sizing(border-box); }
 
 [role="banner"] hgroup {
 padding-left : 0; 
@@ -241,7 +245,7 @@ background-image : none; }
 padding-left : 0; }
 
 .grids h2 {
-margin-bottom : @baseline;
+margin-bottom : $baseline;
 text-align : center; }
 
 }
