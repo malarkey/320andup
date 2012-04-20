@@ -77,10 +77,10 @@ top : 6px;
 float : right;
 padding : 4px 12px;
 .font-size(14);
-background-color : lighten(@basecolor, 20%); }
+background-color : lighten(@basecolor, 75%); }
 
 .header a:hover {
-background-color : lighten(@basecolor, 30%); }
+background-color : lighten(@basecolor, 75%); }
 
 .header .a-rss,
 .header .a-rss:hover {
@@ -121,8 +121,9 @@ font-weight : normal; }
 blockquote  { 
 margin : 0 0 @baseline -24px; 
 padding-left : 24px; 
-border-left : 1px solid lighten(@basecolor, 20%);
-font-style : italic; }
+border-left : 1px solid lighten(@basecolor, 60%);
+.serif();
+font-style : normal; }
 
 blockquote:before, 
 blockquote:after, 
@@ -132,7 +133,7 @@ content : '';
 content : none; }
 
 abbr[title] { 
-border-bottom : 1px dotted lighten(@basecolor, 20%); 
+border-bottom : 1px dotted lighten(@basecolor, 60%); 
 cursor : help; }
 
 b, strong { 
@@ -147,15 +148,15 @@ margin : 1em 0;
 padding : 0;
 height : 1px; 
 border : 0; 
-border-top : 1px solid lighten(@basecolor, 20%); }
+border-top : 1px solid lighten(@basecolor, 60%); }
 
 ins { 
-background-color : lighten(@basecolor, 30%); 
+background-color : lighten(@basecolor, 75%); 
 color : @black; 
 text-decoration : none; }
 
 mark { 
-background-color : lighten(@basecolor, 30%); 
+background-color : lighten(@basecolor, 75%); 
 color : @black; 
 font-style : italic; 
 font-weight : bold; }

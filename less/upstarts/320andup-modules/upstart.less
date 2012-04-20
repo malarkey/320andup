@@ -11,11 +11,27 @@
 
 .grid {
 margin-bottom : @baseline;
-border-bottom : 1px dashed lighten(@basecolor, 15%); }
+border-bottom : 1px dashed lighten(@basecolor, 60%); }
 
 .grid:last-child {
 margin-bottom : 0;
 border-bottom-width : 0; }
+
+.furniture-letter {
+overflow : hidden; }
+
+.furniture-letter span {
+display : block;
+float : left;
+margin : 0 12px 0 0;
+height : 44px;
+width : 44px;
+background-color : @basecolor;
+color : @white;
+.font-size(32);
+font-weight : bold;
+line-height : 44px;
+text-align : center; }
 
 // 480px
 @media only screen and (min-width: 480px) {

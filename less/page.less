@@ -10,10 +10,8 @@
 /* Banner =================================================== */
 
 [role="banner"] {
-padding-top : @baseline; }
-
-[role="banner"] hgroup {
 margin : 0 auto;
+padding-top : @baseline; 
 width : 90%; }
 
 [role="banner"] a[href="#navigation"] {
@@ -27,7 +25,8 @@ white-space : nowrap;
 overflow : hidden;
 background-color : lighten(@basecolor, 20%);
 border : 1px solid lighten(@basecolor, 15%); 
-color : lighten(@basecolor, 5%);
+.border-radius(4px,4px,4px,4px);
+color : lighten(@basecolor, 75%);
 .font-size(32);
 line-height : 42px;
 text-align : center;
@@ -43,7 +42,11 @@ border : 1px solid lighten(@basecolor, 15%); }
 
 [role="navigation"] p {
 margin-bottom : 0; 
-padding : 6px 11px; }
+padding : 6px 11px;
+color : @white; }
+
+[role="navigation"] a {
+color : @white; }
 
 /* Content =================================================== */
 
@@ -55,7 +58,7 @@ width : 90%; }
 
 [role="contentinfo"] {
 padding : @baseline 0; 
-border-top : 3px solid lighten(@basecolor, 15%); }
+border-top : 3px solid lighten(@basecolor, 60%); }
 
 [role="contentinfo"] small {
 display : block;

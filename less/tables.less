@@ -10,40 +10,36 @@
 /* Tables =================================================== */
 
 table {
+width : 100%;
 max-width : 100%;
+margin-bottom : @baseline;
 border-collapse: collapse;
 border-spacing : 0;
 background-color : transparent; }
 
-// TABLE ====================================================
-
-.table {
-width : 100%;
-margin-bottom : @baseline; }
-
-.table th,
-.table td {
+table th,
+table td {
 padding : 8px;
 vertical-align : top;
-border-top : 1px solid lighten(@basecolor, 20%); 
+border-top : 1px solid lighten(@basecolor, 60%); 
 .font-size(14);
 line-height : 1.5;
 text-align : left; }
 
-.table th {
+table th {
 font-weight : bold; }
 
-.table thead th {
+table thead th {
 vertical-align : bottom; }
 
-.table colgroup + thead tr:first-child th,
-.table colgroup + thead tr:first-child td,
-.table thead:first-child tr:first-child th,
-.table thead:first-child tr:first-child td {
+table colgroup + thead tr:first-child th,
+table colgroup + thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
 border-top : 0; }
 
-.table tbody + tbody {
-border-top : 2px solid lighten(@basecolor, 20%); }
+table tbody + tbody {
+border-top : 2px solid lighten(@basecolor, 60%); }
 
 // CONDENSED ====================================================
 
@@ -54,14 +50,14 @@ padding : 4px 5px; }
 // BORDERED ====================================================
 
 .table-bordered {
-border : 1px solid lighten(@basecolor, 20%);
+border : 1px solid lighten(@basecolor, 60%);
 border-left : 0;
 border-collapse : separate;
 *border-collapse : collapsed; }
 
 .table-bordered th,
 .table-bordered td {
-border-left : 1px solid lighten(@basecolor, 20%); }
+border-left : 1px solid lighten(@basecolor, 70%); }
 
 .table-bordered thead:first-child tr:first-child th,
 .table-bordered tbody:first-child tr:first-child th,
@@ -72,7 +68,7 @@ border-top : 0; }
 
 .table-striped tbody tr:nth-child(odd) td,
 .table-striped tbody tr:nth-child(odd) th {
-background-color : lighten(@basecolor, 30%); }
+background-color : lighten(@basecolor, 70%); }
 
 .table tbody tr td,
 .table tbody tr th {
@@ -83,4 +79,4 @@ transition : background-color .25s 0 linear; }
 
 .table tbody tr:hover td,
 .table tbody tr:hover th {
-background-color : lighten(@basecolor, 30%); }
+background-color : lighten(@basecolor, 70%); }

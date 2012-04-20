@@ -16,13 +16,10 @@ margin-bottom : @baseline;
 padding : 8px 35px 8px 14px;
 background-color : @alertcolor;
 border : 1px solid darken(@alertcolor, 20%);
--webkit-border-radius : 2px;
--moz-border-radius: 2px;
-border-radius : 2px;
+.border-radius(2px, 2px, 2px, 2px);
 .sans-serif;
 .font-size(14);
-text-shadow : 0 1px 0 rgba(255, 255, 255, 0.5);
-color : darken(@alertcolor, 50%); }
+color : darken(@alertcolor, 60%); }
 
 .alert-heading {
 color : inherit; }
@@ -31,14 +28,22 @@ color : inherit; }
 position : relative;
 top : -2px;
 right : -21px;
-line-height : 18px; }
+float : right;
+.font-size(21);
+font-weight : bold;
+line-height : 18px;
+color : inherit; }
 
 .alert-success {
 background-color : lighten(@successcolor, 30%);
 border : 1px solid lighten(@successcolor, 20%);
-color : darken(@successcolor, 50%); }
+color : darken(@successcolor, 20%); }
 
-.alert-danger,
+.alert-warning {
+background-color : lighten(@warningcolor, 30%);
+border : 1px solid lighten(@warningcolor, 20%);
+color : darken(@warningcolor, 20%); }
+
 .alert-error {
 background-color : lighten(@dangercolor, 30%);
 border : 1px solid lighten(@dangercolor, 20%);
@@ -48,6 +53,27 @@ color : @dangercolor; }
 background-color : @infocolor;
 border : 1px solid darken(@infocolor, 20%);
 color : darken(@infocolor, 50%); }
+
+.alert-inverse {
+background-color : @inverscolor;
+border : 1px solid @black;
+color : @white; }
+
+.alert-block {
+padding-top : 14px;
+padding-bottom : 14px; }
+
+.alert-block .alert-heading {
+margin-bottom : @baseline / 8;
+font-size : inherit;
+font-weight : bold; }
+
+.alert-block > p,
+.alert-block > ul {
+margin-bottom : 0; }
+
+.alert-block p + p {
+margin-top : 5px; }
 
 // BADGES ====================================================
 
@@ -180,18 +206,17 @@ background-repeat : repeat-x; }
 min-height : 21px;
 padding : 11px;
 margin-bottom : @baseline;
-background-color : lighten(@basecolor, 30%);
-border : 1px solid lighten(@basecolor, 20%);
-.border-radius(2px);
-.box-shadow(inset 0 1px 1px rgba(0,0,0,.5)); }
+background-color : lighten(@basecolor, 75%);
+border : 1px solid lighten(@basecolor, 60%);
+.border-radius(4px,4px,4px,4px);
+.box-shadow(inset 0 1px 11px rgba(0,0,0,.15)); }
 
 .well-large {
-padding : 22px;
-.border-radius(4px); }
+padding : 22px; }
 
 .well-small {
 padding : 6px;
-.border-radius(2px); }
+.border-radius(2px,2px,2px,2px); }
 
 .well p:last-child {
 margin-bottom : 0; }
