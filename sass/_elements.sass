@@ -1,0 +1,54 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+
+// Sass Port by Jina Bolton
+// URL: http://sushiandrobots.com/
+
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Elements ===================================================
+
+// FIGURES & IMAGES =============================================================================
+
+img
+  max-width: 100%
+  border-width: 0
+  vertical-align: middle
+  -ms-interpolation-mode: bicubic
+
+svg:not(:root)
+  overflow: hidden
+
+figure
+  margin-bottom: $baseline
+
+figure img
+  margin-bottom: $baseline / 4
+
+figcaption
+  display: block
+  font-weight: normal
+  +font-size(14)
+  color: $grey
+
+// list-bordered
+
+.list-bordered
+  list-style-type: none
+  margin: 0 0 $baseline 0
+  padding: 0
+
+.list-bordered li
+  margin-bottom: $baseline / 4
+  padding-bottom: $baseline / 4
+  border-bottom: 1px dashed lighten($basecolor, 60%)
+
+.list-bordered li:last-child
+  margin-bottom: 0
+  padding-bottom: 0
+  border-bottom-width: 0
