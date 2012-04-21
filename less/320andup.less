@@ -64,36 +64,37 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 //  9. TEMPLATE SPECIFICS 	==============================
 //  10. MEDIA QUERIES 		==============================
 
+// Print
 @media print {
 @import "print";
 }
 
-// 480px
+// 480px - iPhones (Landscape)
 @media only screen and (min-width: 480px) {
 @import "480";
 }
 
-// 600px
+// 600px - Other Smartphones
 @media only screen and (min-width: 600px) {
 @import "600";
 }
 
-// 768px
+// 768px - iPads (Portrait)
 @media only screen and (min-width: 768px) {
 @import "768";
 }
 
-// 992px
+// 992px - iPads (Landscape)
 @media only screen and (min-width: 992px) {
 @import "992";
 }
 
-// 1382px
+// 1382px - Large Desktop Screens
 @media only screen and (min-width: 1382px) {
 @import "1382";
 }
 
-// 2x
+// 2x - Retina Media - iPhone 4, 4S, & iPad 3
 @media
 only screen and (-webkit-min-device-pixel-ratio: 1.5), 
 only screen and (min--moz-device-pixel-ratio: 1.5),
