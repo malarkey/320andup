@@ -25,10 +25,6 @@ $google = ($_GET['google']) ? str_replace(" ", "+", htmlspecialchars($_GET['goog
 Author: Andy Clarke (http://about.me/malarkey)
 Author: Keith Clark (http://twitter.com/keithclarkcouk)
 URL: http://stuffandnonsense.co.uk/projects/320andup/
-
-Sass Port by Jina Bolton
-URL: http://sushiandrobots.com
-
 License: http://creativecommons.org/licenses/MIT/
 PHP'd: Conor MacNeill (http://twitter.com/thefella)
 -->
