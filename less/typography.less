@@ -30,35 +30,39 @@ color : @lightgrey; }
 
 h1,
 .h1 { 
+margin-bottom : @baselineheight / 2;
 .font-size(32);
-line-height : @baselineheight * 2; }
+line-height : 1.2; }
 
 h2,
 .h2 { 
+margin-bottom : @baselineheight / 2;
 .font-size(24);
-line-height : @baselineheight * 2; }
+line-height : 1.2; }
 
 h3,
 .h3 { 
+margin-bottom : @baselineheight / 1.5;
 .font-size(21);
-line-height : @baselineheight * 1.5; }
+line-height : 1.3; }
 
 h4,
 .h4 { 
+margin-bottom : @baselineheight;
 .font-size(18);
-line-height : @baselineheight * 1.5; }
+line-height : 1.25; }
 
 h5,
 .h5 { 
 .font-size(16);
-line-height : @baselineheight * 1.25;  }
+margin-bottom : @baselineheight; }
 
 h6,
 .h6 { 
+margin-bottom : @baselineheight;
 .font-size(14); 
 font-weight : normal;
 letter-spacing : 1px;
-line-height : @baselineheight;
 text-transform : uppercase; }
 
 // header
@@ -119,8 +123,8 @@ margin : 0;
 // blockquote
 
 blockquote  { 
-margin : 0 0 @baselineheight -gutterwidth; 
-padding-left : gutterwidth; 
+margin : 0 0 @baselineheight -@gutterwidth; 
+padding-left : @gutterwidth; 
 border-left : 2px solid @bordercolor;
 font-family : @altfont;
 font-style : normal; }

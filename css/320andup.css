@@ -156,41 +156,45 @@ h6 small {
 }
 h1,
 .h1 {
+  margin-bottom: 0.75em;
   font-size: 32px;
   font-size: 3.2rem;
-  line-height: 3em;
+  line-height: 1.2;
 }
 h2,
 .h2 {
+  margin-bottom: 0.75em;
   font-size: 24px;
   font-size: 2.4rem;
-  line-height: 3em;
+  line-height: 1.2;
 }
 h3,
 .h3 {
+  margin-bottom: 1em;
   font-size: 21px;
   font-size: 2.1rem;
-  line-height: 2.25em;
+  line-height: 1.3;
 }
 h4,
 .h4 {
+  margin-bottom: 1.5em;
   font-size: 18px;
   font-size: 1.8rem;
-  line-height: 2.25em;
+  line-height: 1.25;
 }
 h5,
 .h5 {
   font-size: 16px;
   font-size: 1.6rem;
-  line-height: 1.875em;
+  margin-bottom: 1.5em;
 }
 h6,
 .h6 {
+  margin-bottom: 1.5em;
   font-size: 14px;
   font-size: 1.4rem;
   font-weight: normal;
   letter-spacing: 1px;
-  line-height: 1.5em;
   text-transform: uppercase;
 }
 .header h1,
@@ -250,8 +254,8 @@ li ol {
   font-size: 1.6rem;
 }
 blockquote {
-  margin: 0 0 1.5em -gutterwidth;
-  padding-left: gutterwidth;
+  margin: 0 0 1.5em -24px;
+  padding-left: 24px;
   border-left: 2px solid #c7ced6;
   font-family: Cambria, Georgia, Times, "Times New Roman";
   font-style: normal;
