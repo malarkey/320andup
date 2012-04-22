@@ -12,7 +12,7 @@
 // 1. ROOT 					==============================
 
 html {
-background : @white; 
+background : @bodycolor; 
 font-size : 62.5%;
 -webkit-overflow-scrolling : touch; 
 -webkit-tap-highlight-color : lighten(@basecolor, 75%); 
@@ -23,11 +23,11 @@ body {
 margin : 0;
 padding : 0;
 width : 100%;
+background-color : transparent;
+font-family : @basefont;
 .font-size();
-.sans-serif();
-line-height : 1.4;
-color : @darkgrey; 
-background-color : transparent; }
+line-height : @baselineheight;
+color : @textcolor; }
 
 // 2. TYPOGRAPHY 			==============================
 // 3. COLOUR 				==============================

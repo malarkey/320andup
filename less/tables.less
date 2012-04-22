@@ -13,17 +13,17 @@ table {
 width : 100%;
 max-width : 100%;
 margin-bottom : @baseline;
-border-collapse: collapse;
+border-collapse : collapse;
 border-spacing : 0;
-background-color : transparent; }
+background-color : @tablebackground; }
 
 table th,
 table td {
 padding : 8px;
 vertical-align : top;
-border-top : 1px solid lighten(@basecolor, 60%); 
+border-top : 1px solid @tableborder; 
 .font-size(14);
-line-height : 1.5;
+line-height : @baselineheight;
 text-align : left; }
 
 table th {
@@ -39,7 +39,7 @@ table thead:first-child tr:first-child td {
 border-top : 0; }
 
 table tbody + tbody {
-border-top : 2px solid lighten(@basecolor, 60%); }
+border-top : 2px solid @tableborder; }
 
 // CONDENSED ====================================================
 
@@ -50,14 +50,14 @@ padding : 4px 5px; }
 // BORDERED ====================================================
 
 .table-bordered {
-border : 1px solid lighten(@basecolor, 60%);
+border : 1px solid @tableborder;
 border-left : 0;
 border-collapse : separate;
 *border-collapse : collapsed; }
 
 .table-bordered th,
 .table-bordered td {
-border-left : 1px solid lighten(@basecolor, 70%); }
+border-left : 1px solid @tableborder; }
 
 .table-bordered thead:first-child tr:first-child th,
 .table-bordered tbody:first-child tr:first-child th,
@@ -68,7 +68,7 @@ border-top : 0; }
 
 .table-striped tbody tr:nth-child(odd) td,
 .table-striped tbody tr:nth-child(odd) th {
-background-color : lighten(@basecolor, 70%); }
+background-color : @tablestripe; }
 
 .table tbody tr td,
 .table tbody tr th {
@@ -79,4 +79,4 @@ transition : background-color .25s 0 linear; }
 
 .table tbody tr:hover td,
 .table tbody tr:hover th {
-background-color : lighten(@basecolor, 70%); }
+background-color : @tablehover; }

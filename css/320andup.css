@@ -125,12 +125,12 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  background-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.4;
-  color: #404040;
-  background-color: transparent;
+  line-height: 1.4em;
+  color: #000000;
 }
 /* Typography =================================================== */
 h1,
@@ -295,7 +295,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: "Monaco", Courier New, monospace;
+  font-family: Monaco, Courier New, monospace;
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 1.5em;
@@ -336,14 +336,14 @@ a {
   color: #013568;
 }
 a:visited {
-  color: #011b35;
+  color: #000203;
 }
 a:hover {
   color: #011b35;
 }
 a:focus {
   outline: thin dotted;
-  color: #000203;
+  color: #000000;
 }
 a:hover,
 a:active {
@@ -355,21 +355,9 @@ a:active {
   padding: 8px 35px 8px 14px;
   background-color: #fcf8e3;
   border: 1px solid #f2e187;
-  -webkit-border-top-right-radius: 2px;
-  -webkit-border-bottom-right-radius: 2px;
-  -webkit-border-bottom-left-radius: 2px;
-  -webkit-border-top-left-radius: 2px;
-  -moz-border-radius-topright: 2px;
-  -moz-border-radius-bottomright: 2px;
-  -moz-border-radius-bottomleft: 2px;
-  -moz-border-radius-topleft: 2px;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
@@ -556,21 +544,9 @@ a:active {
   margin-bottom: 1.5em;
   background-color: #f3f5f6;
   border: 1px solid #c7ced6;
-  -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  -moz-border-radius-topleft: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 11px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: inset 0 1px 11px rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 1px 11px rgba(0, 0, 0, 0.15);
@@ -580,21 +556,9 @@ a:active {
 }
 .well-small {
   padding: 6px;
-  -webkit-border-top-right-radius: 2px;
-  -webkit-border-bottom-right-radius: 2px;
-  -webkit-border-bottom-left-radius: 2px;
-  -webkit-border-top-left-radius: 2px;
-  -moz-border-radius-topright: 2px;
-  -moz-border-radius-bottomright: 2px;
-  -moz-border-radius-bottomleft: 2px;
-  -moz-border-radius-topleft: 2px;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .well p:last-child {
   margin-bottom: 0;
@@ -1158,9 +1122,9 @@ legend {
   margin-bottom: 3em;
   *margin-left: -7px;
   padding: 0;
-  color: #404040;
+  color: #000000;
   border: 0;
-  border-bottom: 1px solid #c7ced6;
+  border-bottom: 1px solid #2d353e;
   white-space: normal;
 }
 legend small {
@@ -1203,7 +1167,7 @@ label {
   display: block;
   margin-bottom: 0.1875em;
   font-weight: bold;
-  color: #404040;
+  color: #000000;
   cursor: pointer;
 }
 input,
@@ -1214,8 +1178,13 @@ select {
   padding: 4px;
   margin-bottom: 0.375em;
   background-color: #ffffff;
-  border: 1px solid #c7ced6;
-  color: #404040;
+  border: 1px solid #2d353e;
+  color: #000000;
+}
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: #8c9bab;
 }
 label input,
 label textarea,
@@ -1238,21 +1207,9 @@ input[type="radio"] {
   *margin-top: 0;
   line-height: normal;
   cursor: pointer;
-  -webkit-border-top-right-radius: 0;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 0;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 0;
-  -moz-border-radius-topleft: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
   border: 0 \9;
 }
 input[type="checkbox"],
@@ -1350,7 +1307,7 @@ textarea[readonly] {
 }
 input:focus,
 textarea:focus {
-  border-color: #000000;
+  border-color: #8c9bab;
   outline: 0;
   outline: thin dotted \9;
 }
@@ -1415,21 +1372,9 @@ input:-moz-placeholder {
   padding-left: 14px;
   padding-right: 14px;
   margin-bottom: 0;
-  -webkit-border-top-right-radius: 14px;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 0;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius-topright: 14px;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 0;
-  -moz-border-radius-topleft: 0;
-  border-top-right-radius: 14px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
 }
 .form-search label {
   display: inline-block;
@@ -1460,7 +1405,7 @@ input:-moz-placeholder {
   font-size: 12px;
   font-size: 1.2rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.4em;
   color: #404040;
   text-align: center;
   vertical-align: middle;
@@ -1474,24 +1419,12 @@ input:-moz-placeholder {
   background-repeat: repeat-x;
   border: 1px solid #cccccc;
   border-bottom-color: #b3b3b3;
-  -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  -moz-border-radius-topleft: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
   cursor: pointer;
   *margin-left: .3em;
 }
@@ -1681,37 +1614,73 @@ a.btn-extlarge:hover {
 }
 .btn-group .btn:first-child {
   margin-left: 0;
-  -webkit-border-top-left-radius: 2px;
-  -moz-border-radius-topleft: 2px;
-  border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 0;
   -webkit-border-bottom-left-radius: 2px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 0;
   -moz-border-radius-bottomleft: 2px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 0;
   border-bottom-left-radius: 2px;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 }
 .btn-group .btn:last-child {
-  -webkit-border-top-right-radius: 2px;
-  -moz-border-radius-topright: 2px;
-  border-top-right-radius: 2px;
+  -webkit-border-top-right-radius: 0;
   -webkit-border-bottom-right-radius: 2px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topright: 0;
   -moz-border-radius-bottomright: 2px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 2px;
+  border-top-right-radius: 0;
   border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 }
 .btn-group .btn.large:first-child {
   margin-left: 0;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topleft: 4px;
-  border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 0;
   -webkit-border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 0;
   -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 0;
   border-bottom-left-radius: 4px;
+  border-top-left-radius: 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 }
 .btn-group .btn.large:last-child {
-  -webkit-border-top-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  border-top-right-radius: 4px;
+  -webkit-border-top-right-radius: 0;
   -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 4px;
+  -moz-border-radius-topright: 0;
   -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 4px;
+  border-top-right-radius: 0;
   border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 }
 .btn-toolbar {
   clear: both;
@@ -1736,10 +1705,10 @@ table th,
 table td {
   padding: 8px;
   vertical-align: top;
-  border-top: 1px solid #c7ced6;
+  border-top: 1px solid #8c9bab;
   font-size: 14px;
   font-size: 1.4rem;
-  line-height: 1.5;
+  line-height: 1.4em;
   text-align: left;
 }
 table th {
@@ -1755,21 +1724,21 @@ table thead:first-child tr:first-child td {
   border-top: 0;
 }
 table tbody + tbody {
-  border-top: 2px solid #c7ced6;
+  border-top: 2px solid #8c9bab;
 }
 .table-condensed th,
 .table-condensed td {
   padding: 4px 5px;
 }
 .table-bordered {
-  border: 1px solid #c7ced6;
+  border: 1px solid #8c9bab;
   border-left: 0;
   border-collapse: separate;
   *border-collapse: collapsed;
 }
 .table-bordered th,
 .table-bordered td {
-  border-left: 1px solid #e4e8ec;
+  border-left: 1px solid #8c9bab;
 }
 .table-bordered thead:first-child tr:first-child th,
 .table-bordered tbody:first-child tr:first-child th,
@@ -1778,7 +1747,7 @@ table tbody + tbody {
 }
 .table-striped tbody tr:nth-child(odd) td,
 .table-striped tbody tr:nth-child(odd) th {
-  background-color: #e4e8ec;
+  background-color: #6e8196;
 }
 .table tbody tr td,
 .table tbody tr th {
@@ -1789,7 +1758,7 @@ table tbody + tbody {
 }
 .table tbody tr:hover td,
 .table tbody tr:hover th {
-  background-color: #e4e8ec;
+  background-color: #8c9bab;
 }
 /* Banner =================================================== */
 [role="banner"] {
@@ -1808,21 +1777,9 @@ table tbody + tbody {
   overflow: hidden;
   background-color: #586879;
   border: 1px solid #4d5b6a;
-  -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -moz-border-radius-bottomleft: 4px;
-  -moz-border-radius-topleft: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   color: #f3f5f6;
   font-size: 32px;
   font-size: 3.2rem;
@@ -1978,7 +1935,7 @@ table tbody + tbody {
   dl,
   address,
   small {
-    line-height: 1.5;
+    line-height: 1.4em;
   }
   [role="banner"] a[href="#navigation"] {
     display: none !important;

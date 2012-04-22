@@ -10,23 +10,35 @@
 /* Variables =================================================== */
 
 // 1. ROOT 					==============================
+
+@bodycolor : @white;
+@textcolor : @black;
+
 // 2. TYPOGRAPHY 			==============================
 
+@basefont : "Helvetica Neue", Helvetica, Arial, sans-serif;
 @basefontsize : 16;
-@baselineheight : 1.5em;
+@baselineheight : 1.4em;
+@baseheadingfont : inherit;
+@baseheadingfontweight : bold;
+
+@altfont : Cambria, Georgia, Times, "Times New Roman";
+@altlineheight : 1.35em;
+
+@codefont : Monaco, Courier New, monospace;
 
 // 3. COLOUR 				==============================
 
 @basecolor 		: rgb(45,53,62);	  
 @compcolor 		: spin(@basecolor, 180); 
-@textColor		: @black;
+@bordercolor    : lighten(@basecolor, 60%);
 
 // Links
 
 @linkcolor 		    : rgb(1,53,104);
 @linkcolorhover 	: darken(@linkcolor, 10);
-@linkcolorvisited   : @linkcolorhover;
-@linkcolorfocus 	: darken(@linkcolorhover, 10);
+@linkcolorvisited   : darken(@linkcolorhover, 10);
+@linkcolorfocus 	: darken(@linkcolorvisited, 10);
 
 // greyscale
 
@@ -49,8 +61,21 @@
 
 // 4. TEXTURE 				==============================
 
-@inputbackgroundcolor : @white; 
-@inputbordercolor : @basecolor;
+// tables 
+
+@tablebackground : transparent;
+@tablestripe : lighten(@basecolor, 30%);
+@tablehover : lighten(@basecolor, 40%);
+@tableborder : lighten(@basecolor, 40%);
+
+// forms 
+
+@inputbackground : @white; 
+@inputborder : @basecolor;
+@inputhover : lighten(@basecolor, 40%);
+@inputfocus : lighten(@basecolor, 40%);
+
+@placeholdercolor :  @lightgrey;
 
 // 6. LAYOUT 				==============================
 

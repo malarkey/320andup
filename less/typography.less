@@ -121,8 +121,8 @@ font-weight : normal; }
 blockquote  { 
 margin : 0 0 @baseline -24px; 
 padding-left : 24px; 
-border-left : 1px solid lighten(@basecolor, 60%);
-.serif();
+border-left : 1px solid @bordercolor;
+font-family : @altfont;
 font-style : normal; }
 
 blockquote:before, 
@@ -133,7 +133,7 @@ content : '';
 content : none; }
 
 abbr[title] { 
-border-bottom : 1px dotted lighten(@basecolor, 60%); 
+border-bottom : 1px dotted @bordercolor; 
 cursor : help; }
 
 b, strong { 
@@ -148,16 +148,16 @@ margin : 1em 0;
 padding : 0;
 height : 1px; 
 border : 0; 
-border-top : 1px solid lighten(@basecolor, 60%); }
+border-top : 1px solid @bordercolor; }
 
 ins { 
 background-color : lighten(@basecolor, 75%); 
-color : @black; 
+color : @textcolor; 
 text-decoration : none; }
 
 mark { 
 background-color : lighten(@basecolor, 75%); 
-color : @black; 
+color : @textcolor; 
 font-style : italic; 
 font-weight : bold; }
 
@@ -165,7 +165,7 @@ pre,
 code, 
 kbd, 
 samp { 
-.monospace;
+font-family : @codefont;
 .font-size(14);
 line-height : @baseline; }
 
