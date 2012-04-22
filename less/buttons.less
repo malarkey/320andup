@@ -20,65 +20,42 @@ font-family : @basefont;
 .font-size(12);
 font-weight : bold;
 line-height : @baselineheight;
-color : @darkgrey;
+color : @buttoncolor;
 text-align : center;
 vertical-align : middle;
-background-color : @lightergrey;
+background-color : @buttonbackground;
 .greygrad;
-border : 1px solid darken(@lightergrey, 10%);
-border-bottom-color : darken(@lightergrey, 20%);
+border : @buttonborderwidth @buttonborderstyle @buttonbordercolor;
+border-bottom-color : @buttonbottombordercolor;
 .rounded(4px);
-.box-shadow(0 1px 0 rgba(255,255,255,.25));
 cursor : pointer;
 *margin-left : .3em; 
 
 &:visited,
 &:hover {
-color : @darkgrey;
+color : @buttoncolor;
 text-decoration : none; }
 }
+
+input[type="submit"].btn:hover {
+border-color : @buttonbordercolor; }
 
 .btn:first-child {
 *margin-left : 0; }
 
-// danger
-
-.btn-danger {
-background-color : @dangercolor;
-.dangergrad;
-border : 1px solid darken(@dangercolor, 30%);
-border-bottom-color : darken(@dangercolor, 25%);
-color : lighten(@dangercolor, 50%); 
-
-&:visited,
-&:hover {
-color : @white; }
-}
-
 // disabled
 
 .btn-disabled {
-background-color : @lightergrey;
-.greygrad;
-border : 1px solid darken(@lightgrey, 15%);
-border-bottom-color : darken(@lightgrey, 20%); 
-color : darken(@lightgrey, 50%);
-text-shadow : 0 1px 1px rgba(255,255,255,.5); 
-
-&:visited,
-&:hover {
-color : darken(@lightgrey, 50%); }
-}
+.opacity(.5); 
+cursor : default; }
 
 // info
 
 .btn-info {
-background-color : @infocolor;
 .infograd;
-border : 1px solid darken(@infocolor, 15%);
+border-color : darken(@infocolor, 15%);
 border-bottom-color : darken(@infocolor, 20%); 
 color : darken(@infocolor, 50%);
-text-shadow : 0 1px 1px rgba(255,255,255,.5); 
 
 &:visited,
 &:hover {
@@ -88,9 +65,8 @@ color : darken(@infocolor, 50%); }
 // inverse
 
 .btn-inverse {
-background-color : @inverscolor;
 .inversegrad;
-border : 1px solid darken(@inverscolor, 15%);
+border-color : darken(@inverscolor, 15%);
 border-bottom-color : darken(@inverscolor, 20%); 
 color : @white; 
 
@@ -102,10 +78,9 @@ color : @white; }
 // primary
 
 .btn-primary {
-background-color : @linkcolor;
-.linkgrad;
-border : 1px solid darken(@linkcolor, 30%);
-border-bottom-color : darken(@linkcolor, 25%);
+.basegrad;
+border-color : darken(@basecolor, 15%);
+border-bottom-color : darken(@basecolor, 20%);
 color : @white; 
 
 &:visited,
@@ -116,37 +91,23 @@ color : @white; }
 // success
 
 .btn-success {
-background-color : @successcolor; 
 .successgrad;
-border : 1px solid darken(@successcolor, 15%);
+border-color : darken(@successcolor, 15%);
 border-bottom-color : darken(@successcolor, 20%); }
 
 // warning
 
 .btn-warning {
-background-color : @warningcolor;
 .warninggrad;
-border : 1px solid darken(@warningcolor, 15%);
+border-color : darken(@warningcolor, 15%);
 border-bottom-color : darken(@warningcolor, 20%); }
 
 // sizes
 
 .btn-extlarge {
 padding : 11px 22px;
-background-color : @basecolor;
-.basegrad;
-border : 1px solid darken(@basecolor, 10%);
-border-bottom-color : darken(@basecolor, 15%);
 .font-size(21);
-font-weight : 200;
-letter-spacing : 1px; 
-line-height : normal;
-color : @white;
 .rounded(4px); }
-
-a.btn-extlarge,
-a.btn-extlarge:hover {
-color : @white; }
 
 .btn.btn-large {
 *padding-top : 7px;
@@ -181,7 +142,7 @@ margin-left : -1px;
 .rounded(0); }
 
 .btn-group .btn:first-child {
-margin-left: 0;
+margin-left : 0;
 .border-radius(2px, 0, 2px, 0); } 
 
 .btn-group .btn:last-child {

@@ -16,15 +16,6 @@ display : table;
 border-collapse : collapse; }
 
 // 2. TYPOGRAPHY 			==============================
-
-p, 
-ol, 
-ul, 
-dl, 
-address,
-small {
-line-height : @baselineheight; }
-
 // 3. COLOUR 				==============================
 // 4. TEXTURE 				==============================
 // 5. ELEMENTS 				==============================
@@ -38,11 +29,12 @@ line-height : @baselineheight; }
 //   NAVIGATION 			==============================
 
 [role="navigation"] {
-display : table-header-group; }
+display : table-header-group; 
 
-[role="navigation"] p {
+p {
 margin : 0 auto;
 width : 90%; }
+}
 
 //   CONTENT 				==============================
 //   11 MAIN 				==============================

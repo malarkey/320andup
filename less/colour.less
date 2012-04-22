@@ -14,21 +14,24 @@
 // 3. COLOUR 				==============================
 
 a { 
-color : @linkcolor; }
+text-decoration : none;
+color : @linkcolor; 
 
-a:visited { 
+&:visited { 
 color : @linkcolorvisited; }
 
-a:hover { 
+&:hover { 
+text-decoration : underline;
 color : @linkcolorhover; }
 
-a:focus { 
+&:focus { 
 outline : thin dotted; 
 color : @linkcolorfocus; }
 
-a:hover, 
-a:active { 
+&:hover, 
+&:active { 
 outline : 0; }
+}
 
 // 4. TEXTURE 				==============================
 // 5. ELEMENTS 				==============================

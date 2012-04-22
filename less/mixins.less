@@ -25,6 +25,37 @@ white-space : nowrap; }
 // 3. COLOUR 				==============================
 // 4. TEXTURE 				==============================
 
+// gradients
+
+.horizontal(@startColor : @white, @endColor : @lightergrey) {
+background-color: @endColor;
+background-image  : -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+background-image  : -webkit-linear-gradient(left, @startColor, @endColor); 					 // Safari 5.1+, Chrome 10+
+background-image  : -moz-linear-gradient(left, @startColor, @endColor); 					 // FF 3.6+
+background-image  : -ms-linear-gradient(left, @startColor, @endColor); 						 // IE10
+background-image  : -o-linear-gradient(left, @startColor, @endColor); 						 // Opera 11.10
+background-image  : linear-gradient(left, @startColor, @endColor); 							 // W3C
+background-repeat : repeat-x; }
+
+.vertical(@startColor : @white, @endColor:  @lightergrey) {
+background-image  : -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+background-image  : -webkit-linear-gradient(top, @startColor, @endColor); 					 // Safari 5.1+, Chrome 10+
+background-color  : @endColor;
+background-image  : -moz-linear-gradient(top, @startColor, @endColor);   					 // FF 3.6+
+background-image  : -ms-linear-gradient(top, @startColor, @endColor); 						 // IE10
+background-image  : -o-linear-gradient(top, @startColor, @endColor); 						 // Opera 11.10
+background-image  : linear-gradient(top, @startColor, @endColor); 							 // W3C
+background-repeat : repeat-x; }
+
+.directional(@startColor : @white, @endColor : @lightergrey, @deg : 45deg) {
+background-color  : @endColor;
+background-image  : -moz-linear-gradient(@deg, @startColor, @endColor); 					// FF 3.6+
+background-image  : -ms-linear-gradient(@deg, @startColor, @endColor); 						// IE10
+background-image  : -webkit-linear-gradient(@deg, @startColor, @endColor); 					// Safari 5.1+, Chrome 10+
+background-image  : -o-linear-gradient(@deg, @startColor, @endColor); 						// Opera 11.10
+background-image  : linear-gradient(@deg, @startColor, @endColor); 							// W3C
+background-repeat : repeat-x; }
+
 // .bordered(COLOR, COLOR, COLOR, COLOR);
 
 .bordered(@top-color: #eee, @right-color: #eee, @bottom-color: #eee, @left-color: #eee) {

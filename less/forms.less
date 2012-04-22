@@ -10,7 +10,7 @@
 /* Forms =================================================== */
 
 form { 
-margin : 0 0 @baselineheight 0; }
+margin : 0 0 @baselineheight 0;
 
 fieldset { 
 margin-bottom : @baselineheight; 
@@ -25,23 +25,25 @@ margin-bottom : @baselineheight * 2;
 padding : 0;
 color : @textcolor;
 border : 0;
-border-bottom : 1px solid @inputborder;
-white-space : normal; }
+border-bottom : @inputborderwidth @inputborderstyle @inputborder;
+white-space : normal; 
 
-legend small {
+small {
 .font-size(14);
 color : @lightgrey; }
+}
 
-form p {
+p {
 margin-bottom : @baselineheight / 2; }
 
-form ul {
+ul {
 list-style-type : none; 
 margin : 0 0 @baselineheight 0;
 padding : 0; }
 
-form br {
+br {
 display : none; }
+}
 
 label,
 input,
@@ -64,7 +66,13 @@ display : block;
 margin-bottom : @baseline / 8;
 font-weight : bold;
 color : @textcolor;
-cursor : pointer; }
+cursor : pointer; 
+
+input,
+textarea,
+select {
+display : block; }
+}
 
 input,
 textarea,
@@ -74,18 +82,12 @@ width : 100%;
 padding : 4px;
 margin-bottom : @baselineheight / 4;
 background-color : @inputbackground;
-border : 1px solid @inputborder;
+border : @inputborderwidth @inputborderstyle @inputborder;
 color : @textcolor; 
 
 &:hover {
 border-color : @inputhover; }
-
 }
-
-label input,
-label textarea,
-label select {
-display : block; }
 
 .input-mini { 
 width : 60px; }
