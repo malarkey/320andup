@@ -129,7 +129,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1.6rem;
-  line-height: 1.4em;
+  line-height: 1.5em;
   color: #000000;
 }
 /* Typography =================================================== */
@@ -139,50 +139,58 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 200;
+  margin: 0;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
   text-rendering: optimizelegibility;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
+  font-weight: normal;
+  color: #bfbfbf;
 }
 h1,
 .h1 {
-  margin-bottom: 0.75em;
   font-size: 32px;
   font-size: 3.2rem;
-  line-height: 1.2;
+  line-height: 3em;
 }
 h2,
 .h2 {
-  margin-bottom: 0.75em;
   font-size: 24px;
   font-size: 2.4rem;
-  line-height: 1.2;
+  line-height: 3em;
 }
 h3,
 .h3 {
-  margin-bottom: 1em;
   font-size: 21px;
   font-size: 2.1rem;
-  line-height: 1.3;
+  line-height: 2.25em;
 }
 h4,
 .h4 {
-  margin-bottom: 1.5em;
   font-size: 18px;
   font-size: 1.8rem;
-  line-height: 1.25;
+  line-height: 2.25em;
 }
 h5,
 .h5 {
-  margin-bottom: 1.5em;
   font-size: 16px;
   font-size: 1.6rem;
+  line-height: 1.875em;
 }
 h6,
 .h6 {
-  margin-bottom: 1.5em;
-  font-size: 12px;
-  font-size: 1.2rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: normal;
   letter-spacing: 1px;
+  line-height: 1.5em;
   text-transform: uppercase;
 }
 .header h1,
@@ -228,6 +236,7 @@ address {
   margin-bottom: 1.5em;
   font-size: 14px;
   font-size: 1.4rem;
+  line-height: 1.5em;
 }
 ul,
 ol {
@@ -240,17 +249,10 @@ li ol {
   font-size: 16px;
   font-size: 1.6rem;
 }
-dl,
-dd {
-  margin-bottom: 1.5em;
-}
-dt {
-  font-weight: normal;
-}
 blockquote {
-  margin: 0 0 1.5em -24px;
-  padding-left: 24px;
-  border-left: 1px solid #c7ced6;
+  margin: 0 0 1.5em -gutterwidth;
+  padding-left: gutterwidth;
+  border-left: 2px solid #c7ced6;
   font-family: Cambria, Georgia, Times, "Times New Roman";
   font-style: normal;
 }
@@ -260,6 +262,25 @@ q:before,
 q:after {
   content: '';
   content: none;
+}
+cite {
+  font-style: normal;
+}
+dl,
+dd {
+  margin-bottom: 1.5em;
+}
+dt {
+  font-weight: bold;
+}
+.dl-horizontal dt {
+  float: left;
+  clear: left;
+  width: 20.25%;
+  text-align: right;
+}
+.dl-horizontal dd {
+  margin-left: 22.78%;
 }
 abbr[title] {
   border-bottom: 1px dotted #c7ced6;
@@ -271,14 +292,6 @@ strong {
 }
 dfn {
   font-style: italic;
-}
-hr {
-  display: block;
-  margin: 1em 0;
-  padding: 0;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #c7ced6;
 }
 ins {
   background-color: #f3f5f6;
@@ -308,21 +321,16 @@ pre {
 q {
   quotes: none;
 }
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
 small {
   font-size: 14px;
   font-size: 1.4rem;
 }
 sub,
 sup {
+  position: relative;
   font-size: 12px;
   font-size: 1.2rem;
   line-height: 0;
-  position: relative;
   vertical-align: baseline;
 }
 sup {
@@ -330,6 +338,15 @@ sup {
 }
 sub {
   bottom: -0.25em;
+}
+hr {
+  display: block;
+  margin: 1em 0;
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #c7ced6;
+  border-bottom: 1px solid #ffffff;
 }
 /* Colour =================================================== */
 a {
@@ -1124,7 +1141,7 @@ legend {
   padding: 0;
   color: #000000;
   border: 0;
-  border-bottom: 1px solid #2d353e;
+  border-bottom: 1px solid #8c9bab;
   white-space: normal;
 }
 legend small {
@@ -1178,13 +1195,13 @@ select {
   padding: 4px;
   margin-bottom: 0.375em;
   background-color: #ffffff;
-  border: 1px solid #2d353e;
+  border: 1px solid #8c9bab;
   color: #000000;
 }
 input:hover,
 textarea:hover,
 select:hover {
-  border-color: #8c9bab;
+  border-color: #586879;
 }
 label input,
 label textarea,
@@ -1307,7 +1324,7 @@ textarea[readonly] {
 }
 input:focus,
 textarea:focus {
-  border-color: #8c9bab;
+  border-color: #2d353e, 40%;
   outline: 0;
   outline: thin dotted \9;
 }
@@ -1405,7 +1422,7 @@ input:-moz-placeholder {
   font-size: 12px;
   font-size: 1.2rem;
   font-weight: bold;
-  line-height: 1.4em;
+  line-height: 1.5em;
   color: #404040;
   text-align: center;
   vertical-align: middle;
@@ -1708,7 +1725,7 @@ table td {
   border-top: 1px solid #8c9bab;
   font-size: 14px;
   font-size: 1.4rem;
-  line-height: 1.4em;
+  line-height: 1.5em;
   text-align: left;
 }
 table th {
@@ -1747,7 +1764,7 @@ table tbody + tbody {
 }
 .table-striped tbody tr:nth-child(odd) td,
 .table-striped tbody tr:nth-child(odd) th {
-  background-color: #6e8196;
+  background-color: #c7ced6;
 }
 .table tbody tr td,
 .table tbody tr th {
@@ -1758,7 +1775,7 @@ table tbody + tbody {
 }
 .table tbody tr:hover td,
 .table tbody tr:hover th {
-  background-color: #8c9bab;
+  background-color: #a9b4c1;
 }
 /* Banner =================================================== */
 [role="banner"] {
@@ -1935,7 +1952,7 @@ table tbody + tbody {
   dl,
   address,
   small {
-    line-height: 1.4em;
+    line-height: 1.5em;
   }
   [role="banner"] a[href="#navigation"] {
     display: none !important;

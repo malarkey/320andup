@@ -33,7 +33,14 @@ border-left : solid 1px @left-color;
 border-right : solid 1px @right-color;
 border-bottom : solid 1px @bottom-color; }
 
-// .border-radius(5px, 0, 0, 5px);
+// .rounded(VALUE);
+
+.rounded(@radius:4px) {
+-webkit-border-radius : @radius;
+-moz-border-radius : @radius;
+border-radius : @radius; }
+
+// .border-radius(VALUE,VALUE,VALUE,VALUE);
 
 .border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
 -webkit-border-top-right-radius : @topright;
@@ -52,35 +59,28 @@ border-top-left-radius : @topleft;
 -moz-background-clip : padding;  
 background-clip : padding-box; }
 
-// .box-shadow(0 1px 2px rgba(0,0,0,.5))
+// .box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
 
 .box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
 -webkit-box-shadow : @shadow;
 -moz-box-shadow : @shadow;
 box-shadow : @shadow; }
 
-// .drop-shadow(0, 1px, 2px, .2);
+// .drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
 
 .drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
 -webkit-box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 -moz-box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
 box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha); }
 
-// .opacity(.5);
+// .opacity(VALUE);
 
 .opacity(@opacity : .5) {
 -webkit-opacity : @opacity;
 -moz-opacity : @opacity;
 opacity : @opacity; }
 
-// .rounded(4px);
-
-.rounded(@radius:4px) {
--webkit-border-radius : @radius;
--moz-border-radius : @radius;
-border-radius : @radius; }
-
-// .rotate(15deg);
+// .rotate(VALUEdeg);
 
 .rotate(@deg) {
 -webkit-transform : rotate(@deg);
@@ -89,7 +89,7 @@ border-radius : @radius; }
 -o-transform : rotate(@deg);
 transform : rotate(@deg); }
 
-// .scale(.5);
+// .scale(VALUE);
 
 .scale(@ratio) {
 -webkit-transform : scale(@ratio);
@@ -107,14 +107,14 @@ transform : scale(@ratio); }
 -o-transform : skew(@x, @y);
 transform : skew(@x, @y); }
 
-// .transition(2s, ease-out);
+// .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
 
-.transition(@duration : .2s, @ease:ease-out) {
--webkit-transition : all @duration @ease;
--moz-transition : all @duration @ease;
--ms-transition : all @duration @ease;
--o-transition : all @duration @ease;
-transition : all @duration @ease; }
+.transition(@transition) {
+-webkit-transition : @transition;
+-moz-transition : @transition;
+-ms-transition : @transition;
+-o-transition : @transition;
+transition : @transition; }
 
 // .translate(VALUE, VALUE)
 
@@ -134,11 +134,22 @@ transform : translate(@x, @y, @z); }
 
 // 5. ELEMENTS 				==============================
 
+// .background-size(VALUE VALUE);
+
 .background-size(@size){
 -webkit-background-size : @size;
 -moz-background-size : @size;
 -o-background-size : @size;
 background-size : @size; }
+
+// .background-clip(VALUE); (border-box, padding-box, content-box)
+
+.background-clip(@clip) {
+-webkit-background-clip : @clip;
+-moz-background-clip : @clip;
+background-clip : @clip; }
+
+// .box-sizing(VALUE); (border-box, padding-box, content-box)
 
 .box-sizing(@boxsize: border-box) {
 -webkit-box-sizing : @boxsize;
@@ -183,11 +194,19 @@ visibility : hidden; }
 .invisible() { 
 visibility : hidden; }
 
-// Resize eg: textareas
+// .resize(VALUE) (none, both, horizontal, vertical, inherit)
 
 .resize(@direction: both) {
 resize : @direction;
 overflow : auto; }
+
+// .userselect(VALUE) (all, element, none, text)
+
+.user-select(@select) {
+-webkit-user-select : @select;
+-moz-user-select : @select;
+-o-user-select : @select;
+user-select : @select; }
 
 // Hidden but available to speaking browsers
 

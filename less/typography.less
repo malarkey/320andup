@@ -17,44 +17,48 @@ h3,
 h4, 
 h5, 
 h6 {
-font-weight : 200;
-text-rendering : optimizelegibility; }
+margin : 0;
+font-family : @baseheadingfont;
+font-weight : @baseheadingfontweight;
+color : @baseheadingfontcolor;
+text-rendering : optimizelegibility; 
+
+small {
+font-weight : normal;
+color : @lightgrey; }
+}
 
 h1,
 .h1 { 
-margin-bottom : @baseline / 2;
 .font-size(32);
-line-height : 1.2; }
+line-height : @baselineheight * 2; }
 
 h2,
 .h2 { 
-margin-bottom : @baseline / 2;
 .font-size(24);
-line-height : 1.2; }
+line-height : @baselineheight * 2; }
 
 h3,
 .h3 { 
-margin-bottom : @baseline / 1.5;
 .font-size(21);
-line-height : 1.3; }
+line-height : @baselineheight * 1.5; }
 
 h4,
 .h4 { 
-margin-bottom : @baseline;
 .font-size(18);
-line-height : 1.25; }
+line-height : @baselineheight * 1.5; }
 
 h5,
 .h5 { 
-margin-bottom : @baseline;
-.font-size(16);  }
+.font-size(16);
+line-height : @baselineheight * 1.25;  }
 
 h6,
 .h6 { 
-margin-bottom : @baseline;
-.font-size(12); 
+.font-size(14); 
 font-weight : normal;
 letter-spacing : 1px;
+line-height : @baselineheight;
 text-transform : uppercase; }
 
 // header
@@ -62,13 +66,13 @@ text-transform : uppercase; }
 .header h1,
 .header h2 {
 float : left; 
-margin-right : 24px; }
+margin-right : @gutterwidth; }
 
 .header h1,
 .header h2,
 .header h3 {
 float : left; 
-margin-right : 24px; }
+margin-right : @gutterwidth; }
 
 .header a {
 display : block;
@@ -98,30 +102,26 @@ ol,
 ul, 
 dl, 
 address { 
-margin-bottom : @baseline; 
-.font-size(14); }
+margin-bottom : @baselineheight; 
+.font-size(14);
+line-height : @baselineheight; }
 
 ul, 
 ol { 
-margin : 0 0 @baseline -24px; 
-padding : 0 0 0 24px; }
+margin : 0 0 @baselineheight -@gutterwidth; 
+padding : 0 0 0 @gutterwidth; }
 
 li ul, 
 li ol { 
 margin : 0;
 .font-size(16); }
 
-dl, 
-dd { 
-margin-bottom : @baseline;  }
-
-dt { 
-font-weight : normal; }
+// blockquote
 
 blockquote  { 
-margin : 0 0 @baseline -24px; 
-padding-left : 24px; 
-border-left : 1px solid @bordercolor;
+margin : 0 0 @baselineheight -gutterwidth; 
+padding-left : gutterwidth; 
+border-left : 2px solid @bordercolor;
 font-family : @altfont;
 font-style : normal; }
 
@@ -132,6 +132,31 @@ q:after {
 content : '';
 content : none; }
 
+cite {
+font-style : normal; } 
+
+// definition lists
+
+dl, 
+dd { 
+margin-bottom : @baselineheight;  }
+
+dt { 
+font-weight : bold; }
+
+.dl-horizontal {
+dt {
+float : left;
+clear : left;
+width : 20.25%;
+text-align : right; }
+
+dd {
+margin-left : 22.78%; } 
+}
+
+// text-level
+
 abbr[title] { 
 border-bottom : 1px dotted @bordercolor; 
 cursor : help; }
@@ -141,14 +166,6 @@ font-weight : bold; }
 
 dfn { 
 font-style : italic; }
-
-hr { 
-display : block; 
-margin : 1em 0; 
-padding : 0;
-height : 1px; 
-border : 0; 
-border-top : 1px solid @bordercolor; }
 
 ins { 
 background-color : lighten(@basecolor, 75%); 
@@ -167,7 +184,7 @@ kbd,
 samp { 
 font-family : @codefont;
 .font-size(14);
-line-height : @baseline; }
+line-height : @baselineheight; }
 
 pre { 
 white-space : pre; 
@@ -177,18 +194,13 @@ word-wrap : break-word; }
 q { 
 quotes : none; }
 
-q:before, 
-q:after { 
-content : ""; 
-content : none; }
-
 small { 
 .font-size(14); }
 
 sub, sup { 
+position : relative;
 .font-size(12);
 line-height : 0; 
-position : relative; 
 vertical-align : baseline; }
 
 sup { 
@@ -196,3 +208,12 @@ top : -.5em; }
 
 sub { 
 bottom : -.25em; }
+
+hr { 
+display : block; 
+margin : 1em 0; 
+padding : 0;
+height : 1px; 
+border : 0; 
+border-top : 1px solid @bordercolor;
+border-bottom : 1px solid @white; }

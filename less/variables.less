@@ -18,9 +18,10 @@
 
 @basefont : "Helvetica Neue", Helvetica, Arial, sans-serif;
 @basefontsize : 16;
-@baselineheight : 1.4em;
+@baselineheight : 1.5em;
 @baseheadingfont : inherit;
 @baseheadingfontweight : bold;
+@baseheadingfontcolor : inherit;
 
 @altfont : Cambria, Georgia, Times, "Times New Roman";
 @altlineheight : 1.35em;
@@ -64,22 +65,23 @@
 // tables 
 
 @tablebackground : transparent;
-@tablestripe : lighten(@basecolor, 30%);
-@tablehover : lighten(@basecolor, 40%);
+@tablestripe : lighten(@basecolor, 60%);
+@tablehover : lighten(@basecolor, 50%);
 @tableborder : lighten(@basecolor, 40%);
 
 // forms 
 
 @inputbackground : @white; 
-@inputborder : @basecolor;
-@inputhover : lighten(@basecolor, 40%);
-@inputfocus : lighten(@basecolor, 40%);
+@inputborder : lighten(@basecolor, 40%);
+@inputhover : lighten(@basecolor, 20%);
+@inputfocus : @basecolor, 40%;
 
 @placeholdercolor :  @lightgrey;
 
 // 6. LAYOUT 				==============================
 
-@baseline : 1.5em;
+@baseline : @baselineheight;
+@gutterwidth : 24px;
 
 //  7. VENDOR-SPECIFIC 		==============================
 //  8. MODERNIZR 			==============================

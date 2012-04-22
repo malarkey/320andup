@@ -21,11 +21,10 @@ $google = ($_GET['google']) ? str_replace(" ", "+", htmlspecialchars($_GET['goog
 <!doctype html>
 
 <!-- 
-320 and Up boilerplate extension
-Author: Andy Clarke (http://about.me/malarkey)
-Author: Keith Clark (http://twitter.com/keithclarkcouk)
+320 and Up by Andy Clarke
+Version: 3.0
 URL: http://stuffandnonsense.co.uk/projects/320andup/
-License: http://creativecommons.org/licenses/MIT/
+Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 PHP'd: Conor MacNeill (http://twitter.com/thefella)
 -->
 
