@@ -3,10 +3,10 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-
+//
 // Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com/
-
+// URL: http://sushiandrobots.com
+//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -15,69 +15,65 @@
 
 // ALERT ====================================================
 
+// For more alert styles:
+// http://twitter.github.com/bootstrap/components.html#alerts"
+// https://github.com/twitter/bootstrap/blob/master/less/alerts.less"
+
 .alert
-  margin-bottom: $baseline
+  margin-bottom: $baselineheight
   padding: 8px 35px 8px 14px
   background-color: $alertcolor
-  border: 1px solid darken($alertcolor, 20%)
-  +border-radius(2px, 2px, 2px, 2px)
-  +sans-serif
+  border: $alertborderwidth $alertborderstyle $alertbordercolor
+  +rounded(2px)
+  font-family: $basefont
   +font-size(14)
-  color: darken($alertcolor, 60%)
-
-.alert-heading
-  color: inherit
-
-.alert .close
-  position: relative
-  top: -2px
-  right: -21px
-  float: right
-  +font-size(21)
-  font-weight: bold
-  line-height: 18px
-  color: inherit
+  color: $alerttext
+  .alert-heading
+    color: inherit
+  .close
+    position: relative
+    top: -2px
+    right: -21px
+    float: right
+    +font-size(21)
+    font-weight: bold
+    line-height: 18px
+    color: inherit
 
 .alert-success
-  background-color: lighten($successcolor, 30%)
-  border: 1px solid lighten($successcolor, 20%)
-  color: darken($successcolor, 20%)
+  background-color: $alertsuccesscolor
+  border-color: $alertsuccessborder
+  color: $alertsuccesstext
 
 .alert-warning
-  background-color: lighten($warningcolor, 30%)
-  border: 1px solid lighten($warningcolor, 20%)
-  color: darken($warningcolor, 20%)
+  background-color: $alertwarningcolor
+  border-color: $alertwarningborder
+  color: $alertwarningtext
 
 .alert-error
-  background-color: lighten($dangercolor, 30%)
-  border: 1px solid lighten($dangercolor, 20%)
-  color: $dangercolor
-
-.alert-info
-  background-color: $infocolor
-  border: 1px solid darken($infocolor, 20%)
-  color: darken($infocolor, 50%)
+  background-color: $alerterrorcolor
+  border-color: $alerterrorborder
+  color: $alerterrortext
 
 .alert-inverse
-  background-color: $inverscolor
-  border: 1px solid $black
-  color: $white
+  background-color: $alertinversecolor
+  border-color: $alertinverseborder
+  color: $alertinversetext
+
+// alert block
 
 .alert-block
   padding-top: 14px
   padding-bottom: 14px
-
-.alert-block .alert-heading
-  margin-bottom: $baseline / 8
-  font-size: inherit
-  font-weight: bold
-
-.alert-block > p,
-.alert-block > ul
-  margin-bottom: 0
-
-.alert-block p + p
-  margin-top: 5px
+  .alert-heading
+    margin-bottom: $baselineheight / 8
+    font-size: inherit
+    font-weight: bold
+  > p,
+  > ul
+    margin-bottom: 0
+  p + p
+    margin-top: 5px
 
 // BADGES ====================================================
 
@@ -86,121 +82,68 @@
   +font-size(12)
   font-weight: bold
   white-space: nowrap
-  color: $white
-  background-color: $lightgrey
-  -webkit-border-radius: 9px
-  -moz-border-radius: 9px
-  border-radius: 9px
-
-.badge:hover
-  color: $white
-  text-decoration: none
-  cursor: pointer
+  color: $badgecolor
+  background-color: $badgebackground
+  +rounded(9px)
+  +transition(background-color 0.25s 0 linear)
+  &:hover
+    color: $badgecolor
+    text-decoration: none
+    cursor: pointer
 
 .badge-error
   background-color: $errorcolor
-
-.badge-error:hover
-  background-color: darken($errorcolor, 20%)
+  color: $white
+  &:hover
+    background-color: darken($errorcolor, 20%)
+    color: $white
 
 .badge-warning
   background-color: $warningcolor
-
-.badge-warning:hover
-  background-color: darken($warningcolor, 20%)
+  color: $white
+  &:hover
+    background-color: darken($warningcolor, 20%)
+    color: $white
 
 .badge-success
   background-color: $successcolor
-
-.badge-success:hover
-  background-color: darken($successcolor, 20%)
+  color: $white
+  &:hover
+    background-color: darken($successcolor, 20%)
+    color: $white
 
 .badge-info
   background-color: $infocolor
   color: darken($infocolor, 50%)
-
-.badge-info:hover
-  background-color: darken($infocolor, 20%)
+  &:hover
+    background-color: darken($infocolor, 20%)
 
 .badge-inverse
   background-color: $inverscolor
-
-.badge-inverse:hover
-  background-color: darken($inverscolor, 20%)
+  color: $white
+  &:hover
+    background-color: darken($inverscolor, 20%)
+    color: $white
 
 // GRADIENTS ====================================================
 
 =greygrad
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($white), to(darken($lightergrey, 5%)))
-  background-image: -webkit-linear-gradient(top, $white, darken($lightergrey, 5%))
-  background-image: -moz-linear-gradient(top, $white darken($lightergrey, 5%))
-  background-image: -ms-linear-gradient(top, $white, darken($lightergrey, 5%))
-  background-image: -o-linear-gradient(top, $white, darken($lightergrey, 5%))
-  background-image: linear-gradient(top, $white, darken($lightergrey, 5%))
-  background-repeat: repeat-x
-
-=linkgrad
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($linkcolor), to(darken($linkcolor, 10%)))
-  background-image: -webkit-linear-gradient(top, $linkcolor, darken($linkcolor, 10%))
-  background-image: -moz-linear-gradient(top, $linkcolor darken($linkcolor, 10%))
-  background-image: -ms-linear-gradient(top, $linkcolor, darken($linkcolor, 10%))
-  background-image: -o-linear-gradient(top, $linkcolor, darken($linkcolor, 10%))
-  background-image: linear-gradient(top, $linkcolor, darken($linkcolor, 10%))
-  background-repeat: repeat-x
+  +vertical($white, darken($lightergrey, 5%))
 
 =basegrad
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($basecolor), to(darken($basecolor, 10%)))
-  background-image: -webkit-linear-gradient(top, $basecolor, darken($basecolor, 10%))
-  background-image: -moz-linear-gradient(top, $basecolor darken($basecolor, 10%))
-  background-image: -ms-linear-gradient(top, $basecolor, darken($basecolor, 10%))
-  background-image: -o-linear-gradient(top, $basecolor, darken($basecolor, 10%))
-  background-image: linear-gradient(top, $basecolor, darken($basecolor, 10%))
-  background-repeat: repeat-x
-
-=dangergrad
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($dangercolor), to(darken($dangercolor, 10%)))
-  background-image: -webkit-linear-gradient(top, $dangercolor, darken($dangercolor, 10%))
-  background-image: -moz-linear-gradient(top, $dangercolor darken($dangercolor, 10%))
-  background-image: -ms-linear-gradient(top, $dangercolor, darken($dangercolor, 10%))
-  background-image: -o-linear-gradient(top, $dangercolor, darken($dangercolor, 10%))
-  background-image: linear-gradient(top, $dangercolor, darken($dangercolor, 10%))
-  background-repeat: repeat-x
+  +vertical($basecolor, darken($basecolor, 10%))
 
 =infograd
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($infocolor), to(darken($infocolor, 10%)))
-  background-image: -webkit-linear-gradient(top, $infocolor, darken($infocolor, 10%))
-  background-image: -moz-linear-gradient(top, $infocolor darken($infocolor, 10%))
-  background-image: -ms-linear-gradient(top, $infocolor, darken($infocolor, 10%))
-  background-image: -o-linear-gradient(top, $infocolor, darken($infocolor, 10%))
-  background-image: linear-gradient(top, $infocolor, darken($infocolor, 10%))
-  background-repeat: repeat-x
+  +vertical($infocolor, darken($infocolor, 10%))
 
 =inversegrad
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($inverscolor), to(darken($inverscolor, 10%)))
-  background-image: -webkit-linear-gradient(top, $inverscolor, darken($inverscolor, 10%))
-  background-image: -moz-linear-gradient(top, $inverscolor darken($inverscolor, 10%))
-  background-image: -ms-linear-gradient(top, $inverscolor, darken($inverscolor, 10%))
-  background-image: -o-linear-gradient(top, $inverscolor, darken($inverscolor, 10%))
-  background-image: linear-gradient(top, $inverscolor, darken($inverscolor, 10%))
-  background-repeat: repeat-x
+  +vertical($inverscolor, darken($inverscolor, 10%))
 
 =successgrad
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($successcolor), to(darken($successcolor, 10%)))
-  background-image: -webkit-linear-gradient(top, $successcolor, darken($successcolor, 10%))
-  background-image: -moz-linear-gradient(top, $successcolor darken($successcolor, 10%))
-  background-image: -ms-linear-gradient(top, $successcolor, darken($successcolor, 10%))
-  background-image: -o-linear-gradient(top, $successcolor, darken($successcolor, 10%))
-  background-image: linear-gradient(top, $successcolor, darken($successcolor, 10%))
-  background-repeat: repeat-x
+  +vertical($successcolor, darken($successcolor, 10%))
 
 =warninggrad
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($warningcolor), to(darken($warningcolor, 10%)))
-  background-image: -webkit-linear-gradient(top, $warningcolor, darken($warningcolor, 10%))
-  background-image: -moz-linear-gradient(top, $warningcolor darken($warningcolor, 10%))
-  background-image: -ms-linear-gradient(top, $warningcolor, darken($warningcolor, 10%))
-  background-image: -o-linear-gradient(top, $warningcolor, darken($warningcolor, 10%))
-  background-image: linear-gradient(top, $warningcolor, darken($warningcolor, 10%))
-  background-repeat: repeat-x
+  +vertical($warningcolor, darken($warningcolor, 10%))
 
 // For additional gradients see: https://github.com/twitter/bootstrap/blob/master/less/mixins.less
 
@@ -209,18 +152,17 @@
 .well
   min-height: 21px
   padding: 11px
-  margin-bottom: $baseline
-  background-color: lighten($basecolor, 75%)
-  border: 1px solid lighten($basecolor, 60%)
-  +border-radius(4px, 4px, 4px, 4px)
-  +box-shadow(inset 0 1px 11px rgba(0, 0, 0, 0.15))
+  margin-bottom: $baselineheight
+  background-color: $wellbackground
+  border: $wellborderwidth $wellborderstyle $wellbordercolor
+  +rounded(4px)
+  +box-shadow(inset 0 1px $wellshadowblur $wellshadow)
+  p:last-child
+    margin-bottom: 0
 
 .well-large
   padding: 22px
 
 .well-small
   padding: 6px
-  +border-radius(2px, 2px, 2px, 2px)
-
-.well p:last-child
-  margin-bottom: 0
+  +rounded(2px)

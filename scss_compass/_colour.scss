@@ -1,0 +1,39 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+//
+// Sass Port by Jina Bolton
+// URL: http://sushiandrobots.com
+//
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Colour =================================================== */
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+// 3. COLOUR 				==============================
+
+a {
+  @include hover-link;
+  @include link-colors($linkcolor, $linkcolorhover, $linkcolorfocus, $linkcolorvisited, $linkcolorfocus);
+
+  &:focus {
+    outline : thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    @include reset-focus;
+  }
+}
+
+// 4. TEXTURE 				==============================
+// 5. ELEMENTS 				==============================
+// 6. LAYOUT 				==============================
+// 7. VENDOR-SPECIFIC 		==============================
+// 8. MODERNIZR 			==============================
+// 9. TEMPLATE SPECIFICS 	==============================

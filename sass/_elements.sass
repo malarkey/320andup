@@ -3,10 +3,10 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-
+//
 // Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com/
-
+// URL: http://sushiandrobots.com
+//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -14,6 +14,17 @@
 /* Elements ===================================================
 
 // FIGURES & IMAGES =============================================================================
+
+hr
+  display: block
+  margin: 1em 0
+  padding: 0
+  height: 1px
+  border: 0
+  border-top: 1px solid $bordercolor
+  border-bottom: 1px solid $white
+
+// img
 
 img
   max-width: 100%
@@ -24,31 +35,29 @@ img
 svg:not(:root)
   overflow: hidden
 
+// figure
+
 figure
-  margin-bottom: $baseline
-
-figure img
-  margin-bottom: $baseline / 4
-
-figcaption
-  display: block
-  font-weight: normal
-  +font-size(14)
-  color: $grey
+  margin-bottom: $baselineheight
+  figure img
+    margin-bottom: $baselineheight / 4
+  figcaption
+    display: block
+    font-weight: normal
+    +font-size(14)
+    color: $grey
 
 // list-bordered
 
 .list-bordered
   list-style-type: none
-  margin: 0 0 $baseline 0
+  margin: 0 0 $baselineheight 0
   padding: 0
-
-.list-bordered li
-  margin-bottom: $baseline / 4
-  padding-bottom: $baseline / 4
-  border-bottom: 1px dashed lighten($basecolor, 60%)
-
-.list-bordered li:last-child
-  margin-bottom: 0
-  padding-bottom: 0
-  border-bottom-width: 0
+  li
+    margin-bottom: $baselineheight / 4
+    padding-bottom: $baselineheight / 4
+    border-bottom: 1px dashed $bordercolor
+    &:last-child
+      margin-bottom: 0
+      padding-bottom: 0
+      border-bottom-width: 0

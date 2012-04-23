@@ -3,10 +3,10 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-
+//
 // Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com/
-
+// URL: http://sushiandrobots.com
+//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -16,7 +16,7 @@
 // 1. ROOT 					==============================
 
 html
-  background: $white
+  background: $bodycolor
   font-size: 62.5%
   -webkit-overflow-scrolling: touch
   -webkit-tap-highlight-color: lighten($basecolor, 75%)
@@ -27,11 +27,11 @@ body
   margin: 0
   padding: 0
   width: 100%
-  +font-size
-  +sans-serif
-  line-height: 1.4
-  color: $darkgrey
   background-color: transparent
+  font-family: $basefont
+  +font-size
+  line-height: $baselineheight
+  color: $textcolor
 
 // 2. TYPOGRAPHY 			==============================
 // 3. COLOUR 				==============================

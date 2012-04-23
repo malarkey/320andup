@@ -3,10 +3,10 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-
+//
 // Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com/
-
+// URL: http://sushiandrobots.com
+//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -18,21 +18,19 @@
 // 3. COLOUR 				==============================
 
 a
+  text-decoration: none
   color: $linkcolor
-
-a:visited
-  color: $linkcolorvisited
-
-a:hover
-  color: $linkcolorhover
-
-a:focus
-  outline: thin dotted
-  color: $linkcolorfocus
-
-a:hover, 
-a:active
-  outline: 0
+  &:visited
+    color: $linkcolorvisited
+  &:hover
+    text-decoration: underline
+    color: $linkcolorhover
+  &:focus
+    outline: thin dotted
+    color: $linkcolorfocus
+  &:hover,
+  &:active
+    outline: 0
 
 // 4. TEXTURE 				==============================
 // 5. ELEMENTS 				==============================

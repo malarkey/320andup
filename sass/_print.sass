@@ -3,10 +3,10 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-
+//
 // Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com/
-
+// URL: http://sushiandrobots.com
+//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -47,15 +47,14 @@ abbr[title]:after
 
 // 3. COLOUR 				==============================
 
-a, a:visited
-  text-decoration: underline
-
-a[href]:after
-  content: " (" attr(href) ")"
-
-a[href^="javascript:"]:after, 
-a[href^="#"]:after
-  content: ""
+a
+  &, &:visited
+    text-decoration: underline
+  &[href]:after
+    content: " (" attr(href) ")"
+  &[href^="javascript:"]:after,
+  &[href^="#"]:after
+    content: ""
 
 // 4. TEXTURE 				==============================
 

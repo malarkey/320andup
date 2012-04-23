@@ -3,10 +3,10 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-
+//
 // Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com/
-
+// URL: http://sushiandrobots.com
+//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -15,129 +15,152 @@
 
 // HEADINGS ====================================================
 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6
-  font-weight: 200
+  margin: 0
+  font-family: $baseheadingfont
+  font-weight: $baseheadingfontweight
+  color: $baseheadingfontcolor
   text-rendering: optimizelegibility
 
 h1,
+h2
+  small
+    font-weight: normal
+    color: $lightgrey
+
+h1,
 .h1
-  margin-bottom: $baseline / 2
+  margin-bottom: $baselineheight / 2
   +font-size(32)
   line-height: 1.2
 
 h2,
 .h2
-  margin-bottom: $baseline / 2
+  margin-bottom: $baselineheight / 2
   +font-size(24)
   line-height: 1.2
 
 h3,
 .h3
-  margin-bottom: $baseline / 1.5
+  margin-bottom: $baselineheight / 1.5
   +font-size(21)
   line-height: 1.3
 
 h4,
 .h4
-  margin-bottom: $baseline
+  margin-bottom: $baselineheight
   +font-size(18)
   line-height: 1.25
 
 h5,
 .h5
-  margin-bottom: $baseline
   +font-size(16)
+  margin-bottom: $baselineheight
 
 h6,
 .h6
-  margin-bottom: $baseline
-  +font-size(12)
+  margin-bottom: $baselineheight
+  +font-size(14)
   font-weight: normal
   letter-spacing: 1px
   text-transform: uppercase
 
 // header
 
-.header h1,
-.header h2
-  float: left
-  margin-right: 24px
+.header
+  h1, h2, h3
+    float: left
+    margin-right: $gutterwidth
+  a
+    display: block
+    position: relative
+    top: 6px
+    float: right
+    padding: 4px 12px
+    +font-size(14)
+    background-color: lighten($basecolor, 75%)
+  &:hover
+    background-color: lighten($basecolor, 75%)
 
-.header h1,
-.header h2,
-.header h3
-  float: left
-  margin-right: 24px
-
-.header a
-  display: block
-  position: relative
-  top: 6px
-  float: right
-  padding: 4px 12px
-  +font-size(14)
-  background-color: lighten($basecolor, 75%)
-
-.header a:hover
-  background-color: lighten($basecolor, 75%)
-
-.header .a-rss,
-.header .a-rss:hover
-  float: left
-  width: 16px
-  height: 16px
-  padding: 0
-  background: transparent url(../img/a-rss.png) no-repeat 0 0
-  +hide-text
+.header
+  .a-rss
+    &, &:hover
+      float: left
+      width: 16px
+      height: 16px
+      padding: 0
+      background: transparent url(../img/a-rss.png) no-repeat 0 0
+      +hide-text
 
 // TYPOGRAPHY ====================================================
 
-p, 
-ol, 
-ul, 
-dl, 
+p,
+ol,
+ul,
+dl,
 address
-  margin-bottom: $baseline
+  margin-bottom: $baselineheight
+  +font-size(14)
+  line-height: $baselineheight
+
+small
   +font-size(14)
 
-ul, 
+ul,
 ol
-  margin: 0 0 $baseline -24px
-  padding: 0 0 0 24px
+  margin: 0 0 $baselineheight #{-$gutterwidth}
+  padding: 0 0 0 $gutterwidth
+  li &
+    margin: 0
+    +font-size(16)
 
-li ul, 
-li ol
-  margin: 0
-  +font-size(16)
-
-dl, 
-dd
-  margin-bottom: $baseline
-
-dt
-  font-weight: normal
+// blockquote
 
 blockquote
-  margin: 0 0 $baseline -24px
-  padding-left: 24px
-  border-left: 1px solid lighten($basecolor, 60%)
-  +serif
+  margin: 0 0 $baselineheight #{-$gutterwidth}
+  padding-left: $gutterwidth
+  border-left: 2px solid $bordercolor
+  font-family: $altfont
   font-style: normal
 
-blockquote:before, 
-blockquote:after, 
-q:before, 
-q:after
-  content: ''
-  content: none
+q
+  quotes: none
+
+blockquote, q
+  &:before, &:after
+    content: ''
+    content: none
+
+cite
+  font-style: normal
+
+// definition lists
+
+dl,
+dd
+  margin-bottom: $baselineheight
+
+dt
+  font-weight: bold
+
+.dl-horizontal
+  dt
+    float: left
+    clear: left
+    width: 20.25%
+    text-align: right
+  .dl-horizontal dd
+    margin-left: 22.78%
+
+// text-level
 
 abbr[title]
-  border-bottom: 1px dotted lighten($basecolor, 60%)
+  border-bottom: 1px dotted $bordercolor
   cursor: help
 
 b, strong
@@ -146,54 +169,36 @@ b, strong
 dfn
   font-style: italic
 
-hr
-  display: block
-  margin: 1em 0
-  padding: 0
-  height: 1px
-  border: 0
-  border-top: 1px solid lighten($basecolor, 60%)
-
 ins
   background-color: lighten($basecolor, 75%)
-  color: $black
+  color: $textcolor
   text-decoration: none
 
 mark
   background-color: lighten($basecolor, 75%)
-  color: $black
+  color: $textcolor
   font-style: italic
   font-weight: bold
 
-pre, 
-code, 
-kbd, 
+pre,
+code,
+kbd,
 samp
-  +monospace
+  font-family: $codefont
   +font-size(14)
-  line-height: $baseline
+  line-height: $baselineheight
 
 pre
   white-space: pre
   white-space: pre-wrap
   word-wrap: break-word
 
-q
-  quotes: none
-
-q:before, 
-q:after
-  content: ""
-  content: none
-
-small
-  +font-size(14)
-
-sub, sup
+sub,
+sup
+  position: relative
   +font-size(12)
   line-height: 0
-  position: relative
-  vertical-align: baseline
+  vertical-align: baselineheight
 
 sup
   top: -0.5em

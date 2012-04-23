@@ -21,11 +21,10 @@ $google = ($_GET['google']) ? str_replace(" ", "+", htmlspecialchars($_GET['goog
 <!doctype html>
 
 <!-- 
-320 and Up boilerplate extension
-Author: Andy Clarke (http://about.me/malarkey)
-Author: Keith Clark (http://twitter.com/keithclarkcouk)
+320 and Up by Andy Clarke
+Version: 3.0
 URL: http://stuffandnonsense.co.uk/projects/320andup/
-License: http://creativecommons.org/licenses/MIT/
+Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 PHP'd: Conor MacNeill (http://twitter.com/thefella)
 -->
 
@@ -64,36 +63,36 @@ p.caption { display : inline-block; padding : 6px; font-size : 12px; text-transf
 article { overflow : hidden; }
 span.font-name { display : block; font-size : 14px; color : #ccc; padding-bottom : 0.25em; }
 @media only screen and (min-width: 480px) { 
-	article { float : left; width : <?=$width?>%; }
+	article { float : left; width : <?php echo $width ?>%; }
 	<?php if ($count > 1) : ?>article div, article h2 { margin-left : 10%; margin-right : 10%; } <?php endif; ?>
 }
 </style>
 <?php if (isset($typekit)) : ?>
-<script type="text/javascript" src="http://use.typekit.com/<?=$typekit?>.js"></script>
+<script type="text/javascript" src="http://use.typekit.com/<?php echo $typekit ?>.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <?php endif; ?>
 <?php if (isset($google)) : ?>
-<link href="http://fonts.googleapis.com/css?family=<?=$google?>" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=<?php echo $google ?>" rel="stylesheet" type="text/css">
 <?php endif; ?>
 </head>
 
 <body>
 <?php foreach ($fonts as $font) : ?>
-<article id="<?=str_replace(" ", "", strtolower($font))?>" style="font-family:'<?=$font?>';">
+<article id="<?php echo str_replace(" ", "", strtolower($font)) ?>" style="font-family:'<?php echo $font ?>';">
 
-<h2><span class="font-name"><?=$font?></span> Type readability reference</h2>
+<h2><span class="font-name"><?php echo $font ?></span> Type readability reference</h2>
 <?php foreach ($normal as $size) : ?>
-<div><p style="font-size:<?=$size?>px">When a new medium borrows from an existing one, some of what it borrows makes sense, but much of the borrowing is thoughtless, &#8220;ritual&#8221;, and often constrains the new medium. Over time, the new medium develops its own conventions, throwing off existing conventions that don&#8217;t make sense.</p><p class="caption"><?=$size?>px</p></div>
+<div><p style="font-size:<?php echo $size ?>px">When a new medium borrows from an existing one, some of what it borrows makes sense, but much of the borrowing is thoughtless, &#8220;ritual&#8221;, and often constrains the new medium. Over time, the new medium develops its own conventions, throwing off existing conventions that don&#8217;t make sense.</p><p class="caption"><?php echo $size ?>px</p></div>
 <?php endforeach; ?>
 
-<h2><span class="font-name"><?=$font?></span> Heading word wrap reference</h2>
+<h2><span class="font-name"><?php echo $font ?></span> Heading word wrap reference</h2>
 <?php foreach ($heading as $size) : ?>
-<div><h3 style="font-size:<?=$size?>px">When a new medium borrows from an existing one</h3><p class="caption"><?=$size?>px</p></div>
+<div><h3 style="font-size:<?php echo $size ?>px">When a new medium borrows from an existing one</h3><p class="caption"><?php echo $size ?>px</p></div>
 <?php endforeach; ?>
 
-<h2><span class="font-name"><?=$font?></span> Small type size reference</h2>
+<h2><span class="font-name"><?php echo $font ?></span> Small type size reference</h2>
 <?php foreach ($normal as $size) : ?>
-<div><p style="font-size:<?=$size?>px">Small type size reference</p><p class="caption"><?=$size?>px</p></div>
+<div><p style="font-size:<?php echo $size ?>px">Small type size reference</p><p class="caption"><?php echo $size ?>px</p></div>
 <?php endforeach; ?>
 
 </article>
@@ -170,7 +169,7 @@ var Detector = function(){
 var detective = new Detector();
 <?php foreach ($fonts as $font) : ?>
 var colour,title;
-if (detective.detect('<?=$font?>') === true) {
+if (detective.detect('<?php echo $font ?>') === true) {
 	colour = '#6fbf4d';
 	title = "Your font should be displayed!";
 } else {
@@ -178,7 +177,7 @@ if (detective.detect('<?=$font?>') === true) {
 	title = "Dammit, your font is missing.";
 }
 var box = '<span style="display:inline-block; width:9px; height:9px; margin-right:6px; background-color:'+colour+';" title="'+title+'"></span>';
-var element = $("#<?=str_replace(" ", "", strtolower($font))?> h2 span");
+var element = $("#<?php echo str_replace(" ", "", strtolower($font)) ?> h2 span");
 element.prepend(box);
 <?php endforeach; ?>
 </script>

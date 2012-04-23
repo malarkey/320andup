@@ -3,10 +3,10 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-
+//
 // Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com/
-
+// URL: http://sushiandrobots.com
+//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -15,188 +15,206 @@
 
 // HEADINGS ====================================================
 
-h1, 
-h2, 
-h3, 
-h4, 
-h5, 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
-font-weight : 200;
+margin : 0;
+font-family : $baseheadingfont;
+font-weight : $baseheadingfontweight;
+color : $baseheadingfontcolor;
 text-rendering : optimizelegibility; }
 
 h1,
-.h1 { 
-margin-bottom : $baseline / 2;
+h2 {
+small {
+font-weight : normal;
+color : $lightgrey; }
+}
+
+h1,
+.h1 {
+margin-bottom : $baselineheight / 2;
 @include font-size(32);
 line-height : 1.2; }
 
 h2,
-.h2 { 
-margin-bottom : $baseline / 2;
+.h2 {
+margin-bottom : $baselineheight / 2;
 @include font-size(24);
 line-height : 1.2; }
 
 h3,
-.h3 { 
-margin-bottom : $baseline / 1.5;
+.h3 {
+margin-bottom : $baselineheight / 1.5;
 @include font-size(21);
 line-height : 1.3; }
 
 h4,
-.h4 { 
-margin-bottom : $baseline;
+.h4 {
+margin-bottom : $baselineheight;
 @include font-size(18);
 line-height : 1.25; }
 
 h5,
-.h5 { 
-margin-bottom : $baseline;
-@include font-size(16);  }
+.h5 {
+@include font-size(16);
+margin-bottom : $baselineheight; }
 
 h6,
-.h6 { 
-margin-bottom : $baseline;
-@include font-size(12); 
+.h6 {
+margin-bottom : $baselineheight;
+@include font-size(14);
 font-weight : normal;
 letter-spacing : 1px;
 text-transform : uppercase; }
 
 // header
 
-.header h1,
-.header h2 {
-float : left; 
-margin-right : 24px; }
+.header {
+h1, h2, h3 {
+float : left;
+margin-right : $gutterwidth;
+}
 
-.header h1,
-.header h2,
-.header h3 {
-float : left; 
-margin-right : 24px; }
-
-.header a {
+a {
 display : block;
 position : relative;
 top : 6px;
-float : right;
+float: right;
 padding : 4px 12px;
 @include font-size(14);
 background-color : lighten($basecolor, 75%); }
 
-.header a:hover {
+&:hover {
 background-color : lighten($basecolor, 75%); }
+}
 
-.header .a-rss,
-.header .a-rss:hover {
-float : left; 
+.header {
+.a-rss {
+&, &:hover {
+float : left;
 width : 16px;
 height : 16px;
 padding : 0;
 background : transparent url(../img/a-rss.png) no-repeat 0 0;
 @include hide-text; }
+}
+}
 
 // TYPOGRAPHY ====================================================
 
-p, 
-ol, 
-ul, 
-dl, 
-address { 
-margin-bottom : $baseline; 
+p,
+ol,
+ul,
+dl,
+address {
+margin-bottom : $baselineheight;
+@include font-size(14);
+line-height : $baselineheight; }
+
+small {
 @include font-size(14); }
 
-ul, 
-ol { 
-margin : 0 0 $baseline -24px; 
-padding : 0 0 0 24px; }
+ul,
+ol {
+margin : 0 0 $baselineheight #{-$gutterwidth};
+padding : 0 0 0 $gutterwidth;
 
-li ul, 
-li ol { 
+li & {
 margin : 0;
 @include font-size(16); }
+}
 
-dl, 
-dd { 
-margin-bottom : $baseline;  }
+// blockquote
 
-dt { 
-font-weight : normal; }
-
-blockquote  { 
-margin : 0 0 $baseline -24px; 
-padding-left : 24px; 
-border-left : 1px solid lighten($basecolor, 60%);
-@include serif();
+blockquote  {
+margin : 0 0 $baselineheight #{-$gutterwidth};
+padding-left : $gutterwidth;
+border-left : 2px solid $bordercolor;
+font-family : $altfont;
 font-style : normal; }
 
-blockquote:before, 
-blockquote:after, 
-q:before, 
-q:after {
-content : '';
-content : none; }
-
-abbr[title] { 
-border-bottom : 1px dotted lighten($basecolor, 60%); 
-cursor : help; }
-
-b, strong { 
-font-weight : bold; }
-
-dfn { 
-font-style : italic; }
-
-hr { 
-display : block; 
-margin : 1em 0; 
-padding : 0;
-height : 1px; 
-border : 0; 
-border-top : 1px solid lighten($basecolor, 60%); }
-
-ins { 
-background-color : lighten($basecolor, 75%); 
-color : $black; 
-text-decoration : none; }
-
-mark { 
-background-color : lighten($basecolor, 75%); 
-color : $black; 
-font-style : italic; 
-font-weight : bold; }
-
-pre, 
-code, 
-kbd, 
-samp { 
-@include monospace;
-@include font-size(14);
-line-height : $baseline; }
-
-pre { 
-white-space : pre; 
-white-space : pre-wrap; 
-word-wrap : break-word; }
-
-q { 
+q {
 quotes : none; }
 
-q:before, 
-q:after { 
-content : ""; 
+blockquote, q {
+&:before, &:after {
+content : '';
 content : none; }
+}
 
-small { 
-@include font-size(14); }
+cite {
+font-style : normal; }
 
-sub, sup { 
+// definition lists
+
+dl,
+dd {
+margin-bottom : $baselineheight;  }
+
+dt {
+font-weight : bold; }
+
+.dl-horizontal {
+
+dt {
+float : left;
+clear : left;
+width : 20.25%;
+text-align : right; }
+
+.dl-horizontal dd {
+margin-left : 22.78%; }
+}
+
+// text-level
+
+abbr[title] {
+border-bottom : 1px dotted $bordercolor;
+cursor : help; }
+
+b, strong {
+font-weight : bold; }
+
+dfn {
+font-style : italic; }
+
+ins {
+background-color : lighten($basecolor, 75%);
+color : $textcolor;
+text-decoration : none; }
+
+mark {
+background-color : lighten($basecolor, 75%);
+color : $textcolor;
+font-style : italic;
+font-weight : bold; }
+
+pre,
+code,
+kbd,
+samp {
+font-family : $codefont;
+@include font-size(14);
+line-height : $baselineheight; }
+
+pre {
+white-space : pre;
+white-space : pre-wrap;
+word-wrap : break-word; }
+
+sub,
+sup {
+position : relative;
 @include font-size(12);
-line-height : 0; 
-position : relative; 
-vertical-align : baseline; }
+line-height : 0;
+vertical-align : baselineheight; }
 
-sup { 
+sup {
 top : -.5em; }
 
-sub { 
+sub {
 bottom : -.25em; }

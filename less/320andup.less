@@ -3,10 +3,6 @@
 320 and Up by Andy Clarke
 Version: 3.0
 URL: http://stuffandnonsense.co.uk/projects/320andup/
-
-Sass Port by Jina Bolton
-URL: http://sushiandrobots.com/
-
 Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 ============================================================ */
@@ -20,7 +16,7 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 @import "variables";
 @import "mixins";
 
-// Site level styles (html, body)
+// Site wide styles (html, body)
 @import "site";
 
 // 2. TYPOGRAPHY 			==============================
@@ -46,7 +42,7 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 // Figures, images and other elements
 @import "elements";
 
-// Standard foem controls
+// Standard form controls
 @import "forms";
 
 // Button styles (optional)
@@ -63,7 +59,7 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 //  7. VENDOR-SPECIFIC 		==============================
 //  8. MODERNIZR 			==============================
 
-@import "modernizr";
+// @import "modernizr";
 
 //  9. TEMPLATE SPECIFICS 	==============================
 //  10. MEDIA QUERIES 		==============================
@@ -101,7 +97,8 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 @media
 only screen and (-webkit-min-device-pixel-ratio: 1.5), 
 only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {}
+only screen and (min-device-pixel-ratio: 1.5) {
+@import "2x"; }
 
 //  11. UPSTARTS 			==============================
 
