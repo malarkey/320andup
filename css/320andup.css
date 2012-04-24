@@ -285,7 +285,7 @@ dt {
   width: 20.25%;
   text-align: right;
 }
-.dl-horizontal .dl-horizontal dd {
+.dl-horizontal dd {
   margin-left: 22.78%;
 }
 abbr[title] {
@@ -357,6 +357,16 @@ a:focus {
 a:hover,
 a:active {
   outline: 0;
+}
+::-moz-selection {
+  background-color: #d6dbe1;
+  color: #2d353e;
+  text-shadow: none;
+}
+::selection {
+  background-color: #d6dbe1;
+  color: #2d353e;
+  text-shadow: none;
 }
 /* Texture =================================================== */
 .alert {
@@ -1096,7 +1106,7 @@ svg:not(:root) {
 figure {
   margin-bottom: 1.5em;
 }
-figure figure img {
+figure img {
   margin-bottom: 0.375em;
 }
 figure figcaption {
