@@ -10,87 +10,87 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 // 1. ROOT 					==============================
 
 // CSS reset
-@import "reset";
+@import "reset.less";
 
 // Variables and mixins
-@import "variables";
-@import "mixins";
+@import "variables.less";
+@import "mixins.less";
 
 // Site wide styles (html, body)
-@import "site";
+@import "site.less";
 
 // 2. TYPOGRAPHY 			==============================
 
 // Block level (h1, p) and text-level (em, strong) type
-@import "typography";
+@import "typography.less";
 
 // 3. COLOUR 				==============================
 
 // Colour interaction semantics
-@import "colour";
+@import "colour.less";
 
 // 4. TEXTURE 				==============================
 
 // Alerts, badges, boxes and gradients
-@import "texture";
+@import "texture.less";
 
 // Font Awesome icon fonts (optional)
-@import "font-awesome";
+@import "font-awesome.less";
 
 // 5. ELEMENTS 				==============================
 
 // Figures, images and other elements
-@import "elements";
+@import "elements.less";
 
 // Standard form controls
-@import "forms";
+@import "forms.less";
 
 // Button styles (optional)
-@import "buttons";
+@import "buttons.less";
 
 // Tables
-@import "tables";
+@import "tables.less";
 
 // 6. LAYOUT 			==============================
 
 // Page level layout styles (banner, navigation, content, contentinfo)
-@import "page";
+@import "page.less";
 
 //  7. VENDOR-SPECIFIC 		==============================
 //  8. MODERNIZR 			==============================
 
-// @import "modernizr";
+// @import "modernizr.less";
 
 //  9. TEMPLATE SPECIFICS 	==============================
 //  10. MEDIA QUERIES 		==============================
 
 @media print {
-@import "print";
+@import "print.less";
 }
 
 // 480px
 @media only screen and (min-width: 480px) {
-@import "480";
+@import "480.less";
 }
 
 // 600px
 @media only screen and (min-width: 600px) {
-@import "600";
+@import "600.less";
 }
 
 // 768px
 @media only screen and (min-width: 768px) {
-@import "768";
+@import "768.less";
 }
 
 // 992px
 @media only screen and (min-width: 992px) {
-@import "992";
+@import "992.less";
 }
 
 // 1382px
 @media only screen and (min-width: 1382px) {
-@import "1382";
+@import "1382.less";
 }
 
 // 2x
@@ -98,9 +98,9 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 only screen and (-webkit-min-device-pixel-ratio: 1.5), 
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
-@import "2x"; }
+@import "2x.less"; }
 
 //  11. UPSTARTS 			==============================
 
-@import "upstarts/320andup-modules/upstart";
-@import "upstarts/320andup-panels/upstart";
+@import "upstarts/320andup-modules/upstart.less";
+@import "upstarts/320andup-panels/upstart.less";
