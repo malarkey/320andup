@@ -1,10 +1,6 @@
 // ==========================================================
 
 /* Font Awesome: http://fortawesome.github.com/Font-Awesome/
-/*
-/* Sass Port by Jina Bolton
-/* URL: http://sushiandrobots.com
-/*
 
 License
 -------------------------------------------------------
@@ -98,7 +94,7 @@ text-indent: -4/3em;
 
 /*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
     readers do not read off random characters that represent icons */
-
+    
 .icon-glass:before              { content: "\f000"; }
 .icon-music:before              { content: "\f001"; }
 .icon-search:before             { content: "\f002"; }

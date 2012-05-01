@@ -3,10 +3,6 @@
 320 and Up by Andy Clarke
 Version: 3.0
 URL: http://stuffandnonsense.co.uk/projects/320andup/
-
-Sass Port by Jina Bolton
-URL: http://sushiandrobots.com
-
 Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 ============================================================ */
@@ -20,7 +16,8 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 @import "reset";
 
 // Variables and mixins
-@import "variables", "mixins";
+@import "variables";
+@import "mixins";
 
 // Site wide styles (html, body)
 @import "site";
@@ -71,32 +68,32 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 //  10. MEDIA QUERIES 		==============================
 
 @media print {
-  @import "print";
+@import "print";
 }
 
 // 480px
 @media only screen and (min-width: 480px) {
-  @import "480";
+@import "480";
 }
 
 // 600px
 @media only screen and (min-width: 600px) {
-  @import "600";
+@import "600";
 }
 
 // 768px
 @media only screen and (min-width: 768px) {
-  @import "768";
+@import "768";
 }
 
 // 992px
 @media only screen and (min-width: 992px) {
-  @import "992";
+@import "992";
 }
 
 // 1382px
 @media only screen and (min-width: 1382px) {
-  @import "1382";
+@import "1382";
 }
 
 // 2x
@@ -104,9 +101,9 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
-  @import "2x";
-}
+@import "2x"; }
 
 //  11. UPSTARTS 			==============================
 
-@import "upstarts/320andup-modules/upstart", "upstarts/320andup-panels/upstart";
+@import "upstarts/320andup-modules/upstart";
+@import "upstarts/320andup-panels/upstart";

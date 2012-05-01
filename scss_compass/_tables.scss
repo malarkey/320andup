@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -14,85 +10,81 @@
 /* Tables =================================================== */
 
 table {
-  width : 100%;
-  max-width : 100%;
-  margin-bottom : $baselineheight;
-  @include reset-table;
-  background-color : $tablebackground;
+width : 100%;
+max-width : 100%;
+margin-bottom : $baselineheight;
+border-collapse : collapse;
+border-spacing : 0;
+background-color : $tablebackground;
 
-  th,
-  td {
-    padding : 8px;
-    vertical-align : top;
-    border-top : $tableborderwidth $tableborderstyle $tableborder;
-    @include font-size(14);
-    line-height : $baselineheight;
-    text-align : left;
-  }
+th,
+td {
+padding : 8px;
+vertical-align : top;
+border-top : $tableborderwidth $tableborderstyle $tableborder;
+@include font-size(14);
+line-height : $baselineheight;
+text-align : left; }
 
-  th {
-    font-weight : bold;
+th {
+font-weight : bold; }
 
-    thead & {
-      vertical-align : bottom;
-    }
-  }
+thead th {
+vertical-align : bottom; }
 
-  #{append-selector('colgroup + thead tr, thead:first-child tr', ':first-child th, :first-child td')} {
-    border-top : 0;
-  }
+colgroup + thead tr:first-child th,
+colgroup + thead tr:first-child td,
+thead:first-child tr:first-child th,
+thead:first-child tr:first-child td {
+border-top : 0; }
 
-  tbody {
-    & + & {
-      border-top : $tableborderwidth * 2 $tableborderstyle $tableborder;
-    }
+tbody + tbody {
+border-top : $tableborderwidth * 2 $tableborderstyle $tableborder; }
 
-    tr {
-      td, th {
-        @include transition(background-color .25s 0 linear);
-      }
+tbody tr td,
+tbody tr th {
+@include transition(background-color .25s 0 linear); }
 
-      &:hover {
-        td, th {
-          background-color : $tablehover;
-        }
-      }
-    }
-  }
+tbody tr:hover td,
+tbody tr:hover th {
+background-color : $tablehover; }
 }
 
 // CONDENSED ====================================================
 
 .table-condensed {
 
-  th,
-  td {
-    padding : 4px 5px;
-  }
+th,
+td {
+padding : 4px 5px; }
 }
 
 // BORDERED ====================================================
 
 .table-bordered {
-  border : $tableborderwidth $tableborderstyle $tableborder {
-    left : 0;
-    collapse : separate;
-  }
-  *border-collapse : collapsed;
+border : $tableborderwidth $tableborderstyle $tableborder;
+border-left : 0;
+border-collapse : separate;
+*border-collapse : collapsed;
 
-  th,
-  td {
-    border-left : $tableborderwidth $tableborderstyle $tableborder;
-  }
+th,
+td {
+border-left : $tableborderwidth $tableborderstyle $tableborder; }
 
-  #{nest("thead:first-child, tbody:first-child', 'tr:first-child th")},
-  tbody:first-child tr:first-child td {
-    border-top : 0;
-  }
+thead:first-child tr:first-child th,
+tbody:first-child tr:first-child th,
+tbody:first-child tr:first-child td {
+border-top : 0; }
 }
 
 // STRIPED ====================================================
 
-#{nest(".table-striped tbody tr:nth-child(odd)', 'td, th")} {
-  background-color : $tablestripe;
+.table-striped {
+
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+background-color : $tablestripe; }
 }
+
+
+

@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -16,62 +12,54 @@
 // FIGURES & IMAGES =============================================================================
 
 hr {
-  display : block;
-  margin : 1em 0;
-  padding : 0;
-  height : 1px;
-  border: 0 {
-    top : 1px solid $bordercolor;
-    bottom : 1px solid $white;
-  }
-}
+display : block;
+margin : 1em 0;
+padding : 0;
+height : 1px;
+border : 0;
+border-top : 1px solid $bordercolor;
+border-bottom : 1px solid $white; }
 
 // img
 
 img {
-  max-width : 100%;
-  border-width : 0;
-  vertical-align : middle;
-  -ms-interpolation-mode : bicubic;
-}
+max-width : 100%;
+border-width : 0;
+vertical-align : middle;
+-ms-interpolation-mode : bicubic; }
 
 svg:not(:root) {
-  overflow : hidden;
-}
+overflow : hidden; }
 
 // figure
 
 figure {
-  margin-bottom : $baselineheight;
+margin-bottom : $baselineheight;
 
-  & img {
-    margin-bottom : $baselineheight / 4;
-  }
+img {
+margin-bottom : $baselineheight / 4; }
 
-  figcaption {
-    display : block;
-    font-weight : normal;
-    @include font-size(14);
-    color : $grey;
-  }
+figcaption {
+display : block;
+font-weight : normal;
+@include font-size(14);
+color : $grey; }
 }
 
 // list-bordered
 
 .list-bordered {
-  @include no-bullets;
-  margin : 0 0 $baselineheight;
-  padding : 0;
+list-style-type : none;
+margin : 0 0 $baselineheight 0;
+padding : 0;
 
-  li {
-    margin-bottom : $baselineheight / 4;
-    padding-bottom : $baselineheight / 4;
-    border-bottom : 1px dashed $bordercolor;
+li {
+margin-bottom : $baselineheight / 4;
+padding-bottom : $baselineheight / 4;
+border-bottom : 1px dashed $bordercolor; }
 
-    &:last-child {
-      margin-bottom : 0;
-      padding-bottom : 0;
-      border-bottom-width : 0;
-    }
-  }
+li:last-child {
+margin-bottom : 0;
+padding-bottom : 0;
+border-bottom-width : 0; }
 }

@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -27,11 +23,10 @@ h6
   color: $baseheadingfontcolor
   text-rendering: optimizelegibility
 
-h1,
-h2
-  small
-    font-weight: normal
-    color: $lightgrey
+h1 small,
+h2 small
+  font-weight: normal
+  color: $lightgrey
 
 h1,
 .h1
@@ -72,10 +67,11 @@ h6,
 
 // header
 
-.header
-  h1, h2, h3
-    float: left
-    margin-right: $gutterwidth
+.header h1,
+.header h2,
+.header h3
+  float: left
+  margin-right: $gutterwidth
   a
     display: block
     position: relative
@@ -87,15 +83,14 @@ h6,
   &:hover
     background-color: lighten($basecolor, 75%)
 
-.header
-  .a-rss
-    &, &:hover
-      float: left
-      width: 16px
-      height: 16px
-      padding: 0
-      background: transparent url(../img/a-rss.png) no-repeat 0 0
-      +hide-text
+.header .a-rss,
+.header .a-rss:hover
+  float: left
+  width: 16px
+  height: 16px
+  padding: 0
+  background: transparent url(../img/a-rss.png) no-repeat 0 0
+  +hide-text
 
 // TYPOGRAPHY ====================================================
 
@@ -115,9 +110,11 @@ ul,
 ol
   margin: 0 0 $baselineheight #{-$gutterwidth}
   padding: 0 0 0 $gutterwidth
-  li &
-    margin: 0
-    +font-size(16)
+
+li ul,
+li ol
+  margin: 0
+  +font-size(16)
 
 // blockquote
 
@@ -131,10 +128,12 @@ blockquote
 q
   quotes: none
 
-blockquote, q
-  &:before, &:after
-    content: ''
-    content: none
+blockquote:before,
+blockquote:after,
+q:before,
+q:after
+  content: ''
+  content: none
 
 cite
   font-style: normal
@@ -154,7 +153,7 @@ dt
     clear: left
     width: 20.25%
     text-align: right
-  .dl-horizontal dd
+  dd
     margin-left: 22.78%
 
 // text-level

@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -27,12 +23,10 @@ font-weight : $baseheadingfontweight;
 color : $baseheadingfontcolor;
 text-rendering : optimizelegibility; }
 
-h1,
-h2 {
-small {
+h1 small,
+h2 small {
 font-weight : normal;
 color : $lightgrey; }
-}
 
 h1,
 .h1 {
@@ -73,17 +67,17 @@ text-transform : uppercase; }
 
 // header
 
-.header {
-h1, h2, h3 {
+.header h1,
+.header h2,
+.header h3 {
 float : left;
 margin-right : $gutterwidth;
-}
 
 a {
 display : block;
 position : relative;
 top : 6px;
-float: right;
+float : right;
 padding : 4px 12px;
 @include font-size(14);
 background-color : lighten($basecolor, 75%); }
@@ -92,17 +86,14 @@ background-color : lighten($basecolor, 75%); }
 background-color : lighten($basecolor, 75%); }
 }
 
-.header {
-.a-rss {
-&, &:hover {
+.header .a-rss,
+.header .a-rss:hover {
 float : left;
 width : 16px;
 height : 16px;
 padding : 0;
 background : transparent url(../img/a-rss.png) no-repeat 0 0;
 @include hide-text; }
-}
-}
 
 // TYPOGRAPHY ====================================================
 
@@ -121,12 +112,12 @@ small {
 ul,
 ol {
 margin : 0 0 $baselineheight #{-$gutterwidth};
-padding : 0 0 0 $gutterwidth;
+padding : 0 0 0 $gutterwidth; }
 
-li & {
+li ul,
+li ol {
 margin : 0;
 @include font-size(16); }
-}
 
 // blockquote
 
@@ -140,11 +131,12 @@ font-style : normal; }
 q {
 quotes : none; }
 
-blockquote, q {
-&:before, &:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 content : '';
 content : none; }
-}
 
 cite {
 font-style : normal; }
@@ -166,7 +158,7 @@ clear : left;
 width : 20.25%;
 text-align : right; }
 
-.dl-horizontal dd {
+dd {
 margin-left : 22.78%; }
 }
 

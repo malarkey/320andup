@@ -3,10 +3,6 @@
 320 and Up by Andy Clarke
 Version: 3.0
 URL: http://stuffandnonsense.co.uk/projects/320andup/
-
-Sass Port by Jina Bolton
-URL: http://sushiandrobots.com
-
 Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 ============================================================ */
@@ -44,8 +40,8 @@ h5, .h5 { font-size: 16px; font-size: 1.6rem; margin-bottom: 1.5em; }
 h6, .h6 { margin-bottom: 1.5em; font-size: 14px; font-size: 1.4rem; font-weight: normal; letter-spacing: 1px; text-transform: uppercase; }
 
 .header h1, .header h2, .header h3 { float: left; margin-right: 24px; }
-.header a { display: block; position: relative; top: 6px; float: right; padding: 4px 12px; font-size: 14px; font-size: 1.4rem; background-color: #f3f5f6; }
-.header:hover { background-color: #f3f5f6; }
+.header h1 a, .header h2 a, .header h3 a { display: block; position: relative; top: 6px; float: right; padding: 4px 12px; font-size: 14px; font-size: 1.4rem; background-color: #f3f5f6; }
+.header h1:hover, .header h2:hover, .header h3:hover { background-color: #f3f5f6; }
 
 .header .a-rss, .header .a-rss:hover { float: left; width: 16px; height: 16px; padding: 0; background: transparent url(../img/a-rss.png) no-repeat 0 0; text-indent: 100%; white-space: nowrap; overflow: hidden; }
 
@@ -54,6 +50,7 @@ p, ol, ul, dl, address { margin-bottom: 1.5em; font-size: 14px; font-size: 1.4re
 small { font-size: 14px; font-size: 1.4rem; }
 
 ul, ol { margin: 0 0 1.5em -24px; padding: 0 0 0 24px; }
+
 li ul, li ol { margin: 0; font-size: 16px; font-size: 1.6rem; }
 
 blockquote { margin: 0 0 1.5em -24px; padding-left: 24px; border-left: 2px solid #c7ced6; font-family: Cambria, Georgia, Times, "Times New Roman"; font-style: normal; }
@@ -69,7 +66,7 @@ dl, dd { margin-bottom: 1.5em; }
 dt { font-weight: bold; }
 
 .dl-horizontal dt { float: left; clear: left; width: 20.25%; text-align: right; }
-.dl-horizontal .dl-horizontal dd { margin-left: 22.78%; }
+.dl-horizontal dd { margin-left: 22.78%; }
 
 abbr[title] { border-bottom: 1px dotted #c7ced6; cursor: help; }
 
@@ -97,6 +94,68 @@ a:visited { color: #000203; }
 a:hover { text-decoration: underline; color: #011b35; }
 a:focus { outline: thin dotted; color: black; }
 a:hover, a:active { outline: 0; }
+
+::-moz-selection { background-color: #d6dbe1; color: #2d353e; text-shadow: none; }
+
+::selection { background-color: #d6dbe1; color: #2d353e; text-shadow: none; }
+
+.swatch { margin: 0 0 1.5em 0; padding: 0; }
+
+.swatch-row { display: block; margin: 0; padding: 0; width: 200px; }
+
+.swatch-row-one { background-color: black; }
+
+.swatch-row-two { background-color: white; }
+
+.swatch-row span { display: block; float: left; width: 50px; height: 50px; }
+
+.swatch-base span:nth-child(1) { background-color: rgba(45, 53, 62, 0.9); }
+
+.swatch-base span:nth-child(2) { background-color: rgba(45, 53, 62, 0.8); }
+
+.swatch-base span:nth-child(3) { background-color: rgba(45, 53, 62, 0.7); }
+
+.swatch-base span:nth-child(4) { background-color: rgba(45, 53, 62, 0.6); }
+
+.swatch-alert span:nth-child(1) { background-color: rgba(252, 248, 227, 0.9); }
+
+.swatch-alert span:nth-child(2) { background-color: rgba(252, 248, 227, 0.8); }
+
+.swatch-alert span:nth-child(3) { background-color: rgba(252, 248, 227, 0.7); }
+
+.swatch-alert span:nth-child(4) { background-color: rgba(252, 248, 227, 0.6); }
+
+.swatch-error span:nth-child(1) { background-color: rgba(218, 79, 73, 0.9); }
+
+.swatch-error span:nth-child(2) { background-color: rgba(218, 79, 73, 0.8); }
+
+.swatch-error span:nth-child(3) { background-color: rgba(218, 79, 73, 0.7); }
+
+.swatch-error span:nth-child(4) { background-color: rgba(218, 79, 73, 0.6); }
+
+.swatch-info span:nth-child(1) { background-color: rgba(217, 237, 247, 0.9); }
+
+.swatch-info span:nth-child(2) { background-color: rgba(217, 237, 247, 0.8); }
+
+.swatch-info span:nth-child(3) { background-color: rgba(217, 237, 247, 0.7); }
+
+.swatch-info span:nth-child(4) { background-color: rgba(217, 237, 247, 0.6); }
+
+.swatch-success span:nth-child(1) { background-color: rgba(91, 183, 91, 0.9); }
+
+.swatch-success span:nth-child(2) { background-color: rgba(91, 183, 91, 0.8); }
+
+.swatch-success span:nth-child(3) { background-color: rgba(91, 183, 91, 0.7); }
+
+.swatch-success span:nth-child(4) { background-color: rgba(91, 183, 91, 0.6); }
+
+.swatch-warning span:nth-child(1) { background-color: rgba(250, 167, 50, 0.9); }
+
+.swatch-warning span:nth-child(2) { background-color: rgba(250, 167, 50, 0.8); }
+
+.swatch-warning span:nth-child(3) { background-color: rgba(250, 167, 50, 0.7); }
+
+.swatch-warning span:nth-child(4) { background-color: rgba(250, 167, 50, 0.6); }
 
 /* Texture =================================================== */
 .alert { margin-bottom: 1.5em; padding: 8px 35px 8px 14px; background-color: #fcf8e3; border: 1px solid #f2e187; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; font-size: 1.4rem; color: #9c8611; }
@@ -142,10 +201,6 @@ a:hover, a:active { outline: 0; }
 .well-small { padding: 6px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
 
 /* Font Awesome: http://fortawesome.github.com/Font-Awesome/
-/*
-/* Sass Port by Jina Bolton
-/* URL: http://sushiandrobots.com
-/*
 
 License
 -------------------------------------------------------
@@ -468,7 +523,7 @@ img { max-width: 100%; border-width: 0; vertical-align: middle; -ms-interpolatio
 svg:not(:root) { overflow: hidden; }
 
 figure { margin-bottom: 1.5em; }
-figure figure img { margin-bottom: 0.375em; }
+figure img { margin-bottom: 0.375em; }
 figure figcaption { display: block; font-weight: normal; font-size: 14px; font-size: 1.4rem; color: gray; }
 
 .list-bordered { list-style-type: none; margin: 0 0 1.5em 0; padding: 0; }
@@ -499,14 +554,19 @@ input:hover, textarea:hover, select:hover { border-color: #586879; }
 .input-small { width: 90px; }
 
 input[type="image"], input[type="checkbox"], input[type="radio"] { width: auto; height: auto; padding: 0; margin: 3px 0; *margin-top: 0; line-height: normal; cursor: pointer; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; border: 0 \9; }
+
 input[type="checkbox"], input[type="radio"] { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+
 input[type="image"] { border: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+
 input[type="file"] { width: auto; padding: initial; line-height: initial; border: initial; background-color: transparent; background-color: initial; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; }
+
 input[type="button"], input[type="reset"], input[type="submit"] { width: auto; height: auto; cursor: pointer; *overflow: visible; }
 
 select, input[type="file"] { height: 28px; *margin-top: 4px; line-height: 28px; }
 
 select { width: auto; background-color: white; font-size: 13px; font-size: 1.3rem; }
+
 select[multiple], select[size] { height: auto; }
 
 textarea { resize: vertical; overflow: auto; height: auto; overflow: auto; vertical-align: top; }
@@ -518,6 +578,7 @@ input[type="hidden"] { display: none; }
 .radio input[type="radio"], .checkbox input[type="checkbox"] { float: left; margin-left: -18px; }
 
 .radio.inline, .checkbox.inline { display: inline-block; padding-top: 5px; margin-bottom: 0; vertical-align: middle; }
+
 .radio.inline + .radio.inline, .checkbox.inline + .checkbox.inline { margin-left: 10px; }
 
 input[disabled], select[disabled], textarea[disabled], input[readonly], select[readonly], textarea[readonly] { -webkit-opacity: 0.5; -moz-opacity: 0.5; opacity: 0.5; cursor: not-allowed; }
@@ -537,14 +598,21 @@ input:-moz-placeholder { font-size: 14px; font-size: 1.4rem; }
 .help-inline { display: inline-block; vertical-align: middle; padding-left: 5px; }
 
 .form-inline input, .form-inline textarea, .form-inline select { display: inline-block; margin-bottom: 0; }
+
 .form-inline label { display: inline-block; }
+
 .form-inline .radio, .form-inline .checkbox, .form-inline .radio { padding-left: 0; margin-bottom: 0; vertical-align: middle; }
+
 .form-inline .radio input[type="radio"], .form-inline .checkbox input[type="checkbox"] { float: left; margin-left: 0; margin-right: 3px; }
 
 .form-search input, .form-search textarea, .form-search select { display: inline-block; margin-bottom: 0; }
+
 .form-search .search-query { padding-left: 14px; padding-right: 14px; margin-bottom: 0; -webkit-border-radius: 14px; -moz-border-radius: 14px; border-radius: 14px; }
+
 .form-search label { display: inline-block; }
-.form-search .radio, .form-search .checkbox, .form-search .radio { padding-left: 0; margin-bottom: 0; vertical-align: middle; }
+
+.form-search .radio, .form-search .checkbox, .form-inline .radio { padding-left: 0; margin-bottom: 0; vertical-align: middle; }
+
 .form-search .radio input[type="radio"], .form-search .checkbox input[type="checkbox"] { float: left; margin-left: 0; margin-right: 3px; }
 
 /* Buttons =================================================== */
@@ -581,22 +649,28 @@ input[type="submit"].btn:hover { border-color: #cccccc; }
 .btn-mini { padding: 3px 5px; font-size: 11px; font-size: 1.1rem; line-height: 14px; }
 
 .btn-group { position: relative; *zoom: 1; *margin-left: .3em; margin-bottom: 1.5em; }
+
 .btn-group .btn { position: relative; float: left; margin-left: -1px; -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; }
+
 .btn-group .btn:first-child { margin-left: 0; -webkit-border-top-right-radius: 2px; -webkit-border-bottom-right-radius: 0; -webkit-border-bottom-left-radius: 2px; -webkit-border-top-left-radius: 0; -moz-border-radius-topright: 2px; -moz-border-radius-bottomright: 0; -moz-border-radius-bottomleft: 2px; -moz-border-radius-topleft: 0; border-top-right-radius: 2px; border-bottom-right-radius: 0; border-bottom-left-radius: 2px; border-top-left-radius: 0; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; }
+
 .btn-group .btn:last-child { -webkit-border-top-right-radius: 0; -webkit-border-bottom-right-radius: 2px; -webkit-border-bottom-left-radius: 0; -webkit-border-top-left-radius: 2px; -moz-border-radius-topright: 0; -moz-border-radius-bottomright: 2px; -moz-border-radius-bottomleft: 0; -moz-border-radius-topleft: 2px; border-top-right-radius: 0; border-bottom-right-radius: 2px; border-bottom-left-radius: 0; border-top-left-radius: 2px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; }
+
 .btn-group .btn.large:first-child { margin-left: 0; -webkit-border-top-right-radius: 4px; -webkit-border-bottom-right-radius: 0; -webkit-border-bottom-left-radius: 4px; -webkit-border-top-left-radius: 0; -moz-border-radius-topright: 4px; -moz-border-radius-bottomright: 0; -moz-border-radius-bottomleft: 4px; -moz-border-radius-topleft: 0; border-top-right-radius: 4px; border-bottom-right-radius: 0; border-bottom-left-radius: 4px; border-top-left-radius: 0; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; }
+
 .btn-group .btn.large:last-child { -webkit-border-top-right-radius: 0; -webkit-border-bottom-right-radius: 4px; -webkit-border-bottom-left-radius: 0; -webkit-border-top-left-radius: 4px; -moz-border-radius-topright: 0; -moz-border-radius-bottomright: 4px; -moz-border-radius-bottomleft: 0; -moz-border-radius-topleft: 4px; border-top-right-radius: 0; border-bottom-right-radius: 4px; border-bottom-left-radius: 0; border-top-left-radius: 4px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; }
 
 .btn-toolbar { clear: both; margin-top: 0.75em; margin-bottom: 0.75em; }
+
 .btn-toolbar .btn-group { display: inline-block; *display: inline; *zoom: 1; }
 
 /* Tables =================================================== */
 table { width: 100%; max-width: 100%; margin-bottom: 1.5em; border-collapse: collapse; border-spacing: 0; background-color: transparent; }
 table th, table td { padding: 8px; vertical-align: top; border-top: 1px solid #8c9bab; font-size: 14px; font-size: 1.4rem; line-height: 1.5em; text-align: left; }
 table th { font-weight: bold; }
-thead table th { vertical-align: bottom; }
+table thead th { vertical-align: bottom; }
 table colgroup + thead tr:first-child th, table colgroup + thead tr:first-child td, table thead:first-child tr:first-child th, table thead:first-child tr:first-child td { border-top: 0; }
-table tbody + table tbody { border-top: 2px solid #8c9bab; }
+table tbody + tbody { border-top: 2px solid #8c9bab; }
 table tbody tr td, table tbody tr th { -webkit-transition: background-color 0.25s 0 linear; -moz-transition: background-color 0.25s 0 linear; -ms-transition: background-color 0.25s 0 linear; -o-transition: background-color 0.25s 0 linear; transition: background-color 0.25s 0 linear; }
 table tbody tr:hover td, table tbody tr:hover th { background-color: #a9b4c1; }
 
@@ -656,9 +730,11 @@ only screen and (min-device-pixel-ratio: 1.5) { /* 2x ==========================
 /* Author: Andy Clarke */
 /* URL: http://stuffandnonsense.co.uk/projects/320andup */
 .grid { margin-bottom: 1.5em; border-bottom: 1px dashed #c7ced6; }
+
 .grid:last-child { margin-bottom: 0; border-bottom-width: 0; }
 
 .furniture-letter { overflow: hidden; }
+
 .furniture-letter span { display: block; float: left; margin: 0 12px 0 0; height: 44px; width: 44px; background-color: #2d353e; color: white; font-size: 32px; font-size: 3.2rem; font-weight: bold; line-height: 44px; text-align: center; }
 
 @media only screen and (min-width: 480px) { /* Styles */ }
@@ -684,6 +760,7 @@ only screen and (min-device-pixel-ratio: 1.5) { /* Styles */ }
 /* Author: Andy Clarke */
 /* URL: http://stuffandnonsense.co.uk/projects/320andup */
 .full { margin-bottom: 1.5em; padding: 1.5em; background-color: #f3f5f6; border-top: 2px solid #c7ced6; border-bottom: 2px solid #c7ced6; }
+
 .full .grids { width: 90%; margin: 0 auto; padding: 1.5em 0; }
 
 @media only screen and (min-width: 480px) { /* Styles */ }

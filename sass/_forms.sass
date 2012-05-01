@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -87,43 +83,46 @@ select
 .input-small
   width: 90px
 
-input
-  &[type="image"],
-  &[type="checkbox"],
-  &[type="radio"]
-    width: auto
-    height: auto
-    padding: 0
-    margin: 3px 0
-    *margin-top: 0
-    line-height: normal
-    cursor: pointer
-    +rounded(0)
-    border: 0 \9
-  &[type="checkbox"],
-  &[type="radio"]
-    +box-sizing(border-box)
-    padding: 0
-    *width: 13px
-    *height: 13px
-  &[type="image"]
-    border: 0
-    +box-shadow(none)
-  &[type="file"]
-    width: auto
-    padding: initial
-    line-height: initial
-    border: initial
-    background-color: transparent
-    background-color: initial
-    +box-shadow(none)
-  &[type="button"],
-  &[type="reset"],
-  &[type="submit"]
-    width: auto
-    height: auto
-    cursor: pointer
-    *overflow: visible
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"]
+  width: auto
+  height: auto
+  padding: 0
+  margin: 3px 0
+  *margin-top: 0
+  line-height: normal
+  cursor: pointer
+  +rounded(0)
+  border: 0 \9
+
+input[type="checkbox"], 
+input[type="radio"]
+  +box-sizing(border-box)
+  padding: 0
+  *width: 13px
+  *height: 13px
+
+input[type="image"]
+  border: 0
+  +box-shadow(none)
+
+input[type="file"]
+  width: auto
+  padding: initial
+  line-height: initial
+  border: initial
+  background-color: transparent
+  background-color: initial
+  +box-shadow(none)
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+  width: auto
+  height: auto
+  cursor: pointer
+  *overflow: visible
 
 select,
 input[type="file"]
@@ -135,9 +134,10 @@ select
   width: auto
   background-color: $inputbackground
   +font-size(13)
-  &[multiple],
-  &[size]
-    height: auto
+
+select[multiple],
+select[size]
+  height: auto
 
 textarea
   +resize(vertical)
@@ -158,14 +158,16 @@ input[type="hidden"]
   float: left
   margin-left: -18px
 
-.radio, .checkbox
-  &.inline
-    display: inline-block
-    padding-top: 5px
-    margin-bottom: 0
-    vertical-align: middle
-    & + &
-      margin-left: 10px
+.radio.inline,
+.checkbox.inline
+  display: inline-block
+  padding-top: 5px
+  margin-bottom: 0
+  vertical-align: middle
+
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline
+  margin-left: 10px
 
 // disabled
 
@@ -180,15 +182,17 @@ textarea[readonly]
 
 // focus and active
 
-input, textarea
-  &:focus
-    border-color: $inputfocus
-    outline: 0
-    outline: thin dotted \9
+input:focus,
+textarea:focus
+  border-color: $inputfocus
+  outline: 0
+  outline: thin dotted \9
 
-input[type="file"], input[type="radio"], input[type="checkbox"], select
-  &:focus
-    +box-shadow(none)
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+select:focus
+  +box-shadow(none)
 
 \::-webkit-input-placeholder
   +font-size(14)
@@ -213,49 +217,54 @@ input:-moz-placeholder
 
 // .form-inline
 
-.form-inline
-  input,
-  textarea,
-  select
-    display: inline-block
-    margin-bottom: 0
-  label
-    display: inline-block
-  .radio,
-  .checkbox,
-  .radio
-    padding-left: 0
-    margin-bottom: 0
-    vertical-align: middle
-  .radio input[type="radio"],
-  .checkbox input[type="checkbox"]
-    float: left
-    margin-left: 0
-    margin-right: 3px
+.form-inline input,
+.form-inline textarea,
+.form-inline select
+  display: inline-block
+  margin-bottom: 0
+
+.form-inline label
+  display: inline-block
+
+.form-inline .radio,
+.form-inline .checkbox,
+.form-inline .radio
+  padding-left: 0
+  margin-bottom: 0
+  vertical-align: middle
+
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"]
+  float: left
+  margin-left: 0
+  margin-right: 3px
 
 // .form-search
 
-.form-search
-  input,
-  textarea,
-  select
-    display: inline-block
-    margin-bottom: 0
-  .search-query
-    padding-left: 14px
-    padding-right: 14px
-    margin-bottom: 0
-    +rounded(14px)
-  label
-    display: inline-block
-  .radio,
-  .checkbox,
-  .radio
-    padding-left: 0
-    margin-bottom: 0
-    vertical-align: middle
-  .radio input[type="radio"],
-  .checkbox input[type="checkbox"]
-    float: left
-    margin-left: 0
-    margin-right: 3px
+.form-search input,
+.form-search textarea,
+.form-search select
+  display: inline-block
+  margin-bottom: 0
+
+.form-search .search-query
+  padding-left: 14px
+  padding-right: 14px
+  margin-bottom: 0
+  +rounded(14px)
+
+.form-search label
+  display: inline-block
+
+.form-search .radio,
+.form-search .checkbox,
+.form-inline .radio
+  padding-left: 0
+  margin-bottom: 0
+  vertical-align: middle
+
+.form-search .radio input[type="radio"],
+.form-search .checkbox input[type="checkbox"]
+  float: left
+  margin-left: 0
+  margin-right: 3px

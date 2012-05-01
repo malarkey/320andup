@@ -5,27 +5,22 @@
 /* Version: 1.0 */
 /* Author: Andy Clarke */
 /* URL: http://stuffandnonsense.co.uk/projects/320andup */
-/*
-/* Sass Port by Jina Bolton
-/* URL: http://sushiandrobots.com
-/*
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
 
 .grid {
 margin-bottom : $baseline;
-border-bottom : 1px dashed lighten($basecolor, 60%);
+border-bottom : 1px dashed lighten($basecolor, 60%); }
 
-&:last-child {
+.grid:last-child {
 margin-bottom : 0;
 border-bottom-width : 0; }
-}
 
 .furniture-letter {
-overflow : hidden;
+overflow : hidden; }
 
-& span {
+.furniture-letter span {
 display : block;
 float : left;
 margin : 0 12px 0 0;
@@ -37,7 +32,6 @@ color : $white;
 font-weight : bold;
 line-height : 44px;
 text-align : center; }
-}
 
 // 480px
 @media only screen and (min-width: 480px) {
@@ -54,24 +48,22 @@ text-align : center; }
 
 // .grids-two
 
-.grids-two {
-.grid {
-width : 43.03%;
+.grids-two .grid {
+width : 43.03%; 
 margin-bottom : 0;
 border-bottom-width : 0; }
 
-.grid-1 {
+.grids-two .grid-1 {
 float : left; }
 
-.grid-2 {
-float: right; }
-}
+.grids-two .grid-2 {
+float : right; }
 
 // grids-three
 
 .grids-three .grid-a {
 float : left;
-width : 31.64%;
+width : 31.64%; 
 margin-right : 2.53%; }
 
 // grids-four
@@ -88,42 +80,39 @@ margin-right : 2.53%; }
 
 // grids-three
 
-.grids-three {
-.grid {
+.grids-three .grid {
 float : left;
 width : 31.64%;
 margin : 0 2.53% 0 0;
 border-bottom-width : 0; }
 
-.grid-3 {
-float: right;
+.grids-three .grid-3 {
+float : right;
 margin-right : 0; }
 
-.grid .grid-a {
-float : none;
+.grids-three .grid .grid-a {
+float : none; 
 width : 100%;
 margin-right : 0;
 margin-bottom : $baseline / 2; }
-}
 
 // grids-four
 
-.grids-four {
-.grid {
-float: left;
+.grids-four .grid {
+float : left;
 width : 20.25%;
 margin : 0 6.32% 0 0;
 border-bottom-width : 0; }
 
-.grid-4 {
-float: right;
+.grids-four .grid-4 {
+float : right;
 margin-right : 0; }
 
-.grid .grid-a {
-float : none;
-width : 100%;
+.grids-four .grid .grid-a {
+float : none; 
+width : 100%; 
 margin-right : 0; }
-}
+
 }
 
 // 1382px
@@ -135,5 +124,5 @@ margin-right : 0; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
-/* Styles */
+/* Styles */ 
 }

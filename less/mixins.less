@@ -165,6 +165,11 @@ transform : translate(@x, @y, @z); }
 
 // 5. ELEMENTS 				==============================
 
+// .background-alpha(VALUE VALUE);
+
+.background-alpha(@color: @white, @alpha: 1) {
+background-color : hsla(hue(@color), saturation(@color), lightness(@color), @alpha); }
+
 // .background-size(VALUE VALUE);
 
 .background-size(@size){

@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -33,7 +29,7 @@ border : $buttonborderwidth $buttonborderstyle $buttonbordercolor;
 border-bottom-color : $buttonbottombordercolor;
 @include rounded(4px);
 cursor : pointer;
-*margin-left : .3em;
+*margin-left : .3em; 
 
 &:visited,
 &:hover {
@@ -50,7 +46,7 @@ border-color : $buttonbordercolor; }
 // disabled
 
 .btn-disabled {
-@include opacity(.5);
+@include opacity(.5); 
 cursor : default; }
 
 // info
@@ -58,7 +54,7 @@ cursor : default; }
 .btn-info {
 @include infograd;
 border-color : darken($infocolor, 15%);
-border-bottom-color : darken($infocolor, 20%);
+border-bottom-color : darken($infocolor, 20%); 
 color : darken($infocolor, 50%);
 
 &:visited,
@@ -71,8 +67,8 @@ color : darken($infocolor, 50%); }
 .btn-inverse {
 @include inversegrad;
 border-color : darken($inverscolor, 15%);
-border-bottom-color : darken($inverscolor, 20%);
-color : $white;
+border-bottom-color : darken($inverscolor, 20%); 
+color : $white; 
 
 &:visited,
 &:hover {
@@ -85,7 +81,7 @@ color : $white; }
 @include basegrad;
 border-color : darken($basecolor, 15%);
 border-bottom-color : darken($basecolor, 20%);
-color : $white;
+color : $white; 
 
 &:visited,
 &:hover {
@@ -125,49 +121,46 @@ line-height : normal;
 
 .btn-small {
 padding : 6px 10px;
-@include font-size(11);
+@include font-size(11); 
 line-height : 16px; }
 
 .btn-mini {
 padding : 3px 5px;
-@include font-size(11);
+@include font-size(11); 
 line-height : 14px; }
 
 .btn-group {
 position : relative;
 *zoom : 1;
 *margin-left : .3em;
-margin-bottom : $baseline;
+margin-bottom : $baseline; }
 
-.btn {
+.btn-group .btn {
 position : relative;
 float : left;
 margin-left : -1px;
-@include rounded(0);
+@include rounded(0); }
 
-&:first-child {
+.btn-group .btn:first-child {
 margin-left : 0;
-@include border-radius(2px, 0, 2px, 0); }
+@include border-radius(2px, 0, 2px, 0); } 
 
-&:last-child {
+.btn-group .btn:last-child {
 @include border-radius(0, 2px, 0, 2px); }
 
-&.large:first-child {
+.btn-group .btn.large:first-child {
 margin-left : 0;
 @include border-radius(4px, 0, 4px, 0); }
 
-&.large:last-child {
+.btn-group .btn.large:last-child {
 @include border-radius(0, 4px, 0, 4px); }
-}
-}
 
 .btn-toolbar {
 clear : both;
 margin-top : $baselineheight / 2;
-margin-bottom : $baselineheight / 2;
+margin-bottom : $baselineheight / 2; }
 
-.btn-group {
+.btn-toolbar .btn-group {
 display : inline-block;
 *display : inline;
 *zoom : 1; }
-}

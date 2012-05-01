@@ -5,15 +5,11 @@
 /* Version: 1.0 */
 /* Author: Andy Clarke */
 /* URL: http://stuffandnonsense.co.uk/projects/320andup */
-/*
-/* Sass Port by Jina Bolton
-/* URL: http://sushiandrobots.com
-/*
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
-// HEADS UP: 320 and Up Panels Upstart is dependent on
+// HEADS UP: 320 and Up Panels Upstart is dependent on 
 // grid styles from Modules Upstart. If you’re importing it
-// you’re ready to go. Otherwise, import it or copy and paste
+// you’re ready to go. Otherwise, import it or copy and paste 
 // its styles here.
 
 // ==========================================================
@@ -21,20 +17,16 @@
 // Full width panel containers
 
 .full {
-  margin-bottom : $baseline;
-  padding : $baseline;
-  background-color : lighten($basecolor, 75%);
-  border: {
-    top : 2px solid lighten($basecolor, 60%);
-    bottom : 2px solid lighten($basecolor, 60%);
-  }
+margin-bottom : $baseline;
+padding : $baseline;
+background-color : lighten($basecolor, 75%);
+border-top : 2px solid lighten($basecolor, 60%);
+border-bottom : 2px solid lighten($basecolor, 60%); }
 
-  .grids {
-    width : 90%;
-    margin : 0 auto;
-    padding : $baseline 0;
-  }
-}
+.full .grids {
+width : 90%;
+margin : 0 auto; 
+padding : $baseline 0; }
 
 // 480px
 @media only screen and (min-width: 480px) {
@@ -49,19 +41,20 @@
 // 768px
 @media only screen and (min-width: 768px) {
 
-  // Extra wide grid units
-  #{nest('.special ', '.grids-three, .grids-four', '.grid-a')} {
-    width : 43.03%;
-  }
+// Extra wide grid units
+.special .grids-three .grid-a,
+.special .grids-four .grid-a {
+width : 43.03%; }
+
 }
 
 // 992px
 @media only screen and (min-width: 992px) {
 
-  // Extra wide grid units
-  #{nest('.special ', '.grids-three, .grids-four', '.grid-a')} {
-    width : 100%;
-  }
+// Extra wide grid units
+.special .grids-three .grid-a,
+.special .grids-four .grid-a {
+width : 100%; }
 }
 
 // 1382px
@@ -73,5 +66,5 @@
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
-/* Styles */
+/* Styles */ 
 }

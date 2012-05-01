@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -15,70 +11,58 @@
 
 // 1. ROOT 					==============================
 
-* {
-  background : transparent !important;
-  color : black !important;
-  @include box-shadow(none !important);
-  text-shadow : none !important;
-  filter : none !important;
-  -ms-filter : none !important;
-}
+* { 
+background : transparent !important; 
+color : black !important; 
+box-shadow : none !important; 
+text-shadow : none !important; 
+filter : none !important; 
+-ms-filter : none !important; }
 
-@page {
-  margin : 0.5cm;
-}
+@page { 
+margin : 0.5cm; }
 
 // 2. TYPOGRAPHY 			==============================
 
-h2, h3, p {
-  orphans : 3;
-  widows : 3;
-}
+h2, h3 { 
+orphans : 3; 
+widows : 3; 
+page-break-after : avoid; }
 
-h2, h3 {
-  page-break-after : avoid;
-}
+p { 
+orphans : 3; 
+widows : 3; }
 
-pre, blockquote {
-  border : 1px solid $grey;
-  page-break-inside : avoid;
-}
+pre, blockquote { 
+border : 1px solid $grey; 
+page-break-inside : avoid; }
 
-abbr[title]:after {
-  content: " (" attr(title) ")";
-}
+abbr[title]:after { 
+content: " (" attr(title) ")"; }
 
 // 3. COLOUR 				==============================
 
-a {
-  &, &:visited {
-    text-decoration : underline;
-  }
+a, a:visited { 
+text-decoration : underline; }
 
-  &[href]:after {
-    content : " (" attr(href) ")";
-  }
+a[href]:after { 
+content : " (" attr(href) ")"; }
 
-  &[href^="javascript:"]:after,
-  &[href^="#"]:after {
-    content : "";
-  }
-}
+a[href^="javascript:"]:after, 
+a[href^="#"]:after { 
+content : ""; }
 
 // 4. TEXTURE 				==============================
 
-img {
-  max-width : 100% !important;
-  page-break-inside : avoid;
-}
+img { 
+max-width : 100% !important;
+page-break-inside : avoid; }
 
-thead {
-  display : table-header-group;
-}
+thead { 
+display : table-header-group; } 
 
-tr {
-  page-break-inside : avoid;
-}
+tr { 
+page-break-inside : avoid; }
 
 // 5. ELEMENTS 				==============================
 // 6. LAYOUT 				==============================

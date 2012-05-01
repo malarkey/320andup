@@ -3,28 +3,11 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
 
 /* Variables =================================================== */
-
-// 1. COLOUR 				==============================
-
-$basecolor 		: rgb(45,53,62);
-$compcolor 		: invert($basecolor);
-$bordercolor    : lighten($basecolor, 60%);
-
-// Links
-
-$linkcolor 		    : rgb(1,53,104);
-$linkcolorhover 	: darken($linkcolor, 10);
-$linkcolorvisited   : darken($linkcolorhover, 10);
-$linkcolorfocus 	: darken($linkcolorvisited, 10);
 
 // greyscale
 
@@ -35,21 +18,12 @@ $lightgrey 		: lighten($black, 75%);
 $lightergrey 	: lighten($black, 90%);
 $white 			: rgb(255,255,255);
 
-// colour palettes
-
-$alertcolor 	: rgb(252,248,227);
-$errorcolor 	: rgb(218,79,73);
-$infocolor 		: rgb(217,237,247);
-$inverscolor 	: rgb(65,65,65);
-$successcolor 	: rgb(91,183,91);
-$warningcolor 	: rgb(250,167,50);
-
-// 2. ROOT 					==============================
+// 1. ROOT 					==============================
 
 $bodycolor : $white;
 $textcolor : black;
 
-// 3. TYPOGRAPHY 			==============================
+// 2. TYPOGRAPHY 			==============================
 
 $basefont : "Helvetica Neue", Helvetica, Arial, sans-serif;
 $basefontsize : 16;
@@ -62,6 +36,28 @@ $altfont : Cambria, Georgia, Times, "Times New Roman";
 $altlineheight : 1.35em;
 
 $codefont : Monaco, Courier New, monospace;
+
+// 3. COLOUR 				==============================
+
+$basecolor 		: rgb(45,53,62);
+$compcolor 		: adjust-hue($basecolor, 180);
+$bordercolor    : lighten($basecolor, 60%);
+
+// Links
+
+$linkcolor 		    : rgb(1,53,104);
+$linkcolorhover 	: darken($linkcolor, 10);
+$linkcolorvisited   : darken($linkcolorhover, 10);
+$linkcolorfocus 	: darken($linkcolorvisited, 10);
+
+// colour palettes
+
+$alertcolor 	: rgb(252,248,227);
+$errorcolor 	: rgb(218,79,73);
+$infocolor 		: rgb(217,237,247);
+$inverscolor 	: rgb(65,65,65);
+$successcolor 	: rgb(91,183,91);
+$warningcolor 	: rgb(250,167,50);
 
 // 4. TEXTURE 				==============================
 

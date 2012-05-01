@@ -3,34 +3,30 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
 
 /* Forms =================================================== */
 
-form {
+form { 
 margin : 0 0 $baselineheight 0;
 
-fieldset {
-margin-bottom : $baselineheight;
-padding : 0;
+fieldset { 
+margin-bottom : $baselineheight; 
+padding : 0; 
 border-width : 0; }
 
-legend {
+legend { 
 display : block;
 width : 100%;
 margin-bottom : $baselineheight * 2;
-*margin-left : -7px;
+*margin-left : -7px; 
 padding : 0;
 color : $textcolor;
 border : 0;
 border-bottom : $inputborderwidth $inputborderstyle $inputborder;
-white-space : normal;
+white-space : normal; 
 
 small {
 @include font-size(14);
@@ -41,7 +37,7 @@ p {
 margin-bottom : $baselineheight / 2; }
 
 ul {
-list-style-type : none;
+list-style-type : none; 
 margin : 0 0 $baselineheight 0;
 padding : 0; }
 
@@ -54,15 +50,15 @@ input,
 button,
 select,
 textarea {
-@include font-size(14);
-vertical-align : baseline;
+@include font-size(14); 
+vertical-align : baseline; 
 *vertical-align : middle; }
 
 input,
 button,
 select,
 textarea {
-font-family : $basefont;
+font-family : $basefont; 
 @include box-sizing(border-box); }
 
 label {
@@ -70,7 +66,7 @@ display : block;
 margin-bottom : $baseline / 8;
 font-weight : bold;
 color : $textcolor;
-cursor : pointer;
+cursor : pointer; 
 
 input,
 textarea,
@@ -87,22 +83,21 @@ padding : 4px;
 margin-bottom : $baselineheight / 4;
 background-color : $inputbackground;
 border : $inputborderwidth $inputborderstyle $inputborder;
-color : $textcolor;
+color : $textcolor; 
 
 &:hover {
 border-color : $inputhover; }
 }
 
-.input-mini {
+.input-mini { 
 width : 60px; }
 
-.input-small {
+.input-small { 
 width : 90px; }
 
-input {
-&[type="image"],
-&[type="checkbox"],
-&[type="radio"] {
+input[type="image"],
+input[type="checkbox"],
+input[type="radio"] {
 width : auto;
 height : auto;
 padding : 0;
@@ -113,18 +108,18 @@ cursor : pointer;
 @include rounded(0);
 border : 0 \9; }
 
-&[type="checkbox"],
-&[type="radio"] {
+input[type="checkbox"], 
+input[type="radio"] {  
 @include box-sizing(border-box);
-padding : 0;
-*width : 13px;
+padding : 0; 
+*width : 13px; 
 *height : 13px; }
 
-&[type="image"] {
-border : 0;
+input[type="image"] {
+border : 0; 
 @include box-shadow(none); }
 
-&[type="file"] {
+input[type="file"] {
 width : auto;
 padding : initial;
 line-height : initial;
@@ -133,35 +128,33 @@ background-color : transparent;
 background-color : initial;
 @include box-shadow(none); }
 
-&[type="button"],
-&[type="reset"],
-&[type="submit"] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
 width : auto;
 height : auto;
 cursor : pointer;
 *overflow : visible; }
-}
 
 select,
 input[type="file"] {
-height : 28px;
-*margin-top : 4px;
+height : 28px; 
+*margin-top : 4px; 
 line-height : 28px; }
 
 select {
 width : auto;
 background-color : $inputbackground;
-@include font-size(13);
+@include font-size(13); }
 
-&[multiple],
-&[size] {
+select[multiple],
+select[size] {
 height : auto; }
-}
 
 textarea {
 @include resize(vertical);
 height : auto;
-overflow : auto;
+overflow : auto; 
 vertical-align : top; }
 
 input[type="hidden"] {
@@ -169,7 +162,7 @@ display : none; }
 
 .radio,
 .checkbox {
-padding-left : 18px;
+padding-left : 18px; 
 font-weight : normal; }
 
 .radio input[type="radio"],
@@ -177,17 +170,16 @@ font-weight : normal; }
 float : left;
 margin-left : -18px; }
 
-.radio, .checkbox {
-&.inline {
+.radio.inline,
+.checkbox.inline {
 display : inline-block;
 padding-top : 5px;
 margin-bottom : 0;
-vertical-align : middle;
+vertical-align : middle; }
 
-& + & {
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
 margin-left : 10px; }
-}
-}
 
 // disabled
 
@@ -202,22 +194,22 @@ cursor : not-allowed; }
 
 // focus and active
 
-input, textarea {
-&:focus {
+input:focus,
+textarea:focus {
 border-color : $inputfocus;
 outline : 0;
 outline : thin dotted \9; }
-}
 
-input[type="file"], input[type="radio"], input[type="checkbox"], select {
-&:focus {
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+select:focus {
 @include box-shadow(none); }
-}
 
 ::-webkit-input-placeholder {
 @include font-size(14); }
 
-input:-moz-placeholder {
+input:-moz-placeholder { 
 @include font-size(14); }
 
 // help text
@@ -227,7 +219,7 @@ input:-moz-placeholder {
 color : $grey; }
 
 .help-block {
-display : block;
+display : block; 
 margin-bottom : $baselineheight / 2; }
 
 .help-inline {
@@ -237,58 +229,54 @@ padding-left : 5px; }
 
 // .form-inline
 
-.form-inline {
-input,
-textarea,
-select {
+.form-inline input,
+.form-inline textarea,
+.form-inline select {
 display : inline-block;
 margin-bottom : 0; }
 
-label {
+.form-inline label {
 display : inline-block; }
 
-.radio,
-.checkbox,
-.radio {
+.form-inline .radio,
+.form-inline .checkbox,
+.form-inline .radio {
 padding-left : 0;
 margin-bottom : 0;
 vertical-align : middle; }
 
-.radio input[type="radio"],
-.checkbox input[type="checkbox"] {
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
 float : left;
 margin-left : 0;
 margin-right : 3px; }
-}
 
 // .form-search
 
-.form-search {
-input,
-textarea,
-select {
+.form-search input,
+.form-search textarea,
+.form-search select {
 display : inline-block;
 margin-bottom : 0; }
 
-.search-query {
+.form-search .search-query {
 padding-left : 14px;
 padding-right : 14px;
-margin-bottom : 0;
+margin-bottom : 0; 
 @include rounded(14px); }
 
-label {
+.form-search label {
 display : inline-block; }
 
-.radio,
-.checkbox,
-.radio {
+.form-search .radio,
+.form-search .checkbox,
+.form-inline .radio {
 padding-left : 0;
 margin-bottom : 0;
 vertical-align : middle; }
 
-.radio input[type="radio"],
-.checkbox input[type="checkbox"] {
+.form-search .radio input[type="radio"],
+.form-search .checkbox input[type="checkbox"] {
 float : left;
 margin-left : 0;
 margin-right : 3px; }
-}

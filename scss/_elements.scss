@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -40,7 +36,7 @@ overflow : hidden; }
 figure {
 margin-bottom : $baselineheight;
 
-figure img {
+img {
 margin-bottom : $baselineheight / 4; }
 
 figcaption {
@@ -60,11 +56,10 @@ padding : 0;
 li {
 margin-bottom : $baselineheight / 4;
 padding-bottom : $baselineheight / 4;
-border-bottom : 1px dashed $bordercolor;
+border-bottom : 1px dashed $bordercolor; }
 
-&:last-child {
+li:last-child {
 margin-bottom : 0;
 padding-bottom : 0;
 border-bottom-width : 0; }
-}
 }

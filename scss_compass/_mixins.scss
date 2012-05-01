@@ -3,29 +3,23 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
 
-/* Mixins & Extends =================================================== */
+/* Mixins =================================================== */
 
 // 1. ROOT 					==============================
 // 2. TYPOGRAPHY 			==============================
 
 @mixin font-size($font-size: 16){
-  font: {
-    size : #{$font-size}px;
-    size : #{($font-size / 10)}rem;
-  }
-}
+font-size : #{$font-size}px;
+font-size : #{$font-size / 10}rem; }
 
-$use-mozilla-ellipsis-binding: true;
-
-@import "compass/typography/text/ellipsis";
+@mixin text-overflow() {
+overflow : hidden;
+text-overflow : ellipsis;
+white-space : nowrap; }
 
 // 3. COLOUR 				==============================
 // 4. TEXTURE 				==============================
@@ -33,139 +27,128 @@ $use-mozilla-ellipsis-binding: true;
 // gradients
 
 @mixin horizontal($startColor : $white, $endColor : $lightergrey) {
-  background: {
-    color: $endColor;
-    repeat : repeat-x;
-  }
-  @include filter-gradient($startColor, $endColor, $orientation: horizontal);
-  @include background-image(linear-gradient(left, $startColor, $endColor));
-}
+background-color: $endColor;
+@include background-image(linear-gradient(left, $startColor, $endColor));
+background-repeat : repeat-x; }
 
 @mixin vertical($startColor : $white, $endColor:  $lightergrey) {
-  background: {
-    color  : $endColor;
-    repeat : repeat-x;
-  }
-  @include filter-gradient($startColor, $endColor);
-  @include background-image(linear-gradient($startColor, $endColor));
-}
+background-color  : $endColor;
+@include background-image(linear-gradient($startColor, $endColor));
+background-repeat : repeat-x; }
 
 @mixin directional($startColor : $white, $endColor : $lightergrey, $deg : 45deg) {
-  background: {
-    color  : $endColor;
-    repeat : repeat-x;
-  }
-  @include filter-gradient($startColor, $endColor, $orientation: diagonal);
-  @include background-image(linear-gradient(left top, $startColor, $endColor));
-}
+background-color  : $endColor;
+@include background-image(linear-gradient($deg, $startColor, $endColor));
+background-repeat : repeat-x; }
 
-// .bordered(COLOR, COLOR, COLOR, COLOR);
+// @include bordered(COLOR, COLOR, COLOR, COLOR);
 
 @mixin bordered($top-color: #eee, $right-color: #eee, $bottom-color: #eee, $left-color: #eee) {
-  border: {
-    width: 1px;
-    style: solid;
-    color: $top-color $right-color $bottom-color $left-color;
-  }
-}
+border-top : solid 1px $top-color;
+border-left : solid 1px $left-color;
+border-right : solid 1px $right-color;
+border-bottom : solid 1px $bottom-color; }
+
+// @include drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
+// Leaving this in, though Compass includes box-shadow already, in case you just want to define an alpha of black. — Jina
+@mixin drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
+@include box-shadow($x-axis $y-axis $blur rgba(0, 0, 0, $alpha)); }
 
 // 5. ELEMENTS 				==============================
+
+// @include background-alpha(VALUE VALUE);
+
+@mixin background-alpha($color: $white, $alpha: 1) {
+background-color : hsla(hue($color), saturation($color), lightness($color), $alpha); }
 
 // Chrome Frame
 
 @mixin chromeframe() {
-  margin : .2em 0;
-  background : $lightgrey;
-  color : $black;
-  padding : .2em 0;
-}
+margin : .2em 0;
+background : $lightgrey;
+color : $black;
+padding : .2em 0; }
 
 // Contain floats
 
+@mixin clearfix {
+*zoom : 1;
+&:before,
+&:after {
+display: table;
+content : ""; }
+&:after {
+clear : both; } }
+
 .clearfix {
-  @include has-layout-zoom;
-
-  &:before,
-  &:after {
-    display: table;
-    content : "";
-  }
-
-  &:after {
-    clear : both;
-  }
-}
+@include clearfix; }
 
 // For image replacement
 
-.hide-text {
-  text-indent : 100%;
-  white-space : nowrap;
-  overflow : hidden;
-}
+@mixin hide-text() {
+text-indent : 100%;
+white-space : nowrap;
+overflow : hidden; }
 
 // Hide from visual and speaking browsers
-@mixin hidden {
-  display : none !important;
-  visibility : hidden;
-}
+
+@mixin hidden() {
+display : none !important;
+visibility : hidden; }
 
 // Hide but maintain layout
 
 @mixin invisible() {
-  visibility : hidden;
-}
+visibility : hidden; }
 
-// .resize(VALUE) (none, both, horizontal, vertical, inherit)
+// @mixin resize(VALUE) (none, both, horizontal, vertical, inherit)
 
 @mixin resize($direction: both) {
-  resize : $direction;
-  overflow : auto;
-}
+resize : $direction;
+overflow : auto; }
 
-// .userselect(VALUE) (all, element, none, text)
+// @include userselect(VALUE) (all, element, none, text)
 
 @mixin user-select($select) {
-  $select: unquote($select);
-  @include experimental(user-select, $select,
-    -moz, -webkit, -o, not -ms, not -khtml, official
-  );
-}
+-webkit-user-select : $select;
+-moz-user-select : $select;
+-o-user-select : $select;
+user-select : $select; }
 
 // Hidden but available to speaking browsers
 
 @mixin visuallyhidden() {
-  overflow : hidden;
-  position : absolute;
-  clip : rect(0 0 0 0);
-  height : 1px;
-  width : 1px;
-  margin : -1px;
-  padding : 0;
-  border : 0;
-  // Make visuallyhidden focusable with a keyboard
+overflow : hidden;
+position : absolute;
+clip : rect(0 0 0 0);
+height : 1px;
+width : 1px;
+margin : -1px;
+padding : 0;
+border : 0;
 
-  &.focusable:active,
-  &.focusable:focus {
-    position : static;
-    clip : auto;
-    height : auto;
-    width : auto;
-    margin : 0;
-    overflow: visible;
-  }
-}
+// Make visuallyhidden focusable with a keyboard
+
+&.focusable:active,
+&.focusable:focus {
+position : static;
+clip : auto;
+height : auto;
+width : auto;
+margin : 0;
+overflow: visible; } }
 
 // 6. LAYOUT 				==============================
 
-// .columns(250px, 0, 24px, COLOR, solid, 1px)
+// @include columns(250px, 0, 24px, COLOR, solid, 1px)
 
 @mixin columns($colwidth: 250px, $colcount: 0, $colgap: 50px, $columnRuleColor: #eee, $columnRuleStyle: solid, $columnRuleWidth: 1px) {
-  @include column-width($colwidth);
-  @include column-count($colcount);
-  @include column-gap($colgap);
-  @include column-rule($columnRuleWidth, $columnRuleStyle, $columnRuleColor);
-}
+@include column-count($colcount);
+@include column-gap($colgap);
+@include column-width($colwidth);
+@include column-rule-color($columnRuleColor);
+@include column-rule-style($columnRuleStyle);
+@include column-rule-width($columnRuleWidth); }
 
 //  7. VENDOR-SPECIFIC 		==============================
 //  8. MODERNIZR 			==============================

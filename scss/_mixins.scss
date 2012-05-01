@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -18,7 +14,7 @@
 
 @mixin font-size($font-size: 16){
 font-size : #{$font-size}px;
-font-size : #{($font-size / 10)}rem; }
+font-size : #{$font-size / 10}rem; }
 
 @mixin text-overflow() {
 overflow : hidden;
@@ -59,7 +55,7 @@ background-image  : -o-linear-gradient($deg, $startColor, $endColor); 						// O
 background-image  : linear-gradient($deg, $startColor, $endColor); 							// W3C
 background-repeat : repeat-x; }
 
-// .bordered(COLOR, COLOR, COLOR, COLOR);
+// @include bordered(COLOR, COLOR, COLOR, COLOR);
 
 @mixin bordered($top-color: #eee, $right-color: #eee, $bottom-color: #eee, $left-color: #eee) {
 border-top : solid 1px $top-color;
@@ -67,14 +63,14 @@ border-left : solid 1px $left-color;
 border-right : solid 1px $right-color;
 border-bottom : solid 1px $bottom-color; }
 
-// .rounded(VALUE);
+// @mixin rounded(VALUE);
 
 @mixin rounded($radius:4px) {
 -webkit-border-radius : $radius;
 -moz-border-radius : $radius;
 border-radius : $radius; }
 
-// .border-radius(VALUE,VALUE,VALUE,VALUE);
+// @mixin border-radius(VALUE,VALUE,VALUE,VALUE);
 
 @mixin border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
 -webkit-border-top-right-radius : $topright;
@@ -93,28 +89,28 @@ border-top-left-radius : $topleft;
 -moz-background-clip : padding;
 background-clip : padding-box; }
 
-// .box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
+// @mixin box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
 
 @mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
 -webkit-box-shadow : $shadow;
 -moz-box-shadow : $shadow;
 box-shadow : $shadow; }
 
-// .drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
+// @include drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
 
 @mixin drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1) {
 -webkit-box-shadow : $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
 -moz-box-shadow : $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
 box-shadow : $x-axis $y-axis $blur rgba(0, 0, 0, $alpha); }
 
-// .opacity(VALUE);
+// @mixin opacity(VALUE);
 
 @mixin opacity($opacity : .5) {
 -webkit-opacity : $opacity;
 -moz-opacity : $opacity;
 opacity : $opacity; }
 
-// .rotate(VALUEdeg);
+// @include rotate(VALUEdeg);
 
 @mixin rotate($deg) {
 -webkit-transform : rotate($deg);
@@ -123,7 +119,7 @@ opacity : $opacity; }
 -o-transform : rotate($deg);
 transform : rotate($deg); }
 
-// .scale(VALUE);
+// @include scale(VALUE);
 
 @mixin scale($ratio) {
 -webkit-transform : scale($ratio);
@@ -132,7 +128,7 @@ transform : rotate($deg); }
 -o-transform : scale($ratio);
 transform : scale($ratio); }
 
-// .skew(VALUE, VALUE);
+// @include skew(VALUE, VALUE);
 
 @mixin skew($x: 0, $y: 0) {
 -webkit-transform : skew($x, $y);
@@ -141,7 +137,7 @@ transform : scale($ratio); }
 -o-transform : skew($x, $y);
 transform : skew($x, $y); }
 
-// .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
+// @include transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
 
 @mixin transition($transition) {
 -webkit-transition : $transition;
@@ -150,7 +146,7 @@ transform : skew($x, $y); }
 -o-transition : $transition;
 transition : $transition; }
 
-// .translate(VALUE, VALUE)
+// @include translate(VALUE, VALUE)
 
 @mixin translate($x: 0, $y: 0) {
 -webkit-transform : translate($x, $y);
@@ -168,7 +164,12 @@ transform : translate($x, $y, $z); }
 
 // 5. ELEMENTS 				==============================
 
-// .background-size(VALUE VALUE);
+// @include background-alpha(VALUE VALUE);
+
+@mixin background-alpha($color: $white, $alpha: 1) {
+background-color : hsla(hue($color), saturation($color), lightness($color), $alpha); }
+
+// @include background-size(VALUE VALUE);
 
 @mixin background-size($size){
 -webkit-background-size : $size;
@@ -176,14 +177,14 @@ transform : translate($x, $y, $z); }
 -o-background-size : $size;
 background-size : $size; }
 
-// .background-clip(VALUE); (border-box, padding-box, content-box)
+// @include background-clip(VALUE); (border-box, padding-box, content-box)
 
 @mixin background-clip($clip) {
 -webkit-background-clip : $clip;
 -moz-background-clip : $clip;
 background-clip : $clip; }
 
-// .box-sizing(VALUE); (border-box, padding-box, content-box)
+// @include box-sizing(VALUE); (border-box, padding-box, content-box)
 
 @mixin box-sizing($boxsize: border-box) {
 -webkit-box-sizing : $boxsize;
@@ -201,7 +202,6 @@ padding : .2em 0; }
 
 // Contain floats
 
-// The clearfix can be used as a mixin but I added a class here so it can work in the markup as well. — Jina
 @mixin clearfix {
 *zoom : 1;
 &:before,
@@ -212,8 +212,7 @@ content : ""; }
 clear : both; } }
 
 .clearfix {
-@include clearfix;
-}
+@include clearfix; }
 
 // For image replacement
 
@@ -233,13 +232,13 @@ visibility : hidden; }
 @mixin invisible() {
 visibility : hidden; }
 
-// .resize(VALUE) (none, both, horizontal, vertical, inherit)
+// @mixin resize(VALUE) (none, both, horizontal, vertical, inherit)
 
 @mixin resize($direction: both) {
 resize : $direction;
 overflow : auto; }
 
-// .userselect(VALUE) (all, element, none, text)
+// @include userselect(VALUE) (all, element, none, text)
 
 @mixin user-select($select) {
 -webkit-user-select : $select;
@@ -258,6 +257,7 @@ width : 1px;
 margin : -1px;
 padding : 0;
 border : 0;
+
 // Make visuallyhidden focusable with a keyboard
 
 &.focusable:active,
@@ -267,12 +267,11 @@ clip : auto;
 height : auto;
 width : auto;
 margin : 0;
-overflow: visible; }
-}
+overflow: visible; } }
 
 // 6. LAYOUT 				==============================
 
-// .columns(250px, 0, 24px, COLOR, solid, 1px)
+// @include columns(250px, 0, 24px, COLOR, solid, 1px)
 
 @mixin columns($colwidth: 250px, $colcount: 0, $colgap: 50px, $columnRuleColor: #eee, $columnRuleStyle: solid, $columnRuleWidth: 1px) {
 -webkit-column-width : $colwidth;

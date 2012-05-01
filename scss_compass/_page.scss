@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -14,67 +10,60 @@
 /* Banner =================================================== */
 
 [role="banner"] {
-  margin : 0 auto;
-  padding-top : $baselineheight;
-  width : 90%;
+margin : 0 auto;
+padding-top : $baselineheight;
+width : 90%;
 
-  a[href="#navigation"] {
-    display : block;
-    position : absolute;
-    top : 11px;
-    right : 22px;
-    width : 43px;
-    height : 43px;
-    white-space : nowrap;
-    overflow : hidden;
-    background-color : lighten($basecolor, 20%);
-    border : 1px solid lighten($basecolor, 15%);
-    @include border-radius(4px);
-    color : lighten($basecolor, 75%);
-    @include font-size(32);
-    line-height : 42px;
-    text: {
-      align : center;
-      decoration : none;
-    }
-  }
+a[href="#navigation"] {
+display : block;
+position : absolute;
+top : 11px;
+right : 22px;
+width : 43px;
+height : 43px;
+white-space : nowrap;
+overflow : hidden;
+background-color : lighten($basecolor, 20%);
+border : 1px solid lighten($basecolor, 15%);
+@include border-radius(4px);
+color : lighten($basecolor, 75%);
+@include font-size(32);
+line-height : 42px;
+text-align : center;
+text-decoration : none; }
 }
 
 /* Navigation =================================================== */
 
 [role="navigation"] {
-  margin : 0 auto $baselineheight;
-  width : 90%;
-  background-color : lighten($basecolor, 20%);
-  border : 1px solid lighten($basecolor, 15%);
+margin : 0 auto $baselineheight;
+width : 90%;
+background-color : lighten($basecolor, 20%);
+border : 1px solid lighten($basecolor, 15%);
 
-  p {
-    margin-bottom : 0;
-    padding : 6px 11px;
-    color : $white;
-  }
+p {
+margin-bottom : 0;
+padding : 6px 11px;
+color : $white; }
 
-  a {
-    color : $white;
-  }
+a {
+color : $white; }
 }
 
 /* Content =================================================== */
 
 .content {
-  margin : 0 auto;
-  width : 90%;
-}
+margin : 0 auto;
+width : 90%; }
 
 /* contentinfo =================================================== */
 
 [role="contentinfo"] {
-  padding : $baselineheight 0;
-  border-top : 3px solid lighten($basecolor, 60%);
+padding : $baselineheight 0;
+border-top : 3px solid lighten($basecolor, 60%);
 
-  small {
-    display : block;
-    margin : 0 auto $baselineheight;
-    width : 90%;
-  }
+small {
+display : block;
+margin : 0 auto $baselineheight;
+width : 90%; }
 }

@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -31,11 +27,10 @@ line-height : $baselineheight;
 text-align : left; }
 
 th {
-font-weight : bold;
+font-weight : bold; }
 
-thead & {
+thead th {
 vertical-align : bottom; }
-}
 
 colgroup + thead tr:first-child th,
 colgroup + thead tr:first-child td,
@@ -43,20 +38,16 @@ thead:first-child tr:first-child th,
 thead:first-child tr:first-child td {
 border-top : 0; }
 
-tbody {
-& + & {
+tbody + tbody {
 border-top : $tableborderwidth * 2 $tableborderstyle $tableborder; }
 
-tr {
-td, th {
+tbody tr td,
+tbody tr th {
 @include transition(background-color .25s 0 linear); }
 
-&:hover {
-td, th {
+tbody tr:hover td,
+tbody tr:hover th {
 background-color : $tablehover; }
-}
-}
-}
 }
 
 // CONDENSED ====================================================
@@ -90,10 +81,9 @@ border-top : 0; }
 
 .table-striped {
 
-tbody tr:nth-child(odd) {
-td, th {
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
 background-color : $tablestripe; }
-}
 }
 
 

@@ -1,10 +1,6 @@
 // ==========================================================
 
 /* Font Awesome: http://fortawesome.github.com/Font-Awesome/
-/*
-/* Sass Port by Jina Bolton
-/* URL: http://sushiandrobots.com
-/*
 
 License
 -------------------------------------------------------
@@ -18,234 +14,229 @@ or mobile software). */
 
 // ==========================================================
 
-@include font-face('FontAwesome', font-files('/fonts/fontawesome-webfont.woff', woff, '/fonts/fontawesome-webfont.ttf', truetype, '/fonts/fontawesome-webfont.svgz#FontAwesomeRegular', svg, '/fonts/fontawesome-webfont.svg#FontAwesomeRegular', svg), '/fonts/fontawesome-webfont.eot');
+// TO DO: Implement Compass font styles: http://compass-style.org/examples/compass/css3/font-face/
+
+@font-face {
+font-family: 'FontAwesome';
+src: url('../fonts/fontawesome-webfont.eot');
+src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+url('../fonts/fontawesome-webfont.woff') format('woff'),
+url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+url('../fonts/fontawesome-webfont.svgz#FontAwesomeRegular') format('svg'),
+url('../fonts/fontawesome-webfont.svg#FontAwesomeRegular') format('svg');
+font-weight : normal;
+font-style : normal; }
 
 [class^="icon-"],
 [class*=" icon-"] {
-  display : inline;
-  width : auto;
-  height : auto;
-  line-height : inherit;
-  vertical-align : baseline;
-  background: {
-    image : none;
-    position : 0 0;
-    repeat : repeat;
-  }
-}
+display : inline;
+width : auto;
+height : auto;
+line-height : inherit;
+vertical-align : baseline;
+background-image : none;
+background-position : 0 0;
+background-repeat : repeat; }
 
 li[class^="icon-"],
 li[class*=" icon-"] {
-  display : block;
-}
+display : block; }
 
-[class^="icon-"],
-[class*=" icon-"] {
-  &:before {
-    font: {
-      style : normal;
-      weight : normal;
-      family : FontAwesome;
-    }
-    display : inline-block;
-    text-decoration : inherit;
-  }
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+font-family : FontAwesome;
+font-weight : normal;
+font-style : normal;
+display : inline-block;
+text-decoration : inherit; }
 
-  a & {
-    display : inline-block;
-    text-decoration : inherit;
-  }
-}
+a [class^="icon-"],
+a [class*=" icon-"] {
+display : inline-block;
+text-decoration : inherit; }
 
 /* makes the font 33% larger relative to the icon container */
 .icon-large:before {
-  vertical-align : top;
-  font-size : 4/3em;
-}
+vertical-align : top;
+font-size : 4/3em; }
 
+.btn {
 [class^="icon-"],
 [class*=" icon-"] {
-  .btn & {
-    /* keeps button heights with and without icons the same */
-    line-height : .9em;
-  }
+/* keeps button heights with and without icons the same */
+line-height : .9em; }
+}
 
-  li & {
-    display : inline-block;
-    width : 1.25em;
-    text-align : center;
+li {
+[class^="icon-"],
+[class*=" icon-"] {
+display : inline-block;
+width : 1.25em;
+text-align : center; }
 
-    &.icon-large  {
-      /* 1.5 increased font size for icon-large * 1.25 width */
-      width : 1.5*1.25em;
-    }
-  }
+.icon-large[class^="icon-"],
+.icon-large[class*=" icon-"]  {
+/* 1.5 increased font size for icon-large * 1.25 width */
+width : 1.5*1.25em; }
 }
 
 li[class^="icon-"],
 li[class*=" icon-"] {
-  @include no-bullet;
+margin-left: 0;
+list-style-type: none;
 
-  &:before {
-    text: {
-      indent: -2em;
-      align: center;
-    }
-  }
-  &.icon-large:before {
-    text-indent: -4/3em;
-  }
+&:before {
+text-indent: -2em;
+text-align: center;
+}
+&.icon-large:before {
+text-indent: -4/3em;
+}
 }
 
 /*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
     readers do not read off random characters that represent icons */
 
+.icon-glass:before              { content: "\f000"; }
+.icon-music:before              { content: "\f001"; }
+.icon-search:before             { content: "\f002"; }
+.icon-envelope:before           { content: "\f003"; }
+.icon-heart:before              { content: "\f004"; }
+.icon-star:before               { content: "\f005"; }
+.icon-star-empty:before         { content: "\f006"; }
+.icon-user:before               { content: "\f007"; }
+.icon-film:before               { content: "\f008"; }
+.icon-th-large:before           { content: "\f009"; }
+.icon-th:before                 { content: "\f00a"; }
+.icon-th-list:before            { content: "\f00b"; }
+.icon-ok:before                 { content: "\f00c"; }
+.icon-remove:before             { content: "\f00d"; }
+.icon-zoom-in:before            { content: "\f00e"; }
+.icon-zoom-out:before           { content: "\f010"; }
+.icon-off:before                { content: "\f011"; }
+.icon-signal:before             { content: "\f012"; }
+.icon-cog:before                { content: "\f013"; }
+.icon-trash:before              { content: "\f014"; }
+.icon-home:before               { content: "\f015"; }
+.icon-file:before               { content: "\f016"; }
+.icon-time:before               { content: "\f017"; }
+.icon-road:before               { content: "\f018"; }
+.icon-download-alt:before       { content: "\f019"; }
+.icon-download:before           { content: "\f01a"; }
+.icon-upload:before             { content: "\f01b"; }
+.icon-inbox:before              { content: "\f01c"; }
+.icon-play-circle:before        { content: "\f01d"; }
+.icon-repeat:before             { content: "\f01e"; }
+/* \f020 is not a valid unicode character. all shifted one down */
+.icon-refresh:before            { content: "\f021"; }
+.icon-list-alt:before           { content: "\f022"; }
+.icon-lock:before               { content: "\f023"; }
+.icon-flag:before               { content: "\f024"; }
+.icon-headphones:before         { content: "\f025"; }
+.icon-volume-off:before         { content: "\f026"; }
+.icon-volume-down:before        { content: "\f027"; }
+.icon-volume-up:before          { content: "\f028"; }
+.icon-qrcode:before             { content: "\f029"; }
+.icon-barcode:before            { content: "\f02a"; }
+.icon-tag:before                { content: "\f02b"; }
+.icon-tags:before               { content: "\f02c"; }
+.icon-book:before               { content: "\f02d"; }
+.icon-bookmark:before           { content: "\f02e"; }
+.icon-print:before              { content: "\f02f"; }
+.icon-camera:before             { content: "\f030"; }
+.icon-font:before               { content: "\f031"; }
+.icon-bold:before               { content: "\f032"; }
+.icon-italic:before             { content: "\f033"; }
+.icon-text-height:before        { content: "\f034"; }
+.icon-text-width:before         { content: "\f035"; }
+.icon-align-left:before         { content: "\f036"; }
+.icon-align-center:before       { content: "\f037"; }
+.icon-align-right:before        { content: "\f038"; }
+.icon-align-justify:before      { content: "\f039"; }
+.icon-list:before               { content: "\f03a"; }
+.icon-indent-left:before        { content: "\f03b"; }
+.icon-indent-right:before       { content: "\f03c"; }
+.icon-facetime-video:before     { content: "\f03d"; }
+.icon-picture:before            { content: "\f03e"; }
+.icon-pencil:before             { content: "\f040"; }
+.icon-map-marker:before         { content: "\f041"; }
+.icon-adjust:before             { content: "\f042"; }
+.icon-tint:before               { content: "\f043"; }
+.icon-edit:before               { content: "\f044"; }
+.icon-share:before              { content: "\f045"; }
+.icon-check:before              { content: "\f046"; }
+.icon-move:before               { content: "\f047"; }
+.icon-step-backward:before      { content: "\f048"; }
+.icon-fast-backward:before      { content: "\f049"; }
+.icon-backward:before           { content: "\f04a"; }
+.icon-play:before               { content: "\f04b"; }
+.icon-pause:before              { content: "\f04c"; }
+.icon-stop:before               { content: "\f04d"; }
+.icon-forward:before            { content: "\f04e"; }
 
-$i-set: glass, music, search, envelope, heart, star, star-empty, user, film, th-large, th, th-list, ok, remove, zoom-in, zoom-out, off, signal, cog, trash, home, file, time, road, download-alt, download, upload, inbox, play-circle, repeat, refresh, list-alt, lock, flag, headphones, volume-off, volume-down, volume-up, qrcode, barcode, tag, tags, book, bookmark, print, camera, font, bold, italic, text-height, text-width, align-left, align-center, align-right, align-justify, list, indent-left, indent-right, facetime-video, picture, pencil, map-marker, adjust, tint, edit, share, check, move, step-backward, fast-backward, backward, play, pause, stop, forward, fast-forward, step-forward, eject, chevron-left, chevron-right, plus-sign, minus-sign, remove-sign, ok-sign, question-sign, info-sign, screenshot, remove-circle, ok-circle, ban-circle, arrow-left, arrow-right, arrow-up, arrow-down, share-alt, resize-full, resize-small, plus, minus, asterisk, exclamation-sign, gift, leaf, fire, eye-open, eye-close, warning-sign, plane, calendar, random, comment, magnet, chevron-up, chevron-down, retweet, shopping-cart, folder-close, folder-open, resize-vertical, resize-horizontal, bar-chart, twitter-sign, facebook-sign, camera-retro, key, cogs, comments, thumbs-up, thumbs-down, star-half, heart-empty, signout, linkedin-sign, pushpin, external-link, signin, trophy, github-sign, upload-alt, lemon;
-$i-value: false;
+.icon-fast-forward:before       { content: "\f050"; }
+.icon-step-forward:before       { content: "\f051"; }
+.icon-eject:before              { content: "\f052"; }
+.icon-chevron-left:before       { content: "\f053"; }
+.icon-chevron-right:before      { content: "\f054"; }
+.icon-plus-sign:before          { content: "\f055"; }
+.icon-minus-sign:before         { content: "\f056"; }
+.icon-remove-sign:before        { content: "\f057"; }
+.icon-ok-sign:before            { content: "\f058"; }
+.icon-question-sign:before      { content: "\f059"; }
+.icon-info-sign:before          { content: "\f05a"; }
+.icon-screenshot:before         { content: "\f05b"; }
+.icon-remove-circle:before      { content: "\f05c"; }
+.icon-ok-circle:before          { content: "\f05d"; }
+.icon-ban-circle:before         { content: "\f05e"; }
 
-@each $i-name in $i-set {
-
-  @if $i-name == glass             { $i-value: #{0}#{0}; }
-  @if $i-name == music             { $i-value: #{0}#{1}; }
-  @if $i-name == search            { $i-value: #{0}#{2}; }
-  @if $i-name == envelope          { $i-value: #{0}#{3}; }
-  @if $i-name == heart             { $i-value: #{0}#{4}; }
-  @if $i-name == star              { $i-value: #{0}#{5}; }
-  @if $i-name == star-empty        { $i-value: #{0}#{6}; }
-  @if $i-name == user              { $i-value: #{0}#{7}; }
-  @if $i-name == film              { $i-value: #{0}#{8}; }
-  @if $i-name == th-large          { $i-value: #{0}#{9}; }
-  @if $i-name == th                { $i-value: #{0}#{a}; }
-  @if $i-name == th-list           { $i-value: #{0}#{b}; }
-  @if $i-name == ok                { $i-value: #{0}#{c}; }
-  @if $i-name == remove            { $i-value: #{0}#{d}; }
-  @if $i-name == zoom-in           { $i-value: #{0}#{e}; }
-  @if $i-name == zoom-out          { $i-value: #{1}#{0}; }
-  @if $i-name == off               { $i-value: #{1}#{1}; }
-  @if $i-name == signal            { $i-value: #{1}#{2}; }
-  @if $i-name == cog               { $i-value: #{1}#{3}; }
-  @if $i-name == trash             { $i-value: #{1}#{4}; }
-  @if $i-name == home              { $i-value: #{1}#{5}; }
-  @if $i-name == file              { $i-value: #{1}#{6}; }
-  @if $i-name == time              { $i-value: #{1}#{7}; }
-  @if $i-name == road              { $i-value: #{1}#{8}; }
-  @if $i-name == download-alt      { $i-value: #{1}#{9}; }
-  @if $i-name == download          { $i-value: #{1}#{a}; }
-  @if $i-name == upload            { $i-value: #{1}#{b}; }
-  @if $i-name == inbox             { $i-value: #{1}#{c}; }
-  @if $i-name == play-circle       { $i-value: #{1}#{d}; }
-  @if $i-name == repeat            { $i-value: #{1}#{e}; }
-  @if $i-name == refresh           { $i-value: #{2}#{1}; }
-  @if $i-name == list-alt          { $i-value: #{2}#{2}; }
-  @if $i-name == lock              { $i-value: #{2}#{3}; }
-  @if $i-name == flag              { $i-value: #{2}#{4}; }
-  @if $i-name == headphones        { $i-value: #{2}#{5}; }
-  @if $i-name == volume-off        { $i-value: #{2}#{6}; }
-  @if $i-name == volume-down       { $i-value: #{2}#{7}; }
-  @if $i-name == volume-up         { $i-value: #{2}#{8}; }
-  @if $i-name == qrcode            { $i-value: #{2}#{9}; }
-  @if $i-name == barcode           { $i-value: #{2}#{a}; }
-  @if $i-name == tag               { $i-value: #{2}#{b}; }
-  @if $i-name == tags              { $i-value: #{2}#{c}; }
-  @if $i-name == book              { $i-value: #{2}#{d}; }
-  @if $i-name == bookmark          { $i-value: #{2}#{e}; }
-  @if $i-name == print             { $i-value: #{2}#{f}; }
-  @if $i-name == camera            { $i-value: #{3}#{0}; }
-  @if $i-name == font              { $i-value: #{3}#{1}; }
-  @if $i-name == bold              { $i-value: #{3}#{2}; }
-  @if $i-name == italic            { $i-value: #{3}#{3}; }
-  @if $i-name == text-height       { $i-value: #{3}#{4}; }
-  @if $i-name == text-width        { $i-value: #{3}#{5}; }
-  @if $i-name == align-left        { $i-value: #{3}#{6}; }
-  @if $i-name == align-center      { $i-value: #{3}#{7}; }
-  @if $i-name == align-right       { $i-value: #{3}#{8}; }
-  @if $i-name == align-justify     { $i-value: #{3}#{9}; }
-  @if $i-name == list              { $i-value: #{3}#{a}; }
-  @if $i-name == indent-left       { $i-value: #{3}#{b}; }
-  @if $i-name == indent-right      { $i-value: #{3}#{c}; }
-  @if $i-name == facetime-video    { $i-value: #{3}#{d}; }
-  @if $i-name == picture           { $i-value: #{3}#{e}; }
-  @if $i-name == pencil            { $i-value: #{4}#{0}; }
-  @if $i-name == map-marker        { $i-value: #{4}#{1}; }
-  @if $i-name == adjust            { $i-value: #{4}#{2}; }
-  @if $i-name == tint              { $i-value: #{4}#{3}; }
-  @if $i-name == edit              { $i-value: #{4}#{4}; }
-  @if $i-name == share             { $i-value: #{4}#{5}; }
-  @if $i-name == check             { $i-value: #{4}#{6}; }
-  @if $i-name == move              { $i-value: #{4}#{7}; }
-  @if $i-name == step-backward     { $i-value: #{4}#{8}; }
-  @if $i-name == fast-backward     { $i-value: #{4}#{9}; }
-  @if $i-name == backward          { $i-value: #{4}#{a}; }
-  @if $i-name == play              { $i-value: #{4}#{b}; }
-  @if $i-name == pause             { $i-value: #{4}#{c}; }
-  @if $i-name == stop              { $i-value: #{4}#{d}; }
-  @if $i-name == forward           { $i-value: #{4}#{e}; }
-  @if $i-name == fast-forward      { $i-value: #{5}#{0}; }
-  @if $i-name == step-forward      { $i-value: #{5}#{1}; }
-  @if $i-name == eject             { $i-value: #{5}#{2}; }
-  @if $i-name == chevron-left      { $i-value: #{5}#{3}; }
-  @if $i-name == chevron-right     { $i-value: #{5}#{4}; }
-  @if $i-name == plus-sign         { $i-value: #{5}#{5}; }
-  @if $i-name == minus-sign        { $i-value: #{5}#{6}; }
-  @if $i-name == remove-sign       { $i-value: #{5}#{7}; }
-  @if $i-name == ok-sign           { $i-value: #{5}#{8}; }
-  @if $i-name == question-sign     { $i-value: #{5}#{9}; }
-  @if $i-name == info-sign         { $i-value: #{5}#{a}; }
-  @if $i-name == screenshot        { $i-value: #{5}#{b}; }
-  @if $i-name == remove-circle     { $i-value: #{5}#{c}; }
-  @if $i-name == ok-circle         { $i-value: #{5}#{d}; }
-  @if $i-name == ban-circle        { $i-value: #{5}#{e}; }
-  @if $i-name == arrow-left        { $i-value: #{6}#{0}; }
-  @if $i-name == arrow-right       { $i-value: #{6}#{1}; }
-  @if $i-name == arrow-up          { $i-value: #{6}#{2}; }
-  @if $i-name == arrow-down        { $i-value: #{6}#{3}; }
-  @if $i-name == share-alt         { $i-value: #{6}#{4}; }
-  @if $i-name == resize-full       { $i-value: #{6}#{5}; }
-  @if $i-name == resize-small      { $i-value: #{6}#{6}; }
-  @if $i-name == plus              { $i-value: #{6}#{7}; }
-  @if $i-name == minus             { $i-value: #{6}#{8}; }
-  @if $i-name == asterisk          { $i-value: #{6}#{9}; }
-  @if $i-name == exclamation-sign  { $i-value: #{6}#{a}; }
-  @if $i-name == gift              { $i-value: #{6}#{b}; }
-  @if $i-name == leaf              { $i-value: #{6}#{c}; }
-  @if $i-name == fire              { $i-value: #{6}#{d}; }
-  @if $i-name == eye-open          { $i-value: #{6}#{e}; }
-  @if $i-name == eye-close         { $i-value: #{7}#{0}; }
-  @if $i-name == warning-sign      { $i-value: #{7}#{1}; }
-  @if $i-name == plane             { $i-value: #{7}#{2}; }
-  @if $i-name == calendar          { $i-value: #{7}#{3}; }
-  @if $i-name == random            { $i-value: #{7}#{4}; }
-  @if $i-name == comment           { $i-value: #{7}#{5}; }
-  @if $i-name == magnet            { $i-value: #{7}#{6}; }
-  @if $i-name == chevron-up        { $i-value: #{7}#{7}; }
-  @if $i-name == chevron-down      { $i-value: #{7}#{8}; }
-  @if $i-name == retweet           { $i-value: #{7}#{9}; }
-  @if $i-name == shopping-cart     { $i-value: #{7}#{a}; }
-  @if $i-name == folder-close      { $i-value: #{7}#{b}; }
-  @if $i-name == folder-open       { $i-value: #{7}#{c}; }
-  @if $i-name == resize-vertical   { $i-value: #{7}#{d}; }
-  @if $i-name == resize-horizontal { $i-value: #{7}#{e}; }
-  @if $i-name == bar-chart         { $i-value: #{8}#{0}; }
-  @if $i-name == twitter-sign      { $i-value: #{8}#{1}; }
-  @if $i-name == facebook-sign     { $i-value: #{8}#{2}; }
-  @if $i-name == camera-retro      { $i-value: #{8}#{3}; }
-  @if $i-name == key               { $i-value: #{8}#{4}; }
-  @if $i-name == cogs              { $i-value: #{8}#{5}; }
-  @if $i-name == comments          { $i-value: #{8}#{6}; }
-  @if $i-name == thumbs-up         { $i-value: #{8}#{7}; }
-  @if $i-name == thumbs-down       { $i-value: #{8}#{8}; }
-  @if $i-name == star-half         { $i-value: #{8}#{9}; }
-  @if $i-name == heart-empty       { $i-value: #{8}#{a}; }
-  @if $i-name == signout           { $i-value: #{8}#{b}; }
-  @if $i-name == linkedin-sign     { $i-value: #{8}#{c}; }
-  @if $i-name == pushpin           { $i-value: #{8}#{d}; }
-  @if $i-name == external-link     { $i-value: #{8}#{e}; }
-  @if $i-name == signin            { $i-value: #{9}#{0}; }
-  @if $i-name == trophy            { $i-value: #{9}#{1}; }
-  @if $i-name == github-sign       { $i-value: #{9}#{2}; }
-  @if $i-name == upload-alt        { $i-value: #{9}#{3}; }
-  @if $i-name == lemon             { $i-value: #{9}#{4}; }
-
-  .icon-#{$i-name}:before { content: "\f#{0}#{$i-value}"; }
-}
+.icon-arrow-left:before         { content: "\f060"; }
+.icon-arrow-right:before        { content: "\f061"; }
+.icon-arrow-up:before           { content: "\f062"; }
+.icon-arrow-down:before         { content: "\f063"; }
+.icon-share-alt:before          { content: "\f064"; }
+.icon-resize-full:before        { content: "\f065"; }
+.icon-resize-small:before       { content: "\f066"; }
+.icon-plus:before               { content: "\f067"; }
+.icon-minus:before              { content: "\f068"; }
+.icon-asterisk:before           { content: "\f069"; }
+.icon-exclamation-sign:before   { content: "\f06a"; }
+.icon-gift:before               { content: "\f06b"; }
+.icon-leaf:before               { content: "\f06c"; }
+.icon-fire:before               { content: "\f06d"; }
+.icon-eye-open:before           { content: "\f06e"; }
+.icon-eye-close:before          { content: "\f070"; }
+.icon-warning-sign:before       { content: "\f071"; }
+.icon-plane:before              { content: "\f072"; }
+.icon-calendar:before           { content: "\f073"; }
+.icon-random:before             { content: "\f074"; }
+.icon-comment:before            { content: "\f075"; }
+.icon-magnet:before             { content: "\f076"; }
+.icon-chevron-up:before         { content: "\f077"; }
+.icon-chevron-down:before       { content: "\f078"; }
+.icon-retweet:before            { content: "\f079"; }
+.icon-shopping-cart:before      { content: "\f07a"; }
+.icon-folder-close:before       { content: "\f07b"; }
+.icon-folder-open:before        { content: "\f07c"; }
+.icon-resize-vertical:before    { content: "\f07d"; }
+.icon-resize-horizontal:before  { content: "\f07e"; }
+.icon-bar-chart:before          { content: "\f080"; }
+.icon-twitter-sign:before       { content: "\f081"; }
+.icon-facebook-sign:before      { content: "\f082"; }
+.icon-camera-retro:before       { content: "\f083"; }
+.icon-key:before                { content: "\f084"; }
+.icon-cogs:before               { content: "\f085"; }
+.icon-comments:before           { content: "\f086"; }
+.icon-thumbs-up:before          { content: "\f087"; }
+.icon-thumbs-down:before        { content: "\f088"; }
+.icon-star-half:before          { content: "\f089"; }
+.icon-heart-empty:before        { content: "\f08a"; }
+.icon-signout:before            { content: "\f08b"; }
+.icon-linkedin-sign:before      { content: "\f08c"; }
+.icon-pushpin:before            { content: "\f08d"; }
+.icon-external-link:before      { content: "\f08e"; }
+.icon-signin:before             { content: "\f090"; }
+.icon-trophy:before             { content: "\f091"; }
+.icon-github-sign:before        { content: "\f092"; }
+.icon-upload-alt:before         { content: "\f093"; }
+.icon-lemon:before              { content: "\f094"; }

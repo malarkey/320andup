@@ -3,10 +3,6 @@
 // 320 and Up by Andy Clarke
 // Version: 3.0
 // URL: http://stuffandnonsense.co.uk/projects/320andup/
-//
-// Sass Port by Jina Bolton
-// URL: http://sushiandrobots.com
-//
 // Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 
 // ==========================================================
@@ -17,7 +13,7 @@
 
 // For more alert styles:
 // http://twitter.github.com/bootstrap/components.html#alerts"
-// https://github.com/twitter/bootstrap/blob/master/less/alerts.less"
+// https://github.com/twitter/bootstrap/blob/master/less/alerts"
 
 .alert {
 margin-bottom : $baselineheight;
@@ -164,7 +160,7 @@ color : $white; }
 @mixin warninggrad {
 @include vertical($warningcolor, darken($warningcolor, 10%)); }
 
-// For additional gradients see: https://github.com/twitter/bootstrap/blob/master/less/mixins.less
+// For additional gradients see: https://github.com/twitter/bootstrap/blob/master/less/mixins
 
 // WELL ====================================================
 
