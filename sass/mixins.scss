@@ -1,0 +1,69 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Mixins =================================================== */
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+
+@mixin font-size($font-size:16){
+//	$font-size : $font-size * $basefontsize;
+	$rem: ($font-size / 10);
+	font-size : $font-size * 1px;
+	font-size : #{$rem}rem; 
+}
+
+
+// 3. COLOUR 				==============================
+// 4. TEXTURE 				==============================
+
+
+@mixin transition($transition) {
+-webkit-transition : $transition;
+-moz-transition : $transition;
+-ms-transition : $transition;
+-o-transition : $transition;
+transition : $transition; }
+
+
+// 5. ELEMENTS 				==============================
+
+@mixin background-alpha($color: $white, $alpha: 1) {
+background-color : hsla(hue($color), saturation($color), lightness($color), $alpha); }
+
+// .resize(VALUE) (none, both, horizontal, vertical, inherit)
+
+@mixin resize($direction: both) {
+resize : $direction;
+overflow : auto; }
+
+// For image replacement
+
+@mixin hide-text() {
+text-indent : 100%;
+white-space : nowrap;
+overflow : hidden; }
+
+// Hide from visual and speaking browsers
+
+@mixin hidden() {
+display : none !important; 
+visibility : hidden; }
+
+// Hide but maintain layout
+
+@mixin invisible() { 
+visibility : hidden; }
+
+
+
+// 6. LAYOUT 				============================== 
+//  7. VENDOR-SPECIFIC 		==============================
+//  8. MODERNIZR 			==============================
+//  9. TEMPLATE SPECIFICS 	==============================
