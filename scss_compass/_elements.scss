@@ -56,10 +56,10 @@ padding : 0;
 li {
 margin-bottom : $baselineheight / 4;
 padding-bottom : $baselineheight / 4;
-border-bottom : 1px dashed $bordercolor; }
+border-bottom : 1px dashed $bordercolor;
 
-li:last-child {
+&:last-child {
 margin-bottom : 0;
 padding-bottom : 0;
-border-bottom-width : 0; }
+border-bottom-width : 0; } }
 }

@@ -29,7 +29,7 @@ border : $buttonborderwidth $buttonborderstyle $buttonbordercolor;
 border-bottom-color : $buttonbottombordercolor;
 @include rounded(4px);
 cursor : pointer;
-*margin-left : .3em; 
+*margin-left : .3em;
 
 &:visited,
 &:hover {
@@ -46,7 +46,7 @@ border-color : $buttonbordercolor; }
 // disabled
 
 .btn-disabled {
-@include opacity(.5); 
+@include opacity(.5);
 cursor : default; }
 
 // info
@@ -54,7 +54,7 @@ cursor : default; }
 .btn-info {
 @include infograd;
 border-color : darken($infocolor, 15%);
-border-bottom-color : darken($infocolor, 20%); 
+border-bottom-color : darken($infocolor, 20%);
 color : darken($infocolor, 50%);
 
 &:visited,
@@ -67,8 +67,8 @@ color : darken($infocolor, 50%); }
 .btn-inverse {
 @include inversegrad;
 border-color : darken($inverscolor, 15%);
-border-bottom-color : darken($inverscolor, 20%); 
-color : $white; 
+border-bottom-color : darken($inverscolor, 20%);
+color : $white;
 
 &:visited,
 &:hover {
@@ -81,7 +81,7 @@ color : $white; }
 @include basegrad;
 border-color : darken($basecolor, 15%);
 border-bottom-color : darken($basecolor, 20%);
-color : $white; 
+color : $white;
 
 &:visited,
 &:hover {
@@ -121,12 +121,12 @@ line-height : normal;
 
 .btn-small {
 padding : 6px 10px;
-@include font-size(11); 
+@include font-size(11);
 line-height : 16px; }
 
 .btn-mini {
 padding : 3px 5px;
-@include font-size(11); 
+@include font-size(11);
 line-height : 14px; }
 
 .btn-group {
@@ -143,7 +143,7 @@ margin-left : -1px;
 
 .btn-group .btn:first-child {
 margin-left : 0;
-@include border-radius(2px, 0, 2px, 0); } 
+@include border-radius(2px, 0, 2px, 0); }
 
 .btn-group .btn:last-child {
 @include border-radius(0, 2px, 0, 2px); }

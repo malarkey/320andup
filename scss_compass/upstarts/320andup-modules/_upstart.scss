@@ -11,16 +11,16 @@
 
 .grid {
 margin-bottom : $baseline;
-border-bottom : 1px dashed lighten($basecolor, 60%); }
+border-bottom : 1px dashed lighten($basecolor, 60%);
 
-.grid:last-child {
+&:last-child {
 margin-bottom : 0;
-border-bottom-width : 0; }
+border-bottom-width : 0; } }
 
 .furniture-letter {
-overflow : hidden; }
+overflow : hidden;
 
-.furniture-letter span {
+span {
 display : block;
 float : left;
 margin : 0 12px 0 0;
@@ -31,7 +31,7 @@ color : $white;
 @include font-size(32);
 font-weight : bold;
 line-height : 44px;
-text-align : center; }
+text-align : center; } }
 
 // 480px
 @media only screen and (min-width: 480px) {
@@ -48,22 +48,23 @@ text-align : center; }
 
 // .grids-two
 
-.grids-two .grid {
-width : 43.03%; 
+.grids-two {
+.grid {
+width : 43.03%;
 margin-bottom : 0;
 border-bottom-width : 0; }
 
-.grids-two .grid-1 {
+.grid-1 {
 float : left; }
 
-.grids-two .grid-2 {
-float : right; }
+.grid-2 {
+float : right; } }
 
 // grids-three
 
 .grids-three .grid-a {
 float : left;
-width : 31.64%; 
+width : 31.64%;
 margin-right : 2.53%; }
 
 // grids-four
@@ -80,38 +81,40 @@ margin-right : 2.53%; }
 
 // grids-three
 
-.grids-three .grid {
+.grids-three {
+.grid {
 float : left;
 width : 31.64%;
 margin : 0 2.53% 0 0;
 border-bottom-width : 0; }
 
-.grids-three .grid-3 {
+.grid-3 {
 float : right;
 margin-right : 0; }
 
-.grids-three .grid .grid-a {
-float : none; 
+.grid .grid-a {
+float : none;
 width : 100%;
 margin-right : 0;
-margin-bottom : $baseline / 2; }
+margin-bottom : $baseline / 2; } }
 
 // grids-four
 
-.grids-four .grid {
+.grids-four {
+.grid {
 float : left;
 width : 20.25%;
 margin : 0 6.32% 0 0;
 border-bottom-width : 0; }
 
-.grids-four .grid-4 {
+.grid-4 {
 float : right;
 margin-right : 0; }
 
-.grids-four .grid .grid-a {
-float : none; 
-width : 100%; 
-margin-right : 0; }
+.grid .grid-a {
+float : none;
+width : 100%;
+margin-right : 0; } }
 
 }
 
@@ -124,5 +127,5 @@ margin-right : 0; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
-/* Styles */ 
+/* Styles */
 }

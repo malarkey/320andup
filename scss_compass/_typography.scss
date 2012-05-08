@@ -18,10 +18,11 @@ font-weight : $baseheadingfontweight;
 color : $baseheadingfontcolor;
 text-rendering : optimizelegibility; }
 
-h1 small,
-h2 small {
+h1,
+h2 {
+small {
 font-weight : normal;
-color : $lightgrey; }
+color : $lightgrey; } }
 
 h1,
 .h1 {
@@ -66,7 +67,6 @@ text-transform : uppercase; }
 #{headings(3)} {
 float : left;
 margin-right : $gutterwidth;
-}
 
 a {
 display : block;
@@ -80,15 +80,17 @@ background-color : lighten($basecolor, 75%); }
 &:hover {
 background-color : lighten($basecolor, 75%); }
 }
+}
 
-.header .a-rss,
-.header .a-rss:hover {
+.header .a-rss {
+&,
+&:hover {
 float : left;
 width : 16px;
 height : 16px;
 padding : 0;
 background : transparent url(../img/a-rss.png) no-repeat 0 0;
-@include hide-text; }
+@include hide-text; } }
 
 // TYPOGRAPHY ====================================================
 
@@ -107,12 +109,11 @@ small {
 ul,
 ol {
 margin : 0 0 $baselineheight #{-$gutterwidth};
-padding : 0 0 0 $gutterwidth; }
+padding : 0 0 0 $gutterwidth;
 
-li ul,
-li ol {
+li & {
 margin : 0;
-@include font-size(16); }
+@include font-size(16); } }
 
 // blockquote
 
@@ -126,12 +127,12 @@ font-style : normal; }
 q {
 quotes : none; }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote,
+q {
+&:before,
+&:after {
 content : '';
-content : none;}
+content : none; } }
 
 cite {
 font-style : normal; }
@@ -201,7 +202,7 @@ line-height : 0;
 vertical-align : baselineheight; }
 
 sup {
-top : -.5em; }
+top : -0.5em; }
 
 sub {
-bottom : -.25em; }
+bottom : -0.25em; }

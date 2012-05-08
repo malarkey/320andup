@@ -28,19 +28,21 @@ table
     font-weight: bold
   thead th
     vertical-align: bottom
-  colgroup + thead tr:first-child th,
-  colgroup + thead tr:first-child td,
-  thead:first-child tr:first-child th,
-  thead:first-child tr:first-child td
-    border-top: 0
-  tbody + tbody
-    border-top: $tableborderwidth * 2 $tableborderstyle $tableborder
-  tbody tr td,
-  tbody tr th
-    +transition(background-color 0.25s 0 linear)
-  tbody tr:hover td,
-  tbody tr:hover th
-    background-color: $tablehover
+  th,
+  td
+    colgroup + thead,
+    thead:first-child
+      tr:first-child &
+        border-top: 0
+  tbody
+    & + &
+      border-top: $tableborderwidth * 2 $tableborderstyle $tableborder
+    tr td,
+    tr th
+      +transition(background-color 0.25s 0 linear)
+    tr:hover td,
+    tr:hover th
+      background-color: $tablehover
 
 // CONDENSED ====================================================
 
@@ -67,6 +69,7 @@ table
 // STRIPED ====================================================
 
 .table-striped
-  tbody tr:nth-child(odd) td,
-  tbody tr:nth-child(odd) th
-    background-color: $tablestripe
+  tbody tr:nth-child(odd)
+    td,
+    th
+      background-color: $tablestripe

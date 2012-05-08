@@ -32,22 +32,24 @@ font-weight : bold; }
 thead th {
 vertical-align : bottom; }
 
-colgroup + thead tr:first-child th,
-colgroup + thead tr:first-child td,
-thead:first-child tr:first-child th,
-thead:first-child tr:first-child td {
-border-top : 0; }
+th,
+td {
+colgroup + thead,
+thead:first-child {
+tr:first-child & {
+border-top : 0; } } }
 
-tbody + tbody {
+tbody {
+& + & {
 border-top : $tableborderwidth * 2 $tableborderstyle $tableborder; }
 
-tbody tr td,
-tbody tr th {
+tr td,
+tr th {
 @include transition(background-color .25s 0 linear); }
 
-tbody tr:hover td,
-tbody tr:hover th {
-background-color : $tablehover; }
+tr:hover td,
+tr:hover th {
+background-color : $tablehover; } }
 }
 
 // CONDENSED ====================================================
@@ -81,9 +83,10 @@ border-top : 0; }
 
 .table-striped {
 
-tbody tr:nth-child(odd) td,
-tbody tr:nth-child(odd) th {
-background-color : $tablestripe; }
+tbody tr:nth-child(odd) {
+td,
+th {
+background-color : $tablestripe; } }
 }
 
 

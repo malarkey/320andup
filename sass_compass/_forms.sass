@@ -83,46 +83,43 @@ select
 .input-small
   width: 90px
 
-input[type="image"],
-input[type="checkbox"],
-input[type="radio"]
-  width: auto
-  height: auto
-  padding: 0
-  margin: 3px 0
-  *margin-top: 0
-  line-height: normal
-  cursor: pointer
-  +border-radius(0)
-  border: 0 \9
-
-input[type="checkbox"],
-input[type="radio"]
-  +box-sizing(border-box)
-  padding: 0
-  *width: 13px
-  *height: 13px
-
-input[type="image"]
-  border: 0
-  +box-shadow(none)
-
-input[type="file"]
-  width: auto
-  padding: initial
-  line-height: initial
-  border: initial
-  background-color: transparent
-  background-color: initial
-  +box-shadow(none)
-
-input[type="button"],
-input[type="reset"],
-input[type="submit"]
-  width: auto
-  height: auto
-  cursor: pointer
-  *overflow: visible
+input
+  &[type="image"],
+  &[type="checkbox"],
+  &[type="radio"]
+    width: auto
+    height: auto
+    padding: 0
+    margin: 3px 0
+    *margin-top: 0
+    line-height: normal
+    cursor: pointer
+    +border-radius(0)
+    border: 0 \9
+  &[type="checkbox"],
+  &[type="radio"]
+    +box-sizing(border-box)
+    padding: 0
+    *width: 13px
+    *height: 13px
+  &[type="image"]
+    border: 0
+    +box-shadow(none)
+  &[type="file"]
+    width: auto
+    padding: initial
+    line-height: initial
+    border: initial
+    background-color: transparent
+    background-color: initial
+    +box-shadow(none)
+  &[type="button"],
+  &[type="reset"],
+  &[type="submit"]
+    width: auto
+    height: auto
+    cursor: pointer
+    *overflow: visible
 
 select,
 input[type="file"]
@@ -134,10 +131,9 @@ select
   width: auto
   background-color: $inputbackground
   +font-size(13)
-
-select[multiple],
-select[size]
-  height: auto
+  &[multiple],
+  &[size]
+    height: auto
 
 textarea
   +resize(vertical)
@@ -158,14 +154,15 @@ input[type="hidden"]
   float: left
   margin-left: -18px
 
-.radio.inline,
-.checkbox.inline
-  display: inline-block
-  padding-top: 5px
-  margin-bottom: 0
-  vertical-align: middle
+.radio,
+.checkbox
+  &.inline
+    display: inline-block
+    padding-top: 5px
+    margin-bottom: 0
+    vertical-align: middle
 
-.radio.inline + .radio.inline,
+.radio,.inline + .radio.inline,
 .checkbox.inline + .checkbox.inline
   margin-left: 10px
 
@@ -217,54 +214,49 @@ input:-moz-placeholder
 
 // .form-inline
 
-.form-inline input,
-.form-inline textarea,
-.form-inline select
-  display: inline-block
-  margin-bottom: 0
-
-.form-inline label
-  display: inline-block
-
-.form-inline .radio,
-.form-inline .checkbox,
-.form-inline .radio
-  padding-left: 0
-  margin-bottom: 0
-  vertical-align: middle
-
-.form-inline .radio input[type="radio"],
-.form-inline .checkbox input[type="checkbox"]
-  float: left
-  margin-left: 0
-  margin-right: 3px
+.form-inline
+  input,
+  textarea,
+  select
+    display: inline-block
+    margin-bottom: 0
+  label
+    display: inline-block
+  .radio,
+  .checkbox,
+  .radio
+    padding-left: 0
+    margin-bottom: 0
+    vertical-align: middle
+  .radio input[type="radio"],
+  .checkbox input[type="checkbox"]
+    float: left
+    margin-left: 0
+    margin-right: 3px
 
 // .form-search
 
-.form-search input,
-.form-search textarea,
-.form-search select
-  display: inline-block
-  margin-bottom: 0
-
-.form-search .search-query
-  padding-left: 14px
-  padding-right: 14px
-  margin-bottom: 0
-  +border-radius(14)
-
-.form-search label
-  display: inline-block
-
-.form-search .radio,
-.form-search .checkbox,
-.form-inline .radio
-  padding-left: 0
-  margin-bottom: 0
-  vertical-align: middle
-
-.form-search .radio input[type="radio"],
-.form-search .checkbox input[type="checkbox"]
-  float: left
-  margin-left: 0
-  margin-right: 3px
+.form-search
+  input,
+  textarea,
+  select
+    display: inline-block
+    margin-bottom: 0
+  .search-query
+    padding-left: 14px
+    padding-right: 14px
+    margin-bottom: 0
+    +border-radius(14)
+  label
+    display: inline-block
+  .radio,
+  .checkbox,
+  .radio
+    padding-left: 0
+    margin-bottom: 0
+    vertical-align: middle
+  .radio input[type="radio"],
+  .checkbox input[type="checkbox"]
+    float: left
+    margin-left: 0
+    margin-right: 3px

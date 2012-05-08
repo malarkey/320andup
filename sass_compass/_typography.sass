@@ -18,10 +18,11 @@
   color: $baseheadingfontcolor
   text-rendering: optimizelegibility
 
-h1 small,
-h2 small
-  font-weight: normal
-  color: $lightgrey
+h1,
+h2
+  small
+    font-weight: normal
+    color: $lightgrey
 
 h1,
 .h1
@@ -66,25 +67,26 @@ h6,
   #{headings(3)}
     float: left
     margin-right: $gutterwidth
-  a
-    display: block
-    position: relative
-    top: 6px
-    float: right
-    padding: 4px 12px
-    +font-size(14)
-    background-color: lighten($basecolor, 75%)
-  &:hover
-    background-color: lighten($basecolor, 75%)
+    a
+      display: block
+      position: relative
+      top: 6px
+      float: right
+      padding: 4px 12px
+      +font-size(14)
+      background-color: lighten($basecolor, 75%)
+    &:hover
+      background-color: lighten($basecolor, 75%)
 
-.header .a-rss,
-.header .a-rss:hover
-  float: left
-  width: 16px
-  height: 16px
-  padding: 0
-  background: transparent url(../img/a-rss.png) no-repeat 0 0
-  +hide-text
+.header .a-rss
+  &,
+  &:hover
+    float: left
+    width: 16px
+    height: 16px
+    padding: 0
+    background: transparent url(../img/a-rss.png) no-repeat 0 0
+    +hide-text
 
 // TYPOGRAPHY ====================================================
 
@@ -104,11 +106,9 @@ ul,
 ol
   margin: 0 0 $baselineheight #{-$gutterwidth}
   padding: 0 0 0 $gutterwidth
-
-li ul,
-li ol
-  margin: 0
-  +font-size(16)
+  li &
+    margin: 0
+    +font-size(16)
 
 // blockquote
 
@@ -122,12 +122,12 @@ blockquote
 q
   quotes: none
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after
-  content: ''
-  content: none
+blockquote,
+q
+  &:before,
+  &:after
+    content: ''
+    content: none
 
 cite
   font-style: normal

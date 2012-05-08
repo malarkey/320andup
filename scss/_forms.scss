@@ -9,24 +9,24 @@
 
 /* Forms =================================================== */
 
-form { 
+form {
 margin : 0 0 $baselineheight 0;
 
-fieldset { 
-margin-bottom : $baselineheight; 
-padding : 0; 
+fieldset {
+margin-bottom : $baselineheight;
+padding : 0;
 border-width : 0; }
 
-legend { 
+legend {
 display : block;
 width : 100%;
 margin-bottom : $baselineheight * 2;
-*margin-left : -7px; 
+*margin-left : -7px;
 padding : 0;
 color : $textcolor;
 border : 0;
 border-bottom : $inputborderwidth $inputborderstyle $inputborder;
-white-space : normal; 
+white-space : normal;
 
 small {
 @include font-size(14);
@@ -37,7 +37,7 @@ p {
 margin-bottom : $baselineheight / 2; }
 
 ul {
-list-style-type : none; 
+list-style-type : none;
 margin : 0 0 $baselineheight 0;
 padding : 0; }
 
@@ -50,15 +50,15 @@ input,
 button,
 select,
 textarea {
-@include font-size(14); 
-vertical-align : baseline; 
+@include font-size(14);
+vertical-align : baseline;
 *vertical-align : middle; }
 
 input,
 button,
 select,
 textarea {
-font-family : $basefont; 
+font-family : $basefont;
 @include box-sizing(border-box); }
 
 label {
@@ -66,7 +66,7 @@ display : block;
 margin-bottom : $baseline / 8;
 font-weight : bold;
 color : $textcolor;
-cursor : pointer; 
+cursor : pointer;
 
 input,
 textarea,
@@ -83,16 +83,16 @@ padding : 4px;
 margin-bottom : $baselineheight / 4;
 background-color : $inputbackground;
 border : $inputborderwidth $inputborderstyle $inputborder;
-color : $textcolor; 
+color : $textcolor;
 
 &:hover {
 border-color : $inputhover; }
 }
 
-.input-mini { 
+.input-mini {
 width : 60px; }
 
-.input-small { 
+.input-small {
 width : 90px; }
 
 input[type="image"],
@@ -108,15 +108,15 @@ cursor : pointer;
 @include rounded(0);
 border : 0 \9; }
 
-input[type="checkbox"], 
-input[type="radio"] {  
+input[type="checkbox"],
+input[type="radio"] {
 @include box-sizing(border-box);
-padding : 0; 
-*width : 13px; 
+padding : 0;
+*width : 13px;
 *height : 13px; }
 
 input[type="image"] {
-border : 0; 
+border : 0;
 @include box-shadow(none); }
 
 input[type="file"] {
@@ -138,8 +138,8 @@ cursor : pointer;
 
 select,
 input[type="file"] {
-height : 28px; 
-*margin-top : 4px; 
+height : 28px;
+*margin-top : 4px;
 line-height : 28px; }
 
 select {
@@ -154,7 +154,7 @@ height : auto; }
 textarea {
 @include resize(vertical);
 height : auto;
-overflow : auto; 
+overflow : auto;
 vertical-align : top; }
 
 input[type="hidden"] {
@@ -162,7 +162,7 @@ display : none; }
 
 .radio,
 .checkbox {
-padding-left : 18px; 
+padding-left : 18px;
 font-weight : normal; }
 
 .radio input[type="radio"],
@@ -209,7 +209,7 @@ select:focus {
 ::-webkit-input-placeholder {
 @include font-size(14); }
 
-input:-moz-placeholder { 
+input:-moz-placeholder {
 @include font-size(14); }
 
 // help text
@@ -219,7 +219,7 @@ input:-moz-placeholder {
 color : $grey; }
 
 .help-block {
-display : block; 
+display : block;
 margin-bottom : $baselineheight / 2; }
 
 .help-inline {
@@ -262,7 +262,7 @@ margin-bottom : 0; }
 .form-search .search-query {
 padding-left : 14px;
 padding-right : 14px;
-margin-bottom : 0; 
+margin-bottom : 0;
 @include rounded(14px); }
 
 .form-search label {

@@ -22,11 +22,10 @@
   background-color: lighten($basecolor, 75%)
   border-top: 2px solid lighten($basecolor, 60%)
   border-bottom: 2px solid lighten($basecolor, 60%)
-
-.full .grids
-  width: 90%
-  margin: 0 auto
-  padding: $baseline 0
+  .grids
+    width: 90%
+    margin: 0 auto
+    padding: $baseline 0
 
 // 480px
 @media only screen and (min-width: 480px)
@@ -39,16 +38,20 @@
 // 768px
 @media only screen and (min-width: 768px)
   // Extra wide grid units
-  .special .grids-three .grid-a,
-  .special .grids-four .grid-a
-    width: 43.03%
+  .special
+    .grids-three,
+    .grids-four
+      .grid-a
+        width: 43.03%
 
 // 992px
 @media only screen and (min-width: 992px)
   // Extra wide grid units
-  .special .grids-three .grid-a,
-  .special .grids-four .grid-a
-    width: 100%
+  .special
+    .grids-three,
+    .grids-four
+      .grid-a
+        width: 100%
 
 // 1382px
 @media only screen and (min-width: 1382px)

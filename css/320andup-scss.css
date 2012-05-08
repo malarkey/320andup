@@ -13,10 +13,6 @@ article, aside, figure, footer, header, hgroup, nav, section { display: block; }
 
 /* Variables =================================================== */
 /* Mixins =================================================== */
-.clearfix { *zoom: 1; }
-.clearfix:before, .clearfix:after { display: table; content: ""; }
-.clearfix:after { clear: both; }
-
 /* Page =================================================== */
 html { background: white; font-size: 62.5%; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: #f3f5f6; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
@@ -715,7 +711,7 @@ table tbody tr:hover td, table tbody tr:hover th { background-color: #a9b4c1; }
 @media only screen and (min-width: 600px) { /* 600 =================================================== */ }
 @media only screen and (min-width: 768px) { /* 768 =================================================== */
   body { display: table; border-collapse: collapse; }
-  [role="banner"] a[href="#navigation"] { display: none !important; visibility: hidden; }
+  [role="banner"] a[href="#navigation"] { @page; }
   [role="navigation"] { display: table-header-group; }
   [role="navigation"] p { margin: 0 auto; width: 90%; } }
 @media only screen and (min-width: 992px) { /* 992 =================================================== */ }

@@ -24,7 +24,7 @@ border-collapse : collapse; }
 //   BANNER 				==============================
 
 [role="banner"] a[href="#navigation"] {
-@include hidden; }
+@page; }
 
 //   NAVIGATION 			==============================
 

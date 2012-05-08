@@ -126,33 +126,28 @@ input[type="submit"].btn:hover
   *zoom: 1
   *margin-left: .3em
   margin-bottom: $baseline
-
-.btn-group .btn
-  position: relative
-  float: left
-  margin-left: -1px
-  +border-radius(0)
-
-.btn-group .btn:first-child
-  margin-left: 0
-  +border-left-radius(2px)
-
-.btn-group .btn:last-child
-  +border-right-radius(2px)
-
-.btn-group .btn.large:first-child
-  margin-left: 0
-  +border-left-radius(4px)
-
-.btn-group .btn.large:last-child
-  +border-right-radius(4px)
+  .btn
+    position: relative
+    float: left
+    margin-left: -1px
+    +border-radius(0)
+    &:first-child
+      margin-left: 0
+      +border-left-radius(2px)
+    &:last-child
+      +border-right-radius(2px)
+    &.large
+      &:first-child
+        margin-left: 0
+        +border-left-radius(4px)
+      &:last-child
+        +border-right-radius(4px)
 
 .btn-toolbar
   clear: both
   margin-top: $baselineheight / 2
   margin-bottom: $baselineheight / 2
-
-.btn-toolbar .btn-group
-  display: inline-block
-  *display: inline
-  *zoom: 1
+  .btn-group
+    display: inline-block
+    *display: inline
+    *zoom: 1

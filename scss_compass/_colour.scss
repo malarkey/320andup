@@ -13,34 +13,34 @@
 // 2. TYPOGRAPHY 			==============================
 // 3. COLOUR 				==============================
 
-a { 
+a {
 text-decoration : none;
-color : $linkcolor; 
+color : $linkcolor;
 
-&:visited { 
+&:visited {
 color : $linkcolorvisited; }
 
-&:hover { 
+&:hover {
 text-decoration : underline;
 color : $linkcolorhover; }
 
-&:focus { 
-outline : thin dotted; 
+&:focus {
+outline : thin dotted;
 color : $linkcolorfocus; }
 
-&:hover, 
-&:active { 
+&:hover,
+&:active {
 outline : 0; }
 }
 
-::-moz-selection { 
-background-color : lighten($basecolor, 65%); 
-color : $basecolor; 
-text-shadow : none; }  
-	
-::selection { 
-background-color : lighten($basecolor, 65%); 
-color : $basecolor; 
+::-moz-selection {
+background-color : lighten($basecolor, 65%);
+color : $basecolor;
+text-shadow : none; }
+
+::selection {
+background-color : lighten($basecolor, 65%);
+color : $basecolor;
 text-shadow : none; }
 
 // swatches
@@ -50,7 +50,7 @@ margin : 0 0 $baselineheight 0;
 padding : 0; }
 
 .swatch-row {
-display : block; 
+display : block;
 margin : 0;
 padding : 0;
 width : 200px; }
@@ -63,93 +63,99 @@ background-color : $white; }
 
 .swatch-row span {
 display : block;
-float : left; 
+float : left;
 width : 50px;
 height : 50px; }
 
 // base
 
-.swatch-base span:nth-child(1) {
+.swatch-base span {
+&:nth-child(1) {
 @include background-alpha($basecolor, .9); }
 
-.swatch-base span:nth-child(2) {
+&:nth-child(2) {
 @include background-alpha($basecolor, .8); }
 
-.swatch-base span:nth-child(3) {
+&:nth-child(3) {
 @include background-alpha($basecolor, .7); }
 
-.swatch-base span:nth-child(4) {
-@include background-alpha($basecolor, .6); }
+&:nth-child(4) {
+@include background-alpha($basecolor, .6); } }
 
 // alert
 
-.swatch-alert span:nth-child(1) {
+.swatch-alert span {
+&:nth-child(1) {
 @include background-alpha($alertcolor, .9); }
 
-.swatch-alert span:nth-child(2) {
+&:nth-child(2) {
 @include background-alpha($alertcolor, .8); }
 
-.swatch-alert span:nth-child(3) {
+&:nth-child(3) {
 @include background-alpha($alertcolor, .7); }
 
-.swatch-alert span:nth-child(4) {
-@include background-alpha($alertcolor, .6); }
+&:nth-child(4) {
+@include background-alpha($alertcolor, .6); } }
 
 // error
 
-.swatch-error span:nth-child(1) {
+.swatch-error span {
+&:nth-child(1) {
 @include background-alpha($errorcolor, .9); }
 
-.swatch-error span:nth-child(2) {
+&:nth-child(2) {
 @include background-alpha($errorcolor, .8); }
 
-.swatch-error span:nth-child(3) {
+&:nth-child(3) {
 @include background-alpha($errorcolor, .7); }
 
-.swatch-error span:nth-child(4) {
-@include background-alpha($errorcolor, .6); }
+&:nth-child(4) {
+@include background-alpha($errorcolor, .6); } }
 
 // info
 
-.swatch-info span:nth-child(1) {
+.swatch-info span {
+&:nth-child(1) {
 @include background-alpha($infocolor, .9); }
 
-.swatch-info span:nth-child(2) {
+&:nth-child(2) {
 @include background-alpha($infocolor, .8); }
 
-.swatch-info span:nth-child(3) {
+&:nth-child(3) {
 @include background-alpha($infocolor, .7); }
 
-.swatch-info span:nth-child(4) {
-@include background-alpha($infocolor, .6); }
+&:nth-child(4) {
+@include background-alpha($infocolor, .6); } }
 
 // success
 
-.swatch-success span:nth-child(1) {
+.swatch-success span {
+&:nth-child(1) {
 @include background-alpha($successcolor, .9); }
 
-.swatch-success span:nth-child(2) {
+&:nth-child(2) {
 @include background-alpha($successcolor, .8); }
 
-.swatch-success span:nth-child(3) {
+&:nth-child(3) {
 @include background-alpha($successcolor, .7); }
 
-.swatch-success span:nth-child(4) {
-@include background-alpha($successcolor, .6); }
+&:nth-child(4) {
+@include background-alpha($successcolor, .6); } }
 
 // warning
 
-.swatch-warning span:nth-child(1) {
+.swatch-warning span {
+&:nth-child(1) {
 @include background-alpha($warningcolor, .9); }
 
-.swatch-warning span:nth-child(2) {
+&:nth-child(2) {
 @include background-alpha($warningcolor, .8); }
 
-.swatch-warning span:nth-child(3) {
+&:nth-child(3) {
 @include background-alpha($warningcolor, .7); }
 
-.swatch-warning span:nth-child(4) {
-@include background-alpha($warningcolor, .6); }
+&:nth-child(4) {
+@include background-alpha($warningcolor, .6); } }
 
 // 4. TEXTURE 				==============================
 // 5. ELEMENTS 				==============================

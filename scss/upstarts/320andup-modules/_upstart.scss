@@ -49,7 +49,7 @@ text-align : center; }
 // .grids-two
 
 .grids-two .grid {
-width : 43.03%; 
+width : 43.03%;
 margin-bottom : 0;
 border-bottom-width : 0; }
 
@@ -63,7 +63,7 @@ float : right; }
 
 .grids-three .grid-a {
 float : left;
-width : 31.64%; 
+width : 31.64%;
 margin-right : 2.53%; }
 
 // grids-four
@@ -91,7 +91,7 @@ float : right;
 margin-right : 0; }
 
 .grids-three .grid .grid-a {
-float : none; 
+float : none;
 width : 100%;
 margin-right : 0;
 margin-bottom : $baseline / 2; }
@@ -109,8 +109,8 @@ float : right;
 margin-right : 0; }
 
 .grids-four .grid .grid-a {
-float : none; 
-width : 100%; 
+float : none;
+width : 100%;
 margin-right : 0; }
 
 }
@@ -124,5 +124,5 @@ margin-right : 0; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5) {
-/* Styles */ 
+/* Styles */
 }

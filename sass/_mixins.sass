@@ -72,7 +72,7 @@
   // W3C
   background-repeat: repeat-x
 
-// @include bordered(COLOR, COLOR, COLOR, COLOR);
+// .bordered(COLOR, COLOR, COLOR, COLOR);
 
 =bordered($top-color: #eeeeee, $right-color: #eeeeee, $bottom-color: #eeeeee, $left-color: #eeeeee)
   border-top: solid 1px $top-color
@@ -80,14 +80,14 @@
   border-right: solid 1px $right-color
   border-bottom: solid 1px $bottom-color
 
-// @mixin rounded(VALUE);
+// @include rounded(VALUE);
 
 =rounded($radius: 4px)
   -webkit-border-radius: $radius
   -moz-border-radius: $radius
   border-radius: $radius
 
-// @mixin border-radius(VALUE,VALUE,VALUE,VALUE);
+// @include border-radius(VALUE,VALUE,VALUE,VALUE);
 
 =border-radius($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0)
   -webkit-border-top-right-radius: $topright
@@ -106,28 +106,28 @@
   -moz-background-clip: padding
   background-clip: padding-box
 
-// @mixin box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
+// @include box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
 
 =box-shadow($shadow: 0 1px 3px rgba(0, 0, 0, 0.25))
   -webkit-box-shadow: $shadow
   -moz-box-shadow: $shadow
   box-shadow: $shadow
 
-// @include drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
+// .drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
 
 =drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1)
   -webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha)
   -moz-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha)
   box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha)
 
-// @mixin opacity(VALUE);
+// @include opacity(VALUE);
 
 =opacity($opacity: 0.5)
   -webkit-opacity: $opacity
   -moz-opacity: $opacity
   opacity: $opacity
 
-// @include rotate(VALUEdeg);
+// .rotate(VALUEdeg);
 
 =rotate($deg)
   -webkit-transform: rotate($deg)
@@ -136,7 +136,7 @@
   -o-transform: rotate($deg)
   transform: rotate($deg)
 
-// @include scale(VALUE);
+// .scale(VALUE);
 
 =scale($ratio)
   -webkit-transform: scale($ratio)
@@ -145,7 +145,7 @@
   -o-transform: scale($ratio)
   transform: scale($ratio)
 
-// @include skew(VALUE, VALUE);
+// .skew(VALUE, VALUE);
 
 =skew($x: 0, $y: 0)
   -webkit-transform: skew($x, $y)
@@ -163,7 +163,7 @@
   -o-transition: $transition
   transition: $transition
 
-// @include translate(VALUE, VALUE)
+// .translate(VALUE, VALUE)
 
 =translate($x: 0, $y: 0)
   -webkit-transform: translate($x, $y)
@@ -186,7 +186,7 @@
 =background-alpha($color: $white, $alpha: 1)
   background-color: hsla(hue($color), saturation($color), lightness($color), $alpha)
 
-// @include background-size(VALUE VALUE);
+// .background-size(VALUE VALUE);
 
 =background-size($size)
   -webkit-background-size: $size
@@ -194,7 +194,7 @@
   -o-background-size: $size
   background-size: $size
 
-// @include background-clip(VALUE); (border-box, padding-box, content-box)
+// .background-clip(VALUE); (border-box, padding-box, content-box)
 
 =background-clip($clip)
   -webkit-background-clip: $clip
@@ -228,9 +228,6 @@
   &:after
     clear: both
 
-.clearfix
-  +clearfix
-
 // For image replacement
 
 =hide-text
@@ -249,13 +246,13 @@
 =invisible
   visibility: hidden
 
-// @mixin resize(VALUE) (none, both, horizontal, vertical, inherit)
+// @include resize(VALUE) (none, both, horizontal, vertical, inherit)
 
 =resize($direction: both)
   resize: $direction
   overflow: auto
 
-// @include userselect(VALUE) (all, element, none, text)
+// .userselect(VALUE) (all, element, none, text)
 
 =user-select($select)
   -webkit-user-select: $select
@@ -275,18 +272,19 @@
   padding: 0
   border: 0
   // Make visuallyhidden focusable with a keyboard
-  &.focusable:active,
-  &.focusable:focus
-    position: static
-    clip: auto
-    height: auto
-    width: auto
-    margin: 0
-    overflow: visible
+  &.focusable
+    &:active,
+    &:focus
+      position: static
+      clip: auto
+      height: auto
+      width: auto
+      margin: 0
+      overflow: visible
 
 // 6. LAYOUT 				==============================
 
-// @include columns(250px, 0, 24px, COLOR, solid, 1px)
+// .columns(250px, 0, 24px, COLOR, solid, 1px)
 
 =columns($colwidth: 250px, $colcount: 0, $colgap: 50px, $columnRuleColor: #eeeeee, $columnRuleStyle: solid, $columnRuleWidth: 1px)
   -webkit-column-width: $colwidth
