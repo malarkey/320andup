@@ -10,7 +10,10 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 // 1. ROOT 					==============================
 
 // CSS reset
-@import "reset.scss";
+@import "reset.scss"; 
+
+// Compass
+@import "compass";
 
 // Variables and mixins
 @import "variables.scss";
@@ -60,7 +63,7 @@ Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
 //  8. MODERNIZR 			==============================
 
 @import "modernizr.scss";
-
+ 
 //  9. TEMPLATE SPECIFICS 	==============================
 //  10. MEDIA QUERIES 		==============================
 
