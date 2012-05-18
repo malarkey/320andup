@@ -1832,63 +1832,6 @@ table tbody tr:hover th {
 .table-striped tbody tr:nth-child(odd) th {
   background-color: #c7ced6;
 }
-/* Banner =================================================== */
-[role="banner"] {
-  margin: 0 auto;
-  padding-top: 1.5em;
-  width: 90%;
-}
-[role="banner"] a[href="#navigation"] {
-  display: block;
-  position: absolute;
-  top: 11px;
-  right: 22px;
-  width: 43px;
-  height: 43px;
-  white-space: nowrap;
-  overflow: hidden;
-  background-color: #586879;
-  border: 1px solid #4d5b6a;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  color: #f3f5f6;
-  font-size: 32px;
-  font-size: 3.2rem;
-  line-height: 42px;
-  text-align: center;
-  text-decoration: none;
-}
-/* Navigation =================================================== */
-[role="navigation"] {
-  margin: 0 auto 1.5em;
-  width: 90%;
-  background-color: #586879;
-  border: 1px solid #4d5b6a;
-}
-[role="navigation"] p {
-  margin-bottom: 0;
-  padding: 6px 11px;
-  color: #ffffff;
-}
-[role="navigation"] a {
-  color: #ffffff;
-}
-/* Content =================================================== */
-.content {
-  margin: 0 auto;
-  width: 90%;
-}
-/* contentinfo =================================================== */
-[role="contentinfo"] {
-  padding: 1.5em 0;
-  border-top: 3px solid #c7ced6;
-}
-[role="contentinfo"] small {
-  display: block;
-  margin: 0 auto 1.5em;
-  width: 90%;
-}
 @media print {
   /* Print =================================================== */
   * {
@@ -1950,21 +1893,6 @@ table tbody tr:hover th {
 }
 @media only screen and (min-width: 768px) {
   /* 768 =================================================== */
-  body {
-    display: table;
-    border-collapse: collapse;
-  }
-  [role="banner"] a[href="#navigation"] {
-    display: none !important;
-    visibility: hidden;
-  }
-  [role="navigation"] {
-    display: table-header-group;
-  }
-  [role="navigation"] p {
-    margin: 0 auto;
-    width: 90%;
-  }
 }
 @media only screen and (min-width: 992px) {
   /* 992 =================================================== */

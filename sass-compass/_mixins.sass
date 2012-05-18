@@ -1,0 +1,153 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Mixins ===================================================
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+
+=font-size($font-size: 16)
+  font-size: #{$font-size}px
+  font-size: #{$font-size / 10}rem
+
+=text-overflow
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+// 3. COLOUR 				==============================
+// 4. TEXTURE 				==============================
+
+// gradients
+
+=horizontal($startColor: $white, $endColor: $lightergrey)
+  background-color: $endColor
+  +background-image(linear-gradient(left, $startColor, $endColor))
+  background-repeat: repeat-x
+
+=vertical($startColor: $white, $endColor: $lightergrey)
+  background-color: $endColor
+  +background-image(linear-gradient($startColor, $endColor))
+  background-repeat: repeat-x
+
+=directional($startColor: $white, $endColor: $lightergrey, $deg: 45deg)
+  background-color: $endColor
+  +background-image(linear-gradient($deg, $startColor, $endColor))
+  background-repeat: repeat-x
+
+// @include bordered(COLOR, COLOR, COLOR, COLOR);
+
+=bordered($top-color: #eeeeee, $right-color: #eeeeee, $bottom-color: #eeeeee, $left-color: #eeeeee)
+  border-top: solid 1px $top-color
+  border-left: solid 1px $left-color
+  border-right: solid 1px $right-color
+  border-bottom: solid 1px $bottom-color
+
+// @include drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
+=drop-shadow($x-axis: 0, $y-axis: 1px, $blur: 2px, $alpha: 0.1)
+  +box-shadow($x-axis $y-axis $blur rgba(0, 0, 0, $alpha))
+
+// 5. ELEMENTS 				==============================
+
+// @include background-alpha(VALUE VALUE);
+
+=background-alpha($color: $white, $alpha: 1)
+  background-color: hsla(hue($color), saturation($color), lightness($color), $alpha)
+
+// Chrome Frame
+
+=chromeframe
+  margin: .2em 0
+  background: $lightgrey
+  color: $black
+  padding: .2em 0
+
+// Contain floats
+
+=clearfix
+  *zoom: 1
+  &:before,
+  &:after
+    display: table
+    content: ""
+  &:after
+    clear: both
+
+.clearfix
+  +clearfix
+
+// For image replacement
+
+=hide-text
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+
+// Hide from visual and speaking browsers
+
+=hidden
+  display: none !important
+  visibility: hidden
+
+// Hide but maintain layout
+
+=invisible
+  visibility: hidden
+
+// @include resize(VALUE) (none, both, horizontal, vertical, inherit)
+
+=resize($direction: both)
+  resize: $direction
+  overflow: auto
+
+// @include userselect(VALUE) (all, element, none, text)
+
+=user-select($select)
+  -webkit-user-select: $select
+  -moz-user-select: $select
+  -o-user-select: $select
+  user-select: $select
+
+// Hidden but available to speaking browsers
+
+=visuallyhidden
+  overflow: hidden
+  position: absolute
+  clip: rect(0 0 0 0)
+  height: 1px
+  width: 1px
+  margin: -1px
+  padding: 0
+  border: 0
+  // Make visuallyhidden focusable with a keyboard
+  &.focusable
+    &:active,
+    &:focus
+      position: static
+      clip: auto
+      height: auto
+      width: auto
+      margin: 0
+      overflow: visible
+
+// 6. LAYOUT 				==============================
+
+// @include columns(250px, 0, 24px, COLOR, solid, 1px)
+
+=columns($colwidth: 250px, $colcount: 0, $colgap: 50px, $columnRuleColor: #eeeeee, $columnRuleStyle: solid, $columnRuleWidth: 1px)
+  +column-count($colcount)
+  +column-gap($colgap)
+  +column-width($colwidth)
+  +column-rule-color($columnRuleColor)
+  +column-rule-style($columnRuleStyle)
+  +column-rule-width($columnRuleWidth)
+
+//  7. VENDOR-SPECIFIC 		==============================
+//  8. MODERNIZR 			==============================
+//  9. TEMPLATE SPECIFICS 	==============================
