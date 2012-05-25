@@ -1,0 +1,159 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Colour =================================================== */
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+// 3. COLOUR 				==============================
+
+a {
+text-decoration : none;
+color : $linkcolor;
+
+&:visited {
+color : $linkcolorvisited; }
+
+&:hover {
+text-decoration : underline;
+color : $linkcolorhover; }
+
+&:focus {
+outline : thin dotted;
+color : $linkcolorfocus; }
+
+&:hover,
+&:active {
+outline : 0; }
+}
+
+::-moz-selection {
+background-color : lighten($basecolor, 65%);
+color : $basecolor;
+text-shadow : none; }
+
+::selection {
+background-color : lighten($basecolor, 65%);
+color : $basecolor;
+text-shadow : none; }
+
+// swatches
+
+.swatch {
+margin : 0 0 $baselineheight 0;
+padding : 0; }
+
+.swatch-row {
+display : block;
+margin : 0;
+padding : 0;
+width : 200px; }
+
+.swatch-row-one {
+background-color : $black; }
+
+.swatch-row-two {
+background-color : $white; }
+
+.swatch-row span {
+display : block;
+float : left;
+width : 50px;
+height : 50px; }
+
+// base
+
+.swatch-base span:nth-child(1) {
+@include background-alpha($basecolor, .9); }
+
+.swatch-base span:nth-child(2) {
+@include background-alpha($basecolor, .8); }
+
+.swatch-base span:nth-child(3) {
+@include background-alpha($basecolor, .7); }
+
+.swatch-base span:nth-child(4) {
+@include background-alpha($basecolor, .6); }
+
+// alert
+
+.swatch-alert span:nth-child(1) {
+@include background-alpha($alertcolor, .9); }
+
+.swatch-alert span:nth-child(2) {
+@include background-alpha($alertcolor, .8); }
+
+.swatch-alert span:nth-child(3) {
+@include background-alpha($alertcolor, .7); }
+
+.swatch-alert span:nth-child(4) {
+@include background-alpha($alertcolor, .6); }
+
+// error
+
+.swatch-error span:nth-child(1) {
+@include background-alpha($errorcolor, .9); }
+
+.swatch-error span:nth-child(2) {
+@include background-alpha($errorcolor, .8); }
+
+.swatch-error span:nth-child(3) {
+@include background-alpha($errorcolor, .7); }
+
+.swatch-error span:nth-child(4) {
+@include background-alpha($errorcolor, .6); }
+
+// info
+
+.swatch-info span:nth-child(1) {
+@include background-alpha($infocolor, .9); }
+
+.swatch-info span:nth-child(2) {
+@include background-alpha($infocolor, .8); }
+
+.swatch-info span:nth-child(3) {
+@include background-alpha($infocolor, .7); }
+
+.swatch-info span:nth-child(4) {
+@include background-alpha($infocolor, .6); }
+
+// success
+
+.swatch-success span:nth-child(1) {
+@include background-alpha($successcolor, .9); }
+
+.swatch-success span:nth-child(2) {
+@include background-alpha($successcolor, .8); }
+
+.swatch-success span:nth-child(3) {
+@include background-alpha($successcolor, .7); }
+
+.swatch-success span:nth-child(4) {
+@include background-alpha($successcolor, .6); }
+
+// warning
+
+.swatch-warning span:nth-child(1) {
+@include background-alpha($warningcolor, .9); }
+
+.swatch-warning span:nth-child(2) {
+@include background-alpha($warningcolor, .8); }
+
+.swatch-warning span:nth-child(3) {
+@include background-alpha($warningcolor, .7); }
+
+.swatch-warning span:nth-child(4) {
+@include background-alpha($warningcolor, .6); }
+
+// 4. TEXTURE 				==============================
+// 5. ELEMENTS 				==============================
+// 6. LAYOUT 				==============================
+// 7. VENDOR-SPECIFIC 		==============================
+// 8. MODERNIZR 			==============================
+// 9. TEMPLATE SPECIFICS 	==============================
