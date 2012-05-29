@@ -1,0 +1,164 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Texture ===================================================
+
+// ALERT ====================================================
+
+// For more alert styles:
+// http://twitter.github.com/bootstrap/components.html#alerts"
+// https://github.com/twitter/bootstrap/blob/master/less/alerts"
+
+.alert
+  margin-bottom: $baselineheight
+  padding: 8px 35px 8px 14px
+  background-color: $alertcolor
+  border: $alertborderwidth $alertborderstyle $alertbordercolor
+  +border-radius(2px)
+  font-family: $basefont
+  +font-size(14)
+  color: $alerttext
+  .alert-heading
+    color: inherit
+  .close
+    position: relative
+    top: -2px
+    right: -21px
+    float: right
+    +font-size(21)
+    font-weight: bold
+    line-height: 18px
+    color: inherit
+
+.alert-success
+  background-color: $alertsuccesscolor
+  border-color: $alertsuccessborder
+  color: $alertsuccesstext
+
+.alert-warning
+  background-color: $alertwarningcolor
+  border-color: $alertwarningborder
+  color: $alertwarningtext
+
+.alert-error
+  background-color: $alerterrorcolor
+  border-color: $alerterrorborder
+  color: $alerterrortext
+
+.alert-inverse
+  background-color: $alertinversecolor
+  border-color: $alertinverseborder
+  color: $alertinversetext
+
+// alert block
+
+.alert-block
+  padding-top: 14px
+  padding-bottom: 14px
+  .alert-heading
+    margin-bottom: $baselineheight / 8
+    font-size: inherit
+    font-weight: bold
+  > p,
+  > ul
+    margin-bottom: 0
+  p + p
+    margin-top: 5px
+
+// BADGES ====================================================
+
+.badge
+  padding: 1px 9px 2px
+  +font-size(12)
+  font-weight: bold
+  white-space: nowrap
+  color: $badgecolor
+  background-color: $badgebackground
+  +border-radius(9px)
+  +transition(background-color 0.25s 0 linear)
+  &:hover
+    color: $badgecolor
+    text-decoration: none
+    cursor: pointer
+
+.badge-error
+  background-color: $errorcolor
+  color: $white
+  &:hover
+    background-color: darken($errorcolor, 20%)
+    color: $white
+
+.badge-warning
+  background-color: $warningcolor
+  color: $white
+  &:hover
+    background-color: darken($warningcolor, 20%)
+    color: $white
+
+.badge-success
+  background-color: $successcolor
+  color: $white
+  &:hover
+    background-color: darken($successcolor, 20%)
+    color: $white
+
+.badge-info
+  background-color: $infocolor
+  color: darken($infocolor, 50%)
+  &:hover
+    background-color: darken($infocolor, 20%)
+
+.badge-inverse
+  background-color: $inverscolor
+  color: $white
+  &:hover
+    background-color: darken($inverscolor, 20%)
+    color: $white
+
+// GRADIENTS ====================================================
+
+=greygrad
+  +vertical($white, darken($lightergrey, 5%))
+
+=basegrad
+  +vertical($basecolor, darken($basecolor, 10%))
+
+=infograd
+  +vertical($infocolor, darken($infocolor, 10%))
+
+=inversegrad
+  +vertical($inverscolor, darken($inverscolor, 10%))
+
+=successgrad
+  +vertical($successcolor, darken($successcolor, 10%))
+
+=warninggrad
+  +vertical($warningcolor, darken($warningcolor, 10%))
+
+// For additional gradients see: https://github.com/twitter/bootstrap/blob/master/less/mixins
+
+// WELL ====================================================
+
+.well
+  min-height: 21px
+  padding: 11px
+  margin-bottom: $baselineheight
+  background-color: $wellbackground
+  border: $wellborderwidth $wellborderstyle $wellbordercolor
+  +border-radius(4px)
+  +box-shadow(inset 0 1px $wellshadowblur $wellshadow)
+  p:last-child
+    margin-bottom: 0
+
+.well-large
+  padding: 22px
+
+.well-small
+  padding: 6px
+  +border-radius(2px)

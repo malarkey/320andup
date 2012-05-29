@@ -1,0 +1,166 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Buttons =================================================== */
+
+.btn {
+display : inline-block;
+*display : inline;
+/* IE7 inline-block hack */
+*zoom : 1;
+padding : 6px 11px 6px;
+margin-bottom : 0;
+font-family : $basefont;
+@include font-size(12);
+font-weight : bold;
+line-height : $baselineheight;
+color : $buttoncolor;
+text-align : center;
+vertical-align : middle;
+background-color : $buttonbackground;
+@include greygrad;
+border : $buttonborderwidth $buttonborderstyle $buttonbordercolor;
+border-bottom-color : $buttonbottombordercolor;
+@include border-radius(4px);
+cursor : pointer;
+*margin-left : .3em;
+
+&:visited,
+&:hover {
+color : $buttoncolor;
+text-decoration : none; }
+}
+
+input[type="submit"].btn:hover {
+border-color : $buttonbordercolor; }
+
+.btn:first-child {
+*margin-left : 0; }
+
+// disabled
+
+.btn-disabled {
+@include opacity(.5);
+cursor : default; }
+
+// info
+
+.btn-info {
+@include infograd;
+border-color : darken($infocolor, 15%);
+border-bottom-color : darken($infocolor, 20%);
+color : darken($infocolor, 50%);
+
+&:visited,
+&:hover {
+color : darken($infocolor, 50%); }
+}
+
+// inverse
+
+.btn-inverse {
+@include inversegrad;
+border-color : darken($inverscolor, 15%);
+border-bottom-color : darken($inverscolor, 20%);
+color : $white;
+
+&:visited,
+&:hover {
+color : $white; }
+}
+
+// primary
+
+.btn-primary {
+@include basegrad;
+border-color : darken($basecolor, 15%);
+border-bottom-color : darken($basecolor, 20%);
+color : $white;
+
+&:visited,
+&:hover {
+color : $white; }
+}
+
+// success
+
+.btn-success {
+@include successgrad;
+border-color : darken($successcolor, 15%);
+border-bottom-color : darken($successcolor, 20%); }
+
+// warning
+
+.btn-warning {
+@include warninggrad;
+border-color : darken($warningcolor, 15%);
+border-bottom-color : darken($warningcolor, 20%); }
+
+// sizes
+
+.btn-extlarge {
+padding : 11px 22px;
+@include font-size(21);
+@include border-radius(4px); }
+
+.btn.btn-large {
+*padding-top : 7px;
+*padding-bottom : 7px; }
+
+.btn-large {
+padding : 11px 22px;
+@include font-size(14);
+line-height : normal;
+@include border-radius(4px); }
+
+.btn-small {
+padding : 6px 10px;
+@include font-size(11);
+line-height : 16px; }
+
+.btn-mini {
+padding : 3px 5px;
+@include font-size(11);
+line-height : 14px; }
+
+.btn-group {
+position : relative;
+*zoom : 1;
+*margin-left : .3em;
+margin-bottom : $baseline; }
+
+.btn-group .btn {
+position : relative;
+float : left;
+margin-left : -1px;
+@include border-radius(0); }
+
+.btn-group .btn:first-child {
+margin-left : 0;
+@include border-left-radius(2px); }
+
+.btn-group .btn:last-child {
+@include border-right-radius(2px); }
+
+.btn-group .btn.large:first-child {
+margin-left : 0;
+@include border-left-radius(4px); }
+
+.btn-group .btn.large:last-child {
+@include border-right-radius(4px); }
+
+.btn-toolbar {
+clear : both;
+margin-top : $baselineheight / 2;
+margin-bottom : $baselineheight / 2; }
+
+.btn-toolbar .btn-group {
+display : inline-block;
+*display : inline;
+*zoom : 1; }

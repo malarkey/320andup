@@ -1,0 +1,145 @@
+// ==========================================================
+
+// 320 and Up by Andy Clarke
+// Version: 3.0
+// URL: http://stuffandnonsense.co.uk/projects/320andup/
+// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+
+// ==========================================================
+
+/* Variables ===================================================
+
+// greyscale
+
+$black: rgb(0, 0, 0)
+$darkgrey: lighten($black, 25%)
+$grey: lighten($black, 50%)
+$lightgrey: lighten($black, 75%)
+$lightergrey: lighten($black, 90%)
+$white: rgb(255, 255, 255)
+
+// 1. ROOT 					==============================
+
+$bodycolor: $white
+$textcolor: black
+
+// 2. TYPOGRAPHY 			==============================
+
+$basefont: "Helvetica Neue", Helvetica, Arial, sans-serif
+$basefontsize: 16
+$baselineheight: 1.5em
+$baseheadingfont: inherit
+$baseheadingfontweight: bold
+$baseheadingfontcolor: inherit
+
+$altfont: Cambria, Georgia, Times, "Times New Roman"
+$altlineheight: 1.35em
+
+$codefont: Monaco, Courier New, monospace
+
+// 3. COLOUR 				==============================
+
+$basecolor: rgb(45, 53, 62)
+$compcolor: adjust-hue($basecolor, 180)
+$bordercolor: lighten($basecolor, 60%)
+
+// Links
+
+$linkcolor: rgb(1, 53, 104)
+$linkcolorhover: darken($linkcolor, 10)
+$linkcolorvisited: darken($linkcolorhover, 10)
+$linkcolorfocus: darken($linkcolorvisited, 10)
+
+// colour palettes
+
+$alertcolor: rgb(252, 248, 227)
+$errorcolor: rgb(218, 79, 73)
+$infocolor: rgb(217, 237, 247)
+$inverscolor: rgb(65, 65, 65)
+$successcolor: rgb(91, 183, 91)
+$warningcolor: rgb(250, 167, 50)
+
+// 4. TEXTURE 				==============================
+
+// alert
+
+$alertbordercolor: darken($alertcolor, 20%)
+$alertborderwidth: 1px
+$alertborderstyle: solid
+$alerttext: darken($alertcolor, 60%)
+
+// alert-error
+$alerterrorcolor: lighten($errorcolor, 30%)
+$alerterrorborder: lighten($errorcolor, 20%)
+$alerterrortext: $errorcolor
+
+// alert-info
+$alertinfocolor: $infocolor
+$alertinfoborder: lighten($infocolor, 20%)
+$alertinfotext: darken($infocolor, 50%)
+
+// alert-inverse
+$alertinversecolor: $inverscolor
+$alertinverseborder: $black
+$alertinversetext: $white
+
+// alert-success
+$alertsuccesscolor: lighten($successcolor, 30%)
+$alertsuccessborder: lighten($successcolor, 20%)
+$alertsuccesstext: darken($successcolor, 20%)
+
+// alert-warning
+$alertwarningcolor: lighten($warningcolor, 30%)
+$alertwarningborder: lighten($warningcolor, 20%)
+$alertwarningtext: darken($warningcolor, 20%)
+
+// badges
+
+$badgebackground: $lightergrey
+$badgecolor: $grey
+
+// buttons
+
+$buttonbackground: $lightergrey
+$buttonbordercolor: darken($buttonbackground, 10%)
+$buttonbottombordercolor: darken($buttonbordercolor, 10%)
+$buttoncolor: $darkgrey
+$buttonborderwidth: 1px
+$buttonborderstyle: solid
+
+// boxes (well)
+
+$wellbackground: lighten($basecolor, 75%)
+$wellbordercolor: darken($wellbackground, 20%)
+$wellborderwidth: 1px
+$wellborderstyle: solid
+$wellshadow: darken($wellbackground, 10%)
+$wellshadowblur: 10px
+
+// tables
+
+$tablebackground: transparent
+$tablestripe: lighten($basecolor, 60%)
+$tablehover: lighten($basecolor, 50%)
+$tableborder: lighten($basecolor, 40%)
+$tableborderwidth: 1px
+$tableborderstyle: solid
+
+// forms
+
+$inputbackground: $white
+$inputborder: lighten($basecolor, 40%)
+$inputborderwidth: 1px
+$inputborderstyle: solid
+$inputhover: lighten($basecolor, 20%)
+$inputfocus: $basecolor, 40%
+$placeholdercolor: $lightgrey
+
+// 6. LAYOUT 				==============================
+
+$baseline: $baselineheight
+$gutterwidth: 24px
+
+//  7. VENDOR-SPECIFIC 		==============================
+//  8. MODERNIZR 			==============================
+//  9. TEMPLATE SPECIFICS 	==============================
