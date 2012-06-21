@@ -49,6 +49,19 @@ border-color : @buttonbordercolor; }
 .opacity(.5); 
 cursor : default; }
 
+// error
+
+.btn-error {
+.errorgrad;
+border-color : darken(@errorcolor, 15%);
+border-bottom-color : darken(@errorcolor, 20%); 
+color : @white; 
+
+&:visited,
+&:hover {
+color : @white; }
+}
+
 // info
 
 .btn-info {
