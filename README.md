@@ -14,6 +14,17 @@ View [the project website](http://stuffandnonsense.co.uk/projects/320andup/) for
 
 
 
+CSS Preprocessor Options
+------------------------
+
++ LESS
++ Sass
++ Sass + Compass
++ SCSS
++ SCSS + Compass
+
+
+
 Authors
 -------
 
@@ -23,7 +34,7 @@ Authors
 + http://github.com/malarkey
 + http://stuffandnonsense.co.uk
 
-**Jina Bolton**, Sass port
+**Jina Bolton**, Sass ports
 
 + http://twitter.com/jina
 + http://github.com/jina
