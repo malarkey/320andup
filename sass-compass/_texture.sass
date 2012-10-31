@@ -7,7 +7,7 @@
 
 // ==========================================================
 
-/* Texture ===================================================
+/* Texture =================================================== */
 
 // ALERT ====================================================
 
@@ -24,8 +24,10 @@
   font-family: $basefont
   +font-size(14)
   color: $alerttext
+
   .alert-heading
     color: inherit
+
   .close
     position: relative
     top: -2px
@@ -59,15 +61,23 @@
 // alert block
 
 .alert-block
-  padding-top: 14px
-  padding-bottom: 14px
+  padding:
+    top: 14px
+    bottom: 14px
+
+
   .alert-heading
     margin-bottom: $baselineheight / 8
-    font-size: inherit
-    font-weight: bold
+    font:
+      size: inherit
+      weight: bold
+
+
+
   > p,
   > ul
     margin-bottom: 0
+
   p + p
     margin-top: 5px
 
@@ -81,7 +91,8 @@
   color: $badgecolor
   background-color: $badgebackground
   +border-radius(9px)
-  +transition(background-color 0.25s 0 linear)
+  +transition(background-color .25s 0 linear)
+
   &:hover
     color: $badgecolor
     text-decoration: none
@@ -90,6 +101,7 @@
 .badge-error
   background-color: $errorcolor
   color: $white
+
   &:hover
     background-color: darken($errorcolor, 20%)
     color: $white
@@ -97,6 +109,7 @@
 .badge-warning
   background-color: $warningcolor
   color: $white
+
   &:hover
     background-color: darken($warningcolor, 20%)
     color: $white
@@ -104,6 +117,7 @@
 .badge-success
   background-color: $successcolor
   color: $white
+
   &:hover
     background-color: darken($successcolor, 20%)
     color: $white
@@ -111,23 +125,28 @@
 .badge-info
   background-color: $infocolor
   color: darken($infocolor, 50%)
+
   &:hover
     background-color: darken($infocolor, 20%)
 
 .badge-inverse
   background-color: $inverscolor
   color: $white
+
   &:hover
     background-color: darken($inverscolor, 20%)
     color: $white
 
 // GRADIENTS ====================================================
 
-=greygrad
-  +vertical($white, darken($lightergrey, 5%))
-
 =basegrad
   +vertical($basecolor, darken($basecolor, 10%))
+
+=errorgrad
+  +vertical($basecolor, darken($errorcolor, 10%))
+
+=greygrad
+  +vertical($white, darken($lightergrey, 5%))
 
 =infograd
   +vertical($infocolor, darken($infocolor, 10%))
@@ -153,6 +172,7 @@
   border: $wellborderwidth $wellborderstyle $wellbordercolor
   +border-radius(4px)
   +box-shadow(inset 0 1px $wellshadowblur $wellshadow)
+
   p:last-child
     margin-bottom: 0
 
