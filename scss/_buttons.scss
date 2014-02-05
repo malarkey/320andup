@@ -30,7 +30,7 @@
   border: $buttonborderwidth $buttonborderstyle $buttonbordercolor {
     bottom-color: $buttonbottombordercolor;
   }
-  @include border-radius(4px);
+  @include rounded(4px);
   cursor: pointer;
   *margin-left: .3em;
 
@@ -131,7 +131,7 @@ input[type="submit"].btn:hover { border-color: $buttonbordercolor; }
 .btn-extlarge {
   padding: 11px 22px;
   @include font-size(21);
-  @include border-radius(4px);
+  @include rounded(4px);
 }
 
 .btn.btn-large {
@@ -145,7 +145,7 @@ input[type="submit"].btn:hover { border-color: $buttonbordercolor; }
   padding: 11px 22px;
   @include font-size(14);
   line-height: normal;
-  @include border-radius(4px);
+  @include rounded(4px);
 }
 
 .btn-small {
@@ -170,7 +170,7 @@ input[type="submit"].btn:hover { border-color: $buttonbordercolor; }
     position: relative;
     float: left;
     margin-left: -1px;
-    @include border-radius(0);
+    @include rounded(0);
 
     &:first-child {
       margin-left: 0;
