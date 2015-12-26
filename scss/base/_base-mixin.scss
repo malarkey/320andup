@@ -1,0 +1,74 @@
+// Helpers
+
+@mixin clearfix() {
+&:before,
+&:after {
+content : "";
+display : table; }
+
+&:after {
+clear : both; }
+}
+
+
+
+// Text
+
+@mixin font-size($font-size: 16){
+font-size : #{$font-size}px;
+font-size : #{$font-size / 10}rem; }
+
+
+
+// Media Queries
+
+// $bp2		480px 		30rem
+// $bp3		600px 		37.5rem
+// $bp4		768px 		48rem
+// $bp5		1024px 		64rem
+// $bp6		1220px		76.250rem
+// $bp7		1400px		87.5rem
+
+
+
+@mixin bp($point) {
+
+@if ($MQs) {
+
+$bp2 : "(min-width : 30em)";
+$bp3 : "(min-width : 37.5em)";
+$bp4 : "(min-width : 48em)";
+$bp5 : "(min-width : 64em)";
+$bp6 : "(min-width : 76.250em)";
+$bp7 : "(min-width : 87.5em)";
+
+@if $point == bp2 {
+@media #{$bp2} { @content; }
+}
+
+@else if $point == bp3 {
+@media #{$bp3} { @content; }
+}
+
+@else if $point == bp3 {
+@media #{$bp3}  { @content; }
+}
+
+@else if $point == bp4 {
+@media #{$bp4}  { @content; }
+}
+
+@else if $point == bp5 {
+@media #{$bp5}  { @content; }
+}
+
+@else if $point == bp6 {
+@media #{$bp6}  { @content; }
+}
+
+@else if $point == bp7 {
+@media #{$bp7}  { @content; }
+}
+
+}
+}

@@ -1,0 +1,48 @@
+form {
+margin : 0 0 ($vertical-spacing) 0;
+padding : 0;
+border : 0; 
+font-family : $form-font-family;
+
+p {
+margin-bottom : ($vertical-spacing / 2); }
+
+ul {
+list-style-type : none;
+margin : 0 0 ($vertical-spacing) 0;
+padding : 0; }
+
+li {
+margin-bottom : 0; }
+
+}
+
+legend {
+display : block;
+width : 100%;
+margin-bottom : ($vertical-spacing * 2);
+padding : 0 0 ($vertical-spacing / 2) 0;
+@include font-size($font-size);
+line-height : inherit;
+color : $form-font-color;
+border : 0;
+border-bottom : $border-width $border-style $border-color; }
+
+fieldset {
+margin-bottom : ($vertical-spacing);
+padding : 0;
+border : 0;
+min-width : 0; 
+
+&:last-of-type {
+margin-bottom : 0; }
+
+}
+
+label {
+display : block;
+max-width : 100%; 
+margin-bottom : 0; 
+font-family : $label-font-family;
+@include font-size($label-font-size);
+color : $label-font-color; }

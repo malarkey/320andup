@@ -1,0 +1,79 @@
+::-moz-selection {
+background-color : $base-bg;
+text-shadow : none; }
+
+::selection {
+background-color : $base-bg;
+text-shadow : none; }
+
+
+
+// Misc
+
+address {
+margin-bottom : ($vertical-spacing);
+@include font-size($font-size);
+line-height : $font-lineheight; }
+
+abbr[title] {
+border-bottom : 1px dotted $border-color;
+cursor : help; }
+
+.amp {
+font-family : $amp-font-family; }
+
+dfn {
+font-style : italic; }
+
+ins {
+background-color : $base-bg;
+color : $font-color;
+text-decoration : none; }
+
+mark {
+background-color : $base-bg;
+color : $font-color;
+font-style : italic;
+font-weight : bold; }
+
+small {
+@include font-size($font-size-minus-one); }
+
+
+// b, strong, i, em
+
+b, strong {
+font-weight : 700; }
+
+
+i, em {
+font-style : italic; }
+
+
+// code 
+
+code {
+vertical-align : middle;
+padding : .25em .5em;
+background-color : $base-bg; }
+
+pre {
+white-space : pre;
+white-space : pre-wrap;
+word-wrap : break-word; }
+
+
+
+// sub/sup 
+
+sub,
+sup {
+position : relative;
+@include font-size($font-size-minus-two);
+line-height : 0; }
+
+sup {
+top : -.5em; }
+
+sub {
+bottom : -.25em; }

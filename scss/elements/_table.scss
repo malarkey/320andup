@@ -1,0 +1,42 @@
+table {
+width :  100%;
+max-width : 100%;
+margin-bottom : ($vertical-spacing);
+border-collapse : collapse;
+border : none;
+background-color : $table-bg;
+border-collapse : collapse;
+border-spacing : 0;
+font-family : $table-font-family; }
+
+th,
+td {
+padding : $table-padding;
+border-top : $table-border-width $table-border-style $table-border-color;
+@include font-size($table-font-size);
+line-height : $font-lineheight;
+text-align : left;
+vertical-align : top; 
+}
+
+th {
+font-family : $alt-font-family;
+text-transform : uppercase;
+font-weight : normal;
+text-align : left; }
+
+.table--condensed {
+
+th,
+td {
+padding : $table-padding / 2;
+@include font-size($table-condensed-font-size); }
+}
+
+.table--stripe {
+
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+background-color : $table-stripe-bg;
+color : $table-stripe-font-color; }
+}

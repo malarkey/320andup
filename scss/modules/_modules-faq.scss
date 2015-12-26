@@ -1,0 +1,22 @@
+.faq { }
+
+.faq__question {
+margin-bottom : ($vertical-spacing);
+@include font-size($font-size-plus-one);
+font-weight : normal; 
+
+@include bp(bp4) {
+@include font-size($font-size-plus-two); }
+}
+
+.faq__answer {
+margin-bottom : ($vertical-spacing);
+
+p, ol, ul {
+@include font-size($font-size-minus-one);
+
+@include bp(bp4) {
+@include font-size($font-size); }
+
+}
+}

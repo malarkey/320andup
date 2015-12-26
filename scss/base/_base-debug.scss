@@ -1,0 +1,76 @@
+// via inuit.css - https://github.com/csswizardry/inuit.css
+
+@if $debug-mode == true {
+
+:empty {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+img {
+outline : $debug-outline-width $debug-outline-style $debug-color-error; }
+
+img[alt] {
+outline : none; }
+
+img[alt=""] {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+a {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+a[title] {
+outline : none; }
+
+a[href="#"],
+a[href*="javascript"] {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+a[target] {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+ul,
+ol {
+> *:not(li){
+outline : $debug-outline-width $debug-outline-style $debug-color-error; }
+}
+
+th {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+th[scope] {
+outline : none; }
+
+table > tr {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+tbody + tfoot {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+form {
+outline : $debug-outline-width $debug-outline-style $debug-color-error; }
+
+form[action] {
+outline : none; }
+
+textarea,
+input {
+outline : $debug-outline-width $debug-outline-style $debug-color-error; }
+
+input[type] {
+outline : none; }
+
+textarea[rows][cols] {
+outline : none; }
+
+input[type=submit] {
+outline : $debug-outline-width $debug-outline-style $debug-color-error; }
+
+input[type=submit][value] {
+outline : none; }
+
+[style] {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+[id] {
+outline : $debug-outline-width $debug-outline-style $debug-color-warning; }
+
+}

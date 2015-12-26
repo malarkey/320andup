@@ -1,0 +1,4 @@
+*.codekit
+*.psd
+*.esproj
+elements/*

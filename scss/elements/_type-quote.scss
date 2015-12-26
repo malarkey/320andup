@@ -1,0 +1,27 @@
+blockquote {
+margin : ($vertical-spacing * 2) 0 ($vertical-spacing * 4); 
+
+@include bp(bp3) {
+margin : ($vertical-spacing * 2) ($gutter * 2) ($vertical-spacing * 4); }
+
+p {
+font-family : $font-family;
+@include font-size($font-size-plus-one);
+color : $alt-font-color; 
+
+@include bp(bp4) {
+@include font-size($font-size-plus-two); }
+}
+
+small {
+font-family : $alt-font-family;
+@include font-size($font-size-minus-one);
+text-transform : uppercase;
+
+@include bp(bp3) {
+padding-left : ($gutter * 2); }
+}
+
+cite {
+font-style : normal; }
+}

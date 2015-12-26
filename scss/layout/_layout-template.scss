@@ -1,0 +1,62 @@
+
+// body 
+
+.flex {
+display : flex;
+flex-direction : column;
+min-height : 100vh; 
+
+.container {
+flex : 1; }
+}
+
+
+
+// container
+
+.container {
+margin : 0 ($gutter / 2); 
+padding : ($vertical-spacing 0);
+transition : margin $transition-duration $transition-timing-function;
+
+@include bp(bp2) {
+margin : 0 ($gutter); }
+
+@include bp(bp3) {
+margin : 0 ($gutter * 2); }
+
+@include bp(bp4) {
+margin : 0 ($gutter * 3); }
+
+@include bp(bp6) {
+margin : 0 auto;
+width : 80%;
+max-width : $max-width; }
+
+}
+
+
+
+// content
+
+.content {
+@include clearfix(); }
+
+.main {
+width : 100%; 
+
+@include bp(bp5) {
+float : left;
+margin-right : -100%;
+width : 67.1747%; }
+}
+
+
+.complementary {
+
+@include bp(bp5) {
+float : left;
+margin-right : -100%;
+margin-left : 72.1747%;
+width : 27.8253%; }
+}

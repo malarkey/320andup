@@ -1,145 +1,262 @@
-// ==========================================================
+// SYSTEM  ================================================
 
-// 320 and Up by Andy Clarke
-// Version: 3.0
-// URL: http://stuffandnonsense.co.uk/projects/320andup/
-// Apache License: v2.0. http://www.apache.org/licenses/LICENSE-2.0
+$debug-mode						: false;
+$debug-color-error				: red;
+$debug-color-warning			: yellow;
+$debug-outline-width			: 5px;
+$debug-outline-style			: solid;
 
-// ==========================================================
 
-/* Variables =================================================== */
 
-// greyscale
 
-$black 			: rgb(0,0,0);
-$darkgrey 		: lighten($black, 25%);
-$grey 			: lighten($black, 50%);
-$lightgrey 		: lighten($black, 75%);
-$lightergrey 	: lighten($black, 90%);
-$white 			: rgb(255,255,255);
 
-// 1. ROOT 					==============================
+// BASICS  ================================================
 
-$bodycolor : $white;
-$textcolor : black;
+$body-background 				: #fff;
+$vertical-spacing				: 1.35rem;
+$gutter		 					: 22px;
+$max-width						: 90.000rem;
+$MQs							: true;
 
-// 2. TYPOGRAPHY 			==============================
 
-$basefont : "Helvetica Neue", Helvetica, Arial, sans-serif;
-$basefontsize : 16;
-$baselineheight : 1.5em;
-$baseheadingfont : inherit;
-$baseheadingfontweight : bold;
-$baseheadingfontcolor : inherit;
 
-$altfont : Cambria, Georgia, Times, "Times New Roman";
-$altlineheight : 1.35em;
 
-$codefont : Monaco, Courier New, monospace;
+// TYPOGRAPHY  ================================================
 
-// 3. COLOUR 				==============================
+// Base
 
-$basecolor 		: rgb(45,53,62);
-$compcolor 		: adjust-hue($basecolor, 180);
-$bordercolor    : lighten($basecolor, 60%);
+$font-size-plus-seven			: 56;
+$font-size-plus-six				: 42;
+$font-size-plus-five			: 38;
+$font-size-plus-four			: 32;
+$font-size-plus-three			: 24;						
+$font-size-plus-two				: 21;
+$font-size-plus-one				: 18;
+$font-size 						: 16;
+$font-size-minus-one			: 14;
+$font-size-minus-two			: 12;
+$font-size-minus-three			: 10;
 
-// Links
+$font-family 					: "Merriweather", "Times", serif;
+$font-color 					: #111;
+$font-lineheight 				: 1.6;
+$font-weight 					: 400;
 
-$linkcolor 		    : rgb(1,53,104);
-$linkcolorhover 	: darken($linkcolor, 10);
-$linkcolorvisited   : darken($linkcolorhover, 10);
-$linkcolorfocus 	: darken($linkcolorvisited, 10);
+// Alt
 
-// colour palettes
+$alt-font-family 				: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$alt-font-color 				: #555;
+$alt-font-lineheight 			: $font-lineheight;
+$alt-font-weight 				: 300;
 
-$alertcolor 	: rgb(252,248,227);
-$errorcolor 	: rgb(218,79,73);
-$infocolor 		: rgb(217,237,247);
-$inverscolor 	: rgb(65,65,65);
-$successcolor 	: rgb(91,183,91);
-$warningcolor 	: rgb(250,167,50);
+// Bold
 
-// 4. TEXTURE 				==============================
+$bold-font-family 				: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-// alert
+// Extra type variables
 
-$alertbordercolor	: darken($alertcolor, 20%);
-$alertborderwidth 	: 1px;
-$alertborderstyle 	: solid;
-$alerttext			: darken($alertcolor, 60%);
+$amp-font-family 				: local('Georgia'), local('Garamond'), local('Palatino'), local('Book Antiqua');
+$codefont-font-family			: Monaco, Courier New, monospace;
 
-// alert-error
-$alerterrorcolor 	: lighten($errorcolor, 30%);
-$alerterrorborder  	: lighten($errorcolor, 20%);
-$alerterrortext 	: $errorcolor;
+// Headings
 
-// alert-info
-$alertinfocolor 	: $infocolor;
-$alertinfoborder  	: lighten($infocolor, 20%);
-$alertinfotext 		: darken($infocolor, 50%);
+$heading-font-family 			: inherit;
+$heading-font-weight 			: 700;
+$heading-font-color 			: inherit;
+$heading-lineheight				: $font-size * 1.15;
 
-// alert-inverse
-$alertinversecolor 	: $inverscolor;
-$alertinverseborder : $black;
-$alertinversetext 	: $white;
 
-// alert-success
-$alertsuccesscolor 	: lighten($successcolor, 30%);
-$alertsuccessborder : lighten($successcolor, 20%);
-$alertsuccesstext 	: darken($successcolor, 20%);
 
-// alert-warning
-$alertwarningcolor 	: lighten($warningcolor, 30%);
-$alertwarningborder : lighten($warningcolor, 20%);
-$alertwarningtext 	: darken($warningcolor, 20%);
 
-// badges
 
-$badgebackground 	: $lightergrey;
-$badgecolor 		: $grey;
+// COLOUR  ================================================
 
-// buttons
+$black 							: #000;
+$white 							: #fff;
 
-$buttonbackground 	: $lightergrey;
-$buttonbordercolor 	: darken($buttonbackground, 10%);
-$buttonbottombordercolor : darken($buttonbordercolor, 10%);
-$buttoncolor 		: $darkgrey;
-$buttonborderwidth	: 1px;
-$buttonborderstyle	: solid;
+$color-primary 					: #555;
+$color-secondary 				: #888;
+$color-neutral 					: #666;
 
-// boxes (well)
+$link-color 		    		: $color-primary;
+$link-color-hover 				: $color-secondary;
+$link-color-visited   			: $link-color;
+$link-color-focus 				: $color-secondary;
 
-$wellbackground		: lighten($basecolor, 75%);
-$wellbordercolor	: darken($wellbackground, 20%);
-$wellborderwidth	: 1px;
-$wellborderstyle	: solid;
-$wellshadow			: darken($wellbackground, 10%);
-$wellshadowblur		: 10px;
+$base-bg						: #f4f4f4;
 
-// tables
 
-$tablebackground 	: transparent;
-$tablestripe 		: lighten($basecolor, 60%);
-$tablehover 		: lighten($basecolor, 50%);
-$tableborder 		: lighten($basecolor, 40%);
-$tableborderwidth	: 1px;
-$tableborderstyle	: solid;
 
-// forms
 
-$inputbackground 	: $white;
-$inputborder 		: lighten($basecolor, 40%);
-$inputborderwidth	: 1px;
-$inputborderstyle	: solid;
-$inputhover 		: lighten($basecolor, 20%);
-$inputfocus 		: $basecolor, 40%;
-$placeholdercolor 	: $lightgrey;
 
-// 6. LAYOUT 				==============================
+// TEXTURE  ================================================
 
-$baseline : $baselineheight;
-$gutterwidth : 24px;
+$border-color    				: #d8d8d8;
+$border-style					: solid;
+$border-width 					: 1px;
+$border-radius 					: 4px;
+$border							: $border-width $border-style $border-color;
 
-//  7. VENDOR-SPECIFIC 		==============================
-//  8. MODERNIZR 			==============================
-//  9. TEMPLATE SPECIFICS 	==============================
+
+
+
+
+// 320 AND UP  ================================================
+
+
+
+// Boxes
+
+$box-padding					: 1rem 1.25rem;
+$box-bg 						: $white;
+
+$box-border-color				: $border-color;
+$box-border-style 				: $border-style;
+$box-border-width 				: $border-width;
+$box-border-radius 				: $border-radius;
+
+$box-font-family				: $font-family;
+$box-font-size 					: $font-size;
+$box-font-color 				: $font-color;
+
+$box-large-padding				: 16px 22px;
+$box-large-border-radius 		: $border-radius * 2;
+
+$box-small-padding				: 2px 6px;
+$box-small-border-radius 		: $border-radius;
+
+
+
+// Buttons
+
+$button-bg 								: $base-bg;
+$button-border-color					: darken($button-bg,10);
+$button-border-style 					: $border-style;
+$button-border-width 					: 2px;
+$button-border-radius 					: 8px;
+
+$button-font-family						: $alt-font-family;
+$button-font-size 						: $font-size-plus-one;
+$button-font-color 						: $font-color;
+$button-font-weight 					: normal;
+$button-letter-spacing					: 0;
+$button-font-transform 					: none;
+
+$button-bg-hover 						: darken($button-bg,5);
+$button-border-color-hover				: darken($button-border-color,5);
+$button-font-color-hover 				: $button-font-color;
+
+$button-large-font-size					: $font-size-plus-three;
+$button-small-font-size					: $font-size;
+$button-mini-font-size					: $font-size-minus-one;
+
+
+
+// Primary buttons
+
+$button-primary-bg						: $color-primary;
+$button-primary-border-color			: darken($button-primary-bg,10);
+$button-primary-font-color 				: $white;
+
+$button-primary-bg-hover				: darken($button-primary-bg,5);
+$button-primary-border-color-hover		: darken($button-primary-border-color,5);
+$button-primary-font-color-hover 		: $button-primary-font-color;
+
+
+
+// Forms
+
+$form-font-family				: $font-family;
+$form-font-color 				: $font-color;
+
+
+
+// Form-inputs
+
+$input-padding					: 6px 11px;
+$input-bg 						: $white;
+
+$input-border-color				: $border-color;
+$input-border-color-hover		: $border-color;
+$input-border-color-focus		: $border-color;
+$input-border-style 			: $border-style;
+$input-border-width 			: 2px;
+$input-border-radius 			: $border-radius;
+
+$input-font-family				: $font-family;
+$input-font-size 				: $font-size;
+$input-font-color 				: $font-color;
+$input-placeholder-color 		: $font-color;
+$input-placeholder-font-size 	: $font-size;
+
+$textarea-min-height			: 160px;
+
+
+
+// Form-labels
+
+$label-font-color 				: $font-color;
+$label-font-family				: $font-family;
+$label-font-size 				: $font-size;
+
+
+
+// Images
+
+$figcaption-font-family			: $alt-font-family;
+$figcaption-font-size			: 1.4rem;
+$figcaption-font-style			: normal;
+$figcaption-font-weight			: normal;
+$figcaption-text-transform		: none;
+
+
+
+// Misc.
+
+$transition-duration			: .25s;
+$transition-timing-function		: ease;
+
+
+
+// Pagination
+
+$pagination-background			: $base-bg;
+$pagination-background-hover	: $body-background;
+$pagination-background-active	: $body-background;
+$pagination-border				: 2px $border-style $border-color;
+$pagination-color				: $font-color;
+$pagination-link-color			: $pagination-color;
+$pagination-padding				: .6rem 1.2rem;
+$pagination-font-size			: 1.4rem;
+$pagination-letter-spacing		: 2px;
+$pagination-text-transform		: uppercase;
+
+
+// Tables
+
+$table-padding 					: 8px;
+$table-font-family				: $font-family;
+$table-font-size 				: $font-size-minus-one;
+$table-condensed-font-size 		: $font-size-minus-two;
+$table-font-color 				: $font-color;
+$table-header-font-weight 		: normal;
+$table-bg						: transparent;
+
+$table-stripe-bg 				: $base-bg;
+$table-stripe-font-color 		: $font-color;
+
+$table-hover-bg 				: $white;
+$table-hover-font-color 		: $font-color;
+
+$table-border-color				: $border-color;
+$table-border-style 			: $border-style;
+$table-border-width 			: 1px;
+
+
+
+
+
+
+
+
+

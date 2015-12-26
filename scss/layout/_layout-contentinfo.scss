@@ -1,0 +1,19 @@
+[role="contentinfo"] {
+margin : ($vertical-spacing) ($gutter / 2) 0 ($gutter / 2); 
+padding : $vertical-spacing 0;
+border-top : $border; 
+
+@include bp(bp2) {
+margin : ($vertical-spacing) ($gutter) 0 ($gutter); }
+
+@include bp(bp3) {
+margin : $vertical-spacing ($gutter * 2) 0 ($gutter * 2); }
+
+@include bp(bp4) {
+margin : $vertical-spacing ($gutter * 3) 0 ($gutter * 3); }
+
+@include bp(bp6) {
+margin : ($vertical-spacing) auto 0 auto;
+width : 80%;
+max-width : $max-width; }
+}
