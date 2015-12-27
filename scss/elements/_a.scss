@@ -1,22 +1,26 @@
 a {
-text-decoration : none;
-color : $link-color;
+	text-decoration : none;
+	color : $link-color;
+	background : linear-gradient($color-neutral, $color-neutral) no-repeat;
+	background-size : 100% 1px;
+	background-position : 0 1.02em;
+	text-shadow : .05em 0 $body-background, -.05em 0 $body-background;
 
 &:visited {
-color : $link-color-visited; }
+	color : $link-color-visited; }
 
 &:hover {
-text-decoration : none;
-color : $link-color-hover; }
+	text-decoration : none;
+	color : $link-color-hover; }
 
 &:focus {
-outline : thin dotted;
-color : $link-color-focus; }
+	outline : thin dotted;
+	color : $link-color-focus; }
 
 &:hover,
 &:active {
-outline : 0; }
+	outline : 0; }
 }
 
 a:link {
-transition : all $transition-duration $transition-timing-function; }
+	transition : all $transition-duration $transition-timing-function; }

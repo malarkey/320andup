@@ -1,41 +1,43 @@
 @-webkit-viewport { 
-width : device-width; }
+	width : device-width; }
 
 @-moz-viewport { 
-width : device-width; }
+	width : device-width; }
 
 @-ms-viewport { 
-width : device-width; }
+	width : device-width; }
 
 @-o-viewport { 
-width : device-width; }
+	width : device-width; }
 
 @viewport { 
-width : device-width; }
+	width : device-width; }
 
 
 html {
-background : $body-background;
-font-size : 62.5%;
--webkit-font-smoothing : antialiased;
--moz-osx-font-smoothing : grayscale;
--webkit-overflow-scrolling : touch;
--webkit-tap-highlight-color : $base-bg;
--webkit-text-size-adjust : 100% }
+	background : $body-background;
+	font-size : 62.5%;
+	-webkit-font-smoothing : antialiased;
+	-moz-osx-font-smoothing : grayscale;
+	-webkit-overflow-scrolling : touch;
+	-webkit-tap-highlight-color : $base-bg;
+	-webkit-text-size-adjust : 100% }
 
 body {
-margin : 0;
-padding : 0;
-background-color : transparent;
-font-family : $font-family;
-font-weight : $font-weight;
-@include font-size($font-size);
-line-height : $font-lineheight;
-color : $font-color; 
+	margin : 0;
+	padding : 0;
+	background-color : transparent;
+	text-rendering : optimizeLegibility;
+	font-variant-ligatures : common-ligatures discretionary-ligatures historical-ligatures;
+	font-family : $font-family;
+	font-weight : $font-weight;
+	@include font-size($font-size);
+	line-height : $font-lineheight;
+	color : $font-color; 
 
 @include bp(bp4) {
-@include font-size($font-size-plus-one); }
+	@include font-size($font-size-plus-one); }
 }
 
 a, button, input, select, textarea, label, summary {
-touch-action : manipulation; }
+	touch-action : manipulation; }

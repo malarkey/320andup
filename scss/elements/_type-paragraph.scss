@@ -1,43 +1,57 @@
 p { 
-margin-bottom : ($vertical-spacing);
-line-height : 1.3; 
-@include font-size($font-size);
+	margin-bottom : ($vertical-spacing);
+	line-height : 1.3; 
+	@include font-size($font-size);
 
 @include bp(bp4) {
-line-height : 1.4; }
+	line-height : 1.4; }
 
 @include bp(bp5) { 
-line-height : 1.5; }
+	line-height : 1.5; }
 }
 
 .lead {
-@include font-size($font-size-plus-one);
+	@include font-size($font-size-plus-one);
 
 @include bp(bp4) {
-@include font-size($font-size-plus-two);
-line-height : 1.5; }
+	@include font-size($font-size-plus-two);
+	line-height : 1.5; }
 }
 
 .secondary {
-@include font-size($font-size-minus-one);
+	@include font-size($font-size-minus-one);
 
 @include bp(bp4) {
-@include font-size($font-size);
-line-height : 1.4; }
+	@include font-size($font-size);
+	line-height : 1.4; }
 }
 
 .tertiary {
-@include font-size($font-size-minus-two);
+	@include font-size($font-size-minus-two);
 
 @include bp(bp4) {
-@include font-size($font-size-minus-one);
-line-height : 1.4; }
+	@include font-size($font-size-minus-one);
+	line-height : 1.4; }
 }
 
 .milli {
-font-family : $alt-font-family;
-@include font-size($font-size-minus-three);
+	font-family : $alt-font-family;
+	@include font-size($font-size-minus-three);
 
 @include bp(bp4) {
-@include font-size($font-size-minus-two); }
+	@include font-size($font-size-minus-two); }
+}
+
+.columns {
+@include bp(bp4) {
+	column-width : 24rem;
+	column-gap : ($gutter * 2); }
+
+p {
+@include bp(bp4) {
+	hyphens : auto;
+	hyphenate-limit-chars : 3;
+	hyphenate-limit-lines : 4;
+	text-align : justify; }
+}
 }

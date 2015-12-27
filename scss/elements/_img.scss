@@ -1,51 +1,50 @@
 img {
-max-width : 100%;
-border-width : 0;
-vertical-align : middle;
--ms-interpolation-mode : bicubic; }
+	max-width : 100%;
+	border-width : 0;
+	vertical-align : middle;
+	-ms-interpolation-mode : bicubic; }
 
 img[width],
 img[height] {
-max-width : none; }
+	max-width : none; }
 
 .img--right {
-float : right;
-margin-bottom : ($vertical-spacing);
-margin-left : ($gutter);
-width : auto; }
+	float : right;
+	margin-bottom : ($vertical-spacing);
+	margin-left : ($gutter);
+	width : auto; }
 
 .img--left {
-float : left;
-width : auto;
-margin-right : ($gutter);
-margin-bottom : ($vertical-spacing); }
+	float : left;
+	width : auto;
+	margin-right : ($gutter);
+	margin-bottom : ($vertical-spacing); }
 
 .img--center {
-display : block;
-width : auto;
-
-margin-right : auto;
-margin-bottom : ($vertical-spacing);
-margin-left : auto; }
+	display : block;
+	width : auto;
+	margin-right : auto;
+	margin-bottom : ($vertical-spacing);
+	margin-left : auto; }
 
 .img--right,
 .img--left,
 .img--center {
-img {
-width : auto; }
+	img {
+	width : auto; }
 }
 
 figure {
-display : block;
-margin : 0 0 ($vertical-spacing) 0;
+	display : block;
+	margin : 0 0 ($vertical-spacing) 0;
 
 img {
-margin-bottom : ($vertical-spacing); }
+	margin-bottom : ($vertical-spacing); }
 }
 
 figcaption {
-font-family : $figcaption-font-family;
-font-size : $figcaption-font-size;
-font-style : $figcaption-font-style;
-font-weight : $figcaption-font-weight;
-text-transform : $figcaption-text-transform; }
+	font-family : $figcaption-font-family;
+	font-size : $figcaption-font-size;
+	font-style : $figcaption-font-style;
+	font-weight : $figcaption-font-weight;
+	text-transform : $figcaption-text-transform; }

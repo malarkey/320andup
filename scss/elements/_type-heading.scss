@@ -1,52 +1,52 @@
 h1, h2, h3, h4, h5 {
-margin-top : 0; }
+	margin-top : 0; }
 
 h1 { 
-margin-bottom : ($vertical-spacing);
-@include font-size($font-size-plus-four);
-font-weight : 700; 
+	margin-bottom : ($vertical-spacing);
+	@include font-size($font-size-plus-four);
+	font-weight : 700; 
 
 @include bp(bp4) {
-@include font-size($font-size-plus-five); }
+	@include font-size($font-size-plus-five); }
 }
 
 h2 { 
-margin-bottom : ($vertical-spacing);
-@include font-size($font-size-plus-three);
-font-weight : 700; 
-line-height : 1.3;
+	margin-bottom : ($vertical-spacing);
+	@include font-size($font-size-plus-three);
+	font-weight : 700; 
+	line-height : 1.3;
 
 @include bp(bp4) {
-@include font-size($font-size-plus-four); }
+	@include font-size($font-size-plus-four); }
 }
 
 p + h2 {
-margin-top : ($vertical-spacing / 1.5); }
+	margin-top : ($vertical-spacing / 1.5); }
 
 h3 { 
-margin-bottom : ($vertical-spacing / 2);
-@include font-size($font-size-plus-two);
-font-weight : 700;
-line-height : 1.3;
+	margin-bottom : ($vertical-spacing / 2);
+	@include font-size($font-size-plus-two);
+	font-weight : 700;
+	line-height : 1.3;
 
 @include bp(bp4) {
-@include font-size($font-size-plus-three); }
+	@include font-size($font-size-plus-three); }
 }
 
 h4 { 
-margin-bottom : ($vertical-spacing / 2);
-@include font-size($font-size-plus-one);
-font-weight : 700; 
+	margin-bottom : ($vertical-spacing / 2);
+	@include font-size($font-size-plus-one);
+	font-weight : 700; 
 
 @include bp(bp4) {
-@include font-size($font-size-plus-two); }
+	@include font-size($font-size-plus-two); }
 }
 
 h5 { 
-margin-bottom : ($vertical-spacing / 2);
-@include font-size($font-size-minus-one);
-font-weight : 700;
+	margin-bottom : ($vertical-spacing / 2);
+	@include font-size($font-size-minus-one);
+	font-weight : 700;
 
 @include bp(bp4) {
-@include font-size($font-size); }
+	@include font-size($font-size); }
 }

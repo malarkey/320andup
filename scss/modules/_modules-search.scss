@@ -1,44 +1,38 @@
 
 .form__search {
-display : flex;
-align-items : flex-start;
+	display : flex;
+	align-items : flex-start;
 
 input {
-flex : 1;
--webkit-appearance : none;
-display : block;
-margin : 0;
-padding : 11px 22px;
-background-color : $input-bg;
-background-image : none;
-border : $input-border-width $input-border-style $button-primary-border-color;
-border-right-width : 0;
-border-radius: $input-border-radius;
-border-top-right-radius : 0;
-border-bottom-right-radius : 0;
-box-sizing : border-box;
-font-family : $input-font-family;
-@include font-size($input-font-size);
-line-height : ($vertical-spacing);
-color : $input-font-color; 
-transition : all $transition-duration $transition-timing-function;
-
-&:focus {
-outline : none;
-border-color : darken($input-border-color,10); }
-}
+	flex : 1;
+	-webkit-appearance : none;
+	display : block;
+	margin : 0;
+	padding : 11px 22px;
+	background-color : $input-bg;
+	background-image : none;
+	border : $input-border-width $input-border-style $button-primary-border-color;
+	border-right-width : 0;
+	border-radius: $input-border-radius;
+	border-top-right-radius : 0;
+	border-bottom-right-radius : 0;
+	box-sizing : border-box;
+	font-family : $input-font-family;
+	@include font-size($input-font-size);
+	line-height : ($vertical-spacing);
+	color : $input-font-color; 
+	transition : all $transition-duration $transition-timing-function; }
 
 .btn {
--webkit-appearance : none;
--webkit-font-smoothing : antialiased;
--moz-osx-font-smoothing : grayscale;
-display : inline-block;
-margin : 0;
-padding : 11px 22px;
-background-color : $button-primary-bg;
-border-color : $button-primary-border-color;
-color : $button-primary-font-color;
-border-top-left-radius : 0;
-border-bottom-left-radius : 0; }
-
+	-webkit-appearance : none;
+	-webkit-font-smoothing : antialiased;
+	-moz-osx-font-smoothing : grayscale;
+	display : inline-block;
+	margin : 0;
+	padding : 9px 22px 11px 22px;
+	background-color : $button-primary-bg;
+	border-color : $button-primary-border-color;
+	color : $button-primary-font-color;
+	border-top-left-radius : 0;
+	border-bottom-left-radius : 0; }
 }
