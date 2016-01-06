@@ -44,14 +44,25 @@ p {
 
 .columns {
 @include bp(bp4) {
-	column-width : 24rem;
+	column-count : 2;
 	column-gap : ($gutter * 2); }
 
 p {
 @include bp(bp4) {
+	margin-bottom : 0;
+	display : inline-block;
 	hyphens : auto;
 	hyphenate-limit-chars : 3;
 	hyphenate-limit-lines : 4;
 	text-align : justify; }
 }
+	
+p + p {
+@include bp(bp4) {
+	text-indent : ($gutter * 2); }
+}
+
+p:last-child:after {
+	content : " \00B6";
+	@include font-size(10); }
 }

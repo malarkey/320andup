@@ -1,7 +1,7 @@
 
 .pattern__container {
 
-@include bp(bp7) { 
+@include bp(bp6) { 
 	display : flex;
 	flex-wrap : wrap; }
 }

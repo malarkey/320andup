@@ -4,7 +4,7 @@ a {
 	background : linear-gradient($color-neutral, $color-neutral) no-repeat;
 	background-size : 100% 1px;
 	background-position : 0 1.02em;
-	text-shadow : .05em 0 $body-background, -.05em 0 $body-background;
+	text-shadow : .075em 0 $body-background, -.075em 0 $body-background;
 
 &:visited {
 	color : $link-color-visited; }

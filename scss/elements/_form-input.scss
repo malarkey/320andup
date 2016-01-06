@@ -1,4 +1,5 @@
 .form-control {
+	-moz-appearance : none;
 	-webkit-appearance : none;
 	display : block;
 	width : 100%;
@@ -54,6 +55,8 @@ textarea.form-control {
 	resize-x : none; }
 
 select.form-control {
+	-moz-appearance : menulist;
+	-webkit-appearance : menulist;
 	margin-bottom : $vertical-spacing;
 	width : auto;
 	max-width : 100%; }
